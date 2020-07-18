@@ -8,7 +8,7 @@
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
       <h1 class="display-3">bievenidiao a weam!</h1>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+      <p class="lead">este texto sirve solo de relleno, seghn estdosiash kae mead awkd awmdawkdldwaw </p>
       <a href="#" class="btn btn-primary btn-lg">Confirmar</a>
     </header>
 
