@@ -5,7 +5,7 @@
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       <h2>pago de su arancel</h2>
-      <p class="lead">awa de uwu</p>
+      <p class="lead">awa de uwu lo que sea </p>
     </div>
   
     <div class="row">
