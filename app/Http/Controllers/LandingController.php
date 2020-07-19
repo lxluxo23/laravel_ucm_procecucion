@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 class LandingController extends Controller
 {
     public function index(){
-        return view('leanding.index');
+        return view('usuario.index');
     }
 
     public function pago(){
-        return view('leanding.2');
+        return view('usuario.pago');
 
     }
 }
