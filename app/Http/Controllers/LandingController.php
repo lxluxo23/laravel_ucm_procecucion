@@ -14,6 +14,9 @@ class LandingController extends Controller
         return view('usuario.pago');
 
     }
+    public function agregar_espacio(){
+        return view('administrador.agregar_espacio');
+    }
 
     public function indexadmin(){
         return view('administrador.indexadmin');
