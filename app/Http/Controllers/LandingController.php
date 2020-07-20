@@ -19,5 +19,13 @@ class LandingController extends Controller
         return view('administrador.indexadmin');
     }
 
+    public function nuevousuario(){
+        return view('administrador.agrgarusuario');
+    }
+
+    public function listaclientes(){
+        return view('administrador.listaclientes');
+    }
+
     
 }

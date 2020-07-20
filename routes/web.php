@@ -19,4 +19,6 @@ Route::get('/pagogogogo', 'LandingController@pago')->name('pago');
 
 Route::get('/admin', 'LandingController@indexadmin')->name('inicioadmin');
 
+Route::get('/agragarusuario', 'LandingController@nuevousuario')->name('nuevousuario');
 
+Route::get('/listaclientes', 'LandingController@listaclientes')->name('listaclientes');
