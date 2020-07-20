@@ -24,3 +24,5 @@ Route::get('/agragarusuario', 'LandingController@nuevousuario')->name('nuevousua
 Route::get('/listaclientes', 'LandingController@listaclientes')->name('listaclientes');
 
 Route::get ('/algo','LandingController@agregar_espacio')->name('agregar');
+
+Route::get ('/Listar espacio','LandingController@listar_espacio')->name('listar_espacio');
