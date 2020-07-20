@@ -30,5 +30,9 @@ class LandingController extends Controller
         return view('administrador.listaclientes');
     }
 
+    public function listar_espacio(){
+        return view ('administrador.listar_espacio');
+    }
+
     
 }

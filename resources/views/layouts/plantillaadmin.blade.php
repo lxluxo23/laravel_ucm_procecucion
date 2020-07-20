@@ -79,7 +79,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestionar espacios</h6>
           <a class="collapse-item" href="{{ route ('agregar')}}">Agregar</a>
-            <a class="collapse-item" href="utilities-border.html">Lista salas</a>
+            <a class="collapse-item" href="{{ route ('listar_espacio')}}">Lista salas</a>
           </div>
         </div>
       </li>
