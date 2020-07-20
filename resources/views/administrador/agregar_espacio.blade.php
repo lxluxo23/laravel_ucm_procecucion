@@ -26,7 +26,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="telefono">Telefono</label>
+          <label for="telefono">Numero de Telefono</label>
           <input type="number" class="form-control" id="telefono" placeholder="" required>
         </div>
         
