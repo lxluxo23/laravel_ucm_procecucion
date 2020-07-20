@@ -15,6 +15,13 @@
               Ingrese Nombre por favor
             </div>
           </div>
+          <div class="col-md-6 mb-3">
+            <label for="nombre">ID</label>
+            <input type="text" class="form-control" id="ID" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Ingrese ID
+            </div>
+          </div>
         </div>
 
         <div class="mb-3">
