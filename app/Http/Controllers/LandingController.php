@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 class LandingController extends Controller
 {
     public function index(){
-        return view('usuario.index');
+        $imagenes = \DB::table ('imagens')->select ('url')->first();
+        //return view('usuario.index',compact ('imagenes'));
+        return view('usuario.index')->with('imagenes',$imagenes);
+        //return view('usuario.index');
     }
 
     public function pago(){
