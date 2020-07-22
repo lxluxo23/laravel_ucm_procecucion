@@ -26,3 +26,11 @@ Route::get('/listaclientes', 'LandingController@listaclientes')->name('listaclie
 Route::get ('/algo','LandingController@agregar_espacio')->name('agregar');
 
 Route::get ('/Listarespacio','LandingController@listar_espacio')->name('listar_espacio');
+
+/*
+|--------------------------------------------------------------------------
+| PARA LOS METODOS POST PEASOS DE LACRA
+|--------------------------------------------------------------------------
+*/
+
+Route::post('nuevousuariopost','LandingController@crearusuario')->name('crear_usuario');

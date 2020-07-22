@@ -3,15 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App;
+use Illuminate\Support\Facades\DB;
 
 class LandingController extends Controller
 {
-    public function index(){
-        $imagenes = \DB::table ('imagens')->select ('url')->first();
-        //return view('usuario.index',compact ('imagenes'));
-        return view('usuario.index')->with('imagenes',$imagenes);
-        //return view('usuario.index');
-    }
+
 
     public function pago(){
         return view('usuario.pago');
@@ -37,5 +34,26 @@ class LandingController extends Controller
         return view ('administrador.listar_espacio');
     }
 
+    /*
+|--------------------------------------------------------------------------
+| PARA LAS FUNCIONES POST
+|--------------------------------------------------------------------------
+*/
+    public function crearusuario(Request $recuperar){
+
+
+
+        $nombre = $recuperar->nombre;
+/*
+        if($valido == 1){
+            $dato = DB::select('call InsertAtendedor(?,?,?)', [$run,$nombre,$estado]);
+            return back()->with('mensaje','Ingresado con exito');
+        }else{
+            return back()->with('mensaje1','Rut incorrecto');
+        }
+*/
+        
+              
+    }
     
 }

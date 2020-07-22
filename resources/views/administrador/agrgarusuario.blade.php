@@ -6,7 +6,8 @@
    
     <div class="col-md-12 order-md-1">
       <h4 class="mb-3">Billing address</h4>
-      <form class="needs-validation" novalidate>
+      <form action="{{ route('crear_usuario') }}" method="POST" class="needs-validation" novalidate>
+        @csrf
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="rut">Rut</label>
