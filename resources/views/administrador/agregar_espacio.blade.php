@@ -38,6 +38,8 @@
             <textarea class="form-control" id="descripcion" name="descripcion" rows="5"></textarea>
           </div>
 
+          
+          <div class="col-md-6 mb-4">
           <label class="col-md-4 control-label">Nuevo Archivo</label>
               <div class="col-md-6">
                 <input type="file" class="form-control" name="file" >

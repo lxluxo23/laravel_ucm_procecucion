@@ -39,7 +39,9 @@ class LandingController extends Controller
     }
 
     public function listar_espacio(){
-        return view ('administrador.listar_espacio');
+
+        $espacios= DB::select('SELECT * FROM espacio_trabajo'); 
+        return view ('administrador.listar_espacio',compact('espacios'));
     }
 
     public function crear_espacio (Request $agregar_espacio){
@@ -60,8 +62,6 @@ class LandingController extends Controller
         $descripcion =$agregar_espacio->descripcion;
 
         $estado= 'Disponible';
-
-        //$url_imagen='lawea.jpg';
 
         $dato = DB::select('call agregar_espacio(?,?,?,?,?)', [$capacidad,$descripcion,$estado,$precio,$nombre]);
 

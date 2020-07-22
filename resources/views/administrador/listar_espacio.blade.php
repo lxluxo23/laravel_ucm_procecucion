@@ -22,17 +22,23 @@
                 <th>Capacidad</th>
                 <th>Descripcion</th>
                 <th>Estado</th>
+                <th>precio</th>
+                <th>Imagen</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
+              @foreach($espacios as $item)
               <tr>
-                <td>1</td>
-                <td>10</td>
-                <td>Piso muy bonito</td>
-                <td>activo</td>
-
+                <td>{{$item->ID_espacio_trabajo}}</td>
+                <td>{{$item->Capacidad}}</td>
+                <td>{{$item->Descripcion}}</td>
+                <td>{{$item->Estado}}</td>
+                <td>{{$item->precio}}</td>
+                <td>{{$item->url_img}}</td>
+                <td>LOS BOTONES</td>
               </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
