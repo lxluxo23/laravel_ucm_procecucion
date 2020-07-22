@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 class LandingController extends Controller
 {
 
+    public function index(){
+        return view('usuario.index');
+
+    }
+
     public function pago(){
         return view('usuario.pago');
 
