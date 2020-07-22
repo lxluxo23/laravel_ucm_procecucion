@@ -15,7 +15,8 @@
 
     @endif
       <h4 class="mb-3">Agregar Espacio de trabajo</h4>
-      <form class="needs-validation" action ="{{route('crear_espacio') }}" method="POST" novalidate>
+      <form action ="{{ route('crear_espacio') }}" method="POST">
+        @csrf
         <div class="row">         
           <div class="col-md-6 mb-3">
             <label for="nombre">ID</label>
