@@ -35,7 +35,7 @@
                 <td>{{$item->Descripcion}}</td>
                 <td>{{$item->Estado}}</td>
                 <td>{{$item->precio}}</td>
-                <td>{{$item->url_img}}</td>
+                <td><IMG SRC="images/{{$item->url_img}}"></td>
                 <td>LOS BOTONES</td>
               </tr>
               @endforeach
