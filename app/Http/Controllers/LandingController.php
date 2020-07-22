@@ -44,7 +44,14 @@ class LandingController extends Controller
 
     public function crear_espacio (Request $agregar_espacio){
 
-        $id_espacio = $agregar_espacio->ID;
+        //$id_espacio = $agregar_espacio->ID;
+
+
+        $file = $agregar_espacio->file('file');
+
+        $nombre = $file->getClientOriginalName();
+        
+        \Storage::disk('local')->put($nombre,  \File::get($file));
 
         $capacidad = $agregar_espacio->capacidad;
         
@@ -52,11 +59,11 @@ class LandingController extends Controller
 
         $descripcion =$agregar_espacio->descripcion;
 
-        $estado= '';
+        $estado= 'Disponible';
 
-        $url_imagen='lawea.jpg';
+        //$url_imagen='lawea.jpg';
 
-        $dato = DB::select('call agregar_espacio(?,?,?,?,?,?)', [$id_espacio,$capacidad,$descripcion,$estado,$precio,$url_imagen]);
+        $dato = DB::select('call agregar_espacio(?,?,?,?,?)', [$capacidad,$descripcion,$estado,$precio,$nombre]);
 
         return back()->with('mensaje','Agregado con exito');
 

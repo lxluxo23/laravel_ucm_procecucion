@@ -15,16 +15,9 @@
 
     @endif
       <h4 class="mb-3">Agregar Espacio de trabajo</h4>
-      <form action ="{{ route('crear_espacio') }}" method="POST">
+      <form action ="{{ route('crear_espacio') }}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
         @csrf
         <div class="row">         
-          <div class="col-md-6 mb-3">
-            <label for="nombre">ID</label>
-            <input type="text" class="form-control" id="ID" name="ID" placeholder="" value="" required>
-            <div class="invalid-feedback">
-              Ingrese ID
-            </div>
-          </div>
           <div class="col-md-6 mb-6">
             <label for="Capacidad">Capacidad</label>
             <input type="number" class="form-control" id="capacidad" name="capacidad" placeholder="" required>
@@ -44,6 +37,11 @@
             <label for="descripcion">Descripcion<span class="text-muted"></span></label>
             <textarea class="form-control" id="descripcion" name="descripcion" rows="5"></textarea>
           </div>
+
+          <label class="col-md-4 control-label">Nuevo Archivo</label>
+              <div class="col-md-6">
+                <input type="file" class="form-control" name="file" >
+              </div>
         
         <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
