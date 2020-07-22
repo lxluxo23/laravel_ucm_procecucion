@@ -26,34 +26,18 @@
               </tr>
             </thead>
             <tbody>
+              @foreach($hr as $item)
               <tr>
-                <td>111111</td>
-                <td>luis cespedes</td>
-                <td>luxo@luxo.luxo</td>
-                <td>23</td>
+                <td>{{$item->Rut}}</td>
+                <td>{{$item->Nombre}}</td>
+                <td>{{$item->Email}}</td>
+                <td>{{$item->Telefono_1}}</td>
                 <td>LOS BOTONES</td>
               </tr>
-              <tr>
-                <td>22222222</td>
-                <td>felipe herrera</td>
-                <td>lockus@lockus.lockus</td>
-                <td>63</td>
-                <td>LOS BOTONES</td>
-              </tr>
-              <tr>
-                <td>0000000000</td>
-                <td>yo</td>
-                <td>yo@yo.yo</td>
-                <td>66</td>
-                <td>LOS BOTONES</td>
-              </tr>
-              <tr>
-                <td>3333333333333333</td>
-                <td>El adrian</td>
-                <td>eidrian.eidrian.eidrian</td>
-                <td>22</td>
-                <td>LOS BOTONES</td>
-              </tr>
+              @endforeach
+
+
+          
 
             </tbody>
           </table>

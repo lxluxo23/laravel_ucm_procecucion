@@ -31,11 +31,41 @@ class LandingController extends Controller
     }
 
     public function listaclientes(){
-        return view('administrador.listaclientes');
+
+        $hr = DB::select('SELECT * FROM usuario');        
+        
+        return view('administrador.listaclientes', compact('hr'));
+
     }
 
     public function listar_espacio(){
         return view ('administrador.listar_espacio');
     }
     
+    public function crearusuario(Request $recuperar){
+
+        $rut = $recuperar->rut;
+
+        $nombre = $recuperar->nombre;
+
+        $pass = $recuperar->pass;
+
+        $tipo = 'Fantasma';
+
+        $estado = 'Soy admin';
+
+        $telefono = $recuperar->telefono;
+
+        $email = $recuperar->email;
+
+        $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,$pass,$tipo,$telefono,$email,$estado]);
+
+        return back()->with('mensaje','Agregado con exito');                
+    }
+
+    public function hora2(){
+
+        
+
+    }
 }
