@@ -8,7 +8,14 @@ use Illuminate\Support\Facades\DB;
 
 class LandingController extends Controller
 {
+<<<<<<< HEAD
 
+=======
+    public function index(){
+        return view('usuario.index');
+         
+    }
+>>>>>>> 681f6b705a66741e5c52ed902dc70f7436a01a06
 
     public function pago(){
         return view('usuario.pago');
@@ -35,25 +42,6 @@ class LandingController extends Controller
     }
 
     /*
-|--------------------------------------------------------------------------
-| PARA LAS FUNCIONES POST
-|--------------------------------------------------------------------------
-*/
-    public function crearusuario(Request $recuperar){
 
-
-
-        $nombre = $recuperar->nombre;
-/*
-        if($valido == 1){
-            $dato = DB::select('call InsertAtendedor(?,?,?)', [$run,$nombre,$estado]);
-            return back()->with('mensaje','Ingresado con exito');
-        }else{
-            return back()->with('mensaje1','Rut incorrecto');
-        }
-*/
-        
-              
-    }
     
 }
