@@ -8,8 +8,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>landing PRUEBA1</title>
-
+  <title>Pagina de inicio</title>
+  <link rel="stylesheet" href="assets/landing/css/estilo.css">
   <!-- Bootstrap core CSS -->
   <link href="{{ asset('assets/landing/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 

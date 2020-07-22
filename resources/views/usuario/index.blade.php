@@ -1,13 +1,13 @@
 @extends('layouts.landing')
 
 @section('contenido')
-
+<div class="contenedordeinicio">
       <!-- Page Content -->
   <div class="container">
 
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
-      <h1 class="display-3">bienvenido a nuestra casa!</h1>
+      <h1 class="display-3">Bienvenido a nuestra casa!</h1>
       <p class="lead">Busca un lugar comodo y perfecto para el cual puedas ejercer tus proyectos</p>
       <a href="#" class="btn btn-primary btn-lg">Ir a nuestro catálogo</a>
     </header>
@@ -58,7 +58,7 @@
         <div class="card h-100">
           <img class="card-img-top" src="images/espacio4.jpg" alt="">
           <div class="card-body">
-            <h4 class="card-title">Espacio titanico</h4>
+            <h4 class="card-title">Espacio titánico</h4>
             <p class="card-text">De 4cm x 4cm el cual incluye una mesa para 400 personas, cocina, pista de baile, cancha de tenis, una base militar, un planeta y un baño</p>
           </div>
           <div class="card-footer">
@@ -72,5 +72,5 @@
 
   </div>
   <!-- /.container -->
-
+</div>
 @endsection
