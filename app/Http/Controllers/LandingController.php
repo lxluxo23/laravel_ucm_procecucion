@@ -56,6 +56,10 @@ class LandingController extends Controller
 
         $url_imagen='lawea.jpg';
 
+        $dato = DB::select('call agregar_espacio(?,?,?,?,?,?)', [$id_espacio,$capacidad,$descripcion,$estado,$precio,$url_imagen]);
+        
+        return back()->with('mensaje','Agregado con exito');
+
 
 
 

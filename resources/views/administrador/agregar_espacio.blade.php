@@ -5,6 +5,15 @@
 <div class="row">
    
     <div class="col-md-12 order-md-1">
+
+      @if(session('mensaje'))
+
+      <div class="alert alert-success" onclick="window.close()"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>!</strong>
+          {{ session('mensaje') }}
+      </div>
+
+    @endif
       <h4 class="mb-3">Agregar Espacio de trabajo</h4>
       <form class="needs-validation" action ="{{route('crear_espacio') }}" method="POST" novalidate>
         <div class="row">         
