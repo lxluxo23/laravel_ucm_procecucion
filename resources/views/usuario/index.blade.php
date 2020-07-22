@@ -6,7 +6,7 @@
   <div class="container">
 
     <!-- Jumbotron Header -->
-    <header class="jumbotron my-4">
+    <header class="contenedorheader my-4">
       <h1 class="display-3">Bienvenido a nuestra casa!</h1>
       <p class="lead">Busca un lugar comodo y perfecto para el cual puedas ejercer tus proyectos</p>
       <a href="#" class="btn btn-primary btn-lg">Ir a nuestro catálogo</a>
@@ -16,7 +16,7 @@
     <div class="row text-center">
 
       <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
+        <div class="contendorimagenesinicio h-100">
           <img class="card-img-top" src="images/espacio1.jpg" alt="">
           <div class="card-body">
             <h4 class="card-title">Espacio pequeño</h4>
@@ -29,7 +29,7 @@
       </div>
 
       <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
+        <div class="contendorimagenesinicio h-100">
         <img class="card-img-top" src="images/espacio2.jpg" alt="">
           <div class="card-body">
             <h4 class="card-title">Espacio medio</h4>
@@ -42,7 +42,7 @@
       </div>
 
       <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
+        <div class="contendorimagenesinicio h-100">
           <img class="card-img-top" src="images/espacio3.jpg" alt="">
           <div class="card-body">
             <h4 class="card-title">Espacio grande</h4>
@@ -55,7 +55,7 @@
       </div>
 
       <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
+        <div class="contendorimagenesinicio h-100">
           <img class="card-img-top" src="images/espacio4.jpg" alt="">
           <div class="card-body">
             <h4 class="card-title">Espacio titánico</h4>

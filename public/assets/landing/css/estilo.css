@@ -4,5 +4,40 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    background: #ffffff;
+    background: #45a6f5;
 }
+
+.contenedorheader{
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background:#bae6ff7a;
+    border-radius: .3rem;
+}
+
+
+.contendorimagenesinicio{
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #b9ebf3;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+
+}
+
+
+@media (min-width: 576px){
+
+.contenedorheader {
+    padding: 4rem 2rem;
+}
+
+
+}
+
+
