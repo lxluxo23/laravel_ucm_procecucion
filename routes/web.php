@@ -34,3 +34,5 @@ Route::get ('/Listarespacio','LandingController@listar_espacio')->name('listar_e
 */
 
 Route::post('nuevousuariopost','LandingController@crearusuario')->name('crear_usuario');
+
+Route::post('crearespaciopost','LandingController@crear_espacio')->name('crear_espacio');

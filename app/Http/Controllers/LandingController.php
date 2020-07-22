@@ -41,6 +41,26 @@ class LandingController extends Controller
     public function listar_espacio(){
         return view ('administrador.listar_espacio');
     }
+
+    public function crear_espacio (Request $agregar_espacio){
+
+        $id_espacio = $agregar_espacio->ID;
+
+        $capacidad = $agregar_espacio->capacidad;
+        
+        $precio = $agregar_espacio->precio;
+
+        $descripcion =$agregar_espacio->descripcion;
+
+        $estado= 'Activo';
+
+        $url_imagen='lawea.jpg';
+
+
+
+
+
+    }
     
     public function crearusuario(Request $recuperar){
 
