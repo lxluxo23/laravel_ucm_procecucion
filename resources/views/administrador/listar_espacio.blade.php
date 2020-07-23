@@ -6,7 +6,7 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Espacios</h1>
-    <p class="mb-4">En esta lista prodra seleccionar modificar y eliminar espacios de trabajo</p>
+    <p class="mb-4">Modifique o elimine seleccionando los botones a la derecha en la fila correspondiente al espacio de trabajo.</p>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -36,8 +36,8 @@
                 <td>{{$item->Estado}}</td>
                 <td>{{$item->precio}}</td>
                 <td><IMG SRC="images/{{$item->url_img}}" width="150"></td>
-                <td><a href='delete.php?id=".$row["0"]."'><img id='img_tab_edit' src='images/edit.png' width="50"/></a> 
-                    <a href='delete.php?id=".$row["0"]."'><img id='img_tab_delete' src='images/trash.png' width="50"/></a>
+                <td><a href='delete.php?id=".$row["0"]."'><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a> 
+                    <a href='delete.php?id=".$row["0"]."'><img id='img_tab_delete' src='images/elim.jpg' width="50"/></a>
                 </td>
               </tr>
               @endforeach
