@@ -2,14 +2,18 @@
 
 @section('contenido')
 <div class="contenedordeinicio">
+  <div class="fondoblancotransp">
+  </div>
       <!-- Page Content -->
   <div class="container">
 
     <!-- Jumbotron Header -->
     <header class="contenedorheader my-4">
-      <h1 class="display-3">Bienvenido a nuestra casa!</h1>
-      <p class="lead">Busca un lugar comodo y perfecto para el cual puedas ejercer tus proyectos</p>
-      <a href="#" class="btn btn-primary btn-lg">Ir a nuestro catálogo</a>
+      <div class="imagenheader">
+        <h1 class="display-3"><b class="TextoTituloInicio">Bienvenidos a nuestra casa!</b></h1>
+        <p class="lead"><b class="TextoTituloInicio" >Busque un lugar comodo y perfecto para el cual puedas ejercer tus proyectos</b></p>
+        <a href="#" class="btn btn-primary btn-lg">Ir a nuestro catálogo</a>
+      </div>
     </header>
 
     <!-- Page Features -->

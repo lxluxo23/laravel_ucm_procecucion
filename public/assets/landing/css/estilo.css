@@ -4,15 +4,48 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    background: #45a6f5;
+    /*background: #a7d5fa;*/
+    background-image: url("../../../images/ofifondo.png");
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 
+.fondoblancotransp{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fde9d2;
+    opacity: 0.5;
+
+}
+
+
 .contenedorheader{
+    
+    position: relative;
     padding: 2rem 1rem;
     margin-bottom: 2rem;
-    background:#bae6ff7a;
+    background-image: url("../../../images/brolololo.jpg");
+    background-size: 60% 350%;
+    /*background:#0580c798;*/
     border-radius: .3rem;
+    border: 1px solid #5470cc;
+    
+   
 }
+
+/*.imagenheader{
+    background-image: url("../../../images/espacio1.jpg");
+    overflow: hidden;
+}*/
+
+.TextoTituloInicio{
+   color: #3a4adbf3;
+}
+
+.TextoSubTituloInicio{
+    color: #3a4adbf3;
+ }
 
 
 .contendorimagenesinicio{
@@ -27,6 +60,7 @@
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
+    border: 1px solid #5470cc;
 
 }
 

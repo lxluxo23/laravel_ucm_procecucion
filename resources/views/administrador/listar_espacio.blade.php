@@ -36,7 +36,9 @@
                 <td>{{$item->Estado}}</td>
                 <td>{{$item->precio}}</td>
                 <td><IMG SRC="images/{{$item->url_img}}" width="150"></td>
-                <td><a href='delete.php?id=".$row["0"]."'><img id='img_tab_edit' src='images/edit.png' width="50"/></a> <a href='delete.php?id=".$row["0"]."'><img id='img_tab_delete' src='images/trash.png' width="50"/></a></td>
+                <td><a href='delete.php?id=".$row["0"]."'><img id='img_tab_edit' src='images/edit.png' width="50"/></a> 
+                    <a href='delete.php?id=".$row["0"]."'><img id='img_tab_delete' src='images/trash.png' width="50"/></a>
+                </td>
               </tr>
               @endforeach
             </tbody>
