@@ -27,7 +27,7 @@
             <p class="card-text">De 1cm x 2cm el cual incluye una mesa para 100 personas con un cocina y baño</p>
           </div>
           <div class="card-footer">
-            <a href="{{ route('detventa') }}" class="btn btn-primary">Ver más detalles</a>
+            <a href="{{ route('detaespacio') }}" class="btn btn-primary">Ver más detalles</a>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
             <p class="card-text">De 2cm x 3cm el cual incluye una mesa para 200 personas, cocina, pista de baile, cancha de tenis y un baño</p>
           </div>
           <div class="card-footer">
-            <a href="{{ route('detventa') }}" class="btn btn-primary">Ver más detalles</a>
+            <a href="{{ route('detaespacio') }}" class="btn btn-primary">Ver más detalles</a>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@
             <p class="card-text">De 3cm x 4cm el cual incluye una mesa para 300 personas, cocina, pista de baile, cancha de tenis, una base militar y un baño</p>
           </div>
           <div class="card-footer">
-            <a href="{{ route('detventa') }}" class="btn btn-primary">Ver más detalles</a>
+            <a href="{{ route('detaespacio') }}" class="btn btn-primary">Ver más detalles</a>
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@
             <p class="card-text">De 4cm x 4cm el cual incluye una mesa para 400 personas, cocina, pista de baile, cancha de tenis, una base militar, un planeta y un baño</p>
           </div>
           <div class="card-footer">
-            <a href="{{ route('detventa') }}" class="btn btn-primary">Ver más detalles</a>
+            <a href="{{ route('detaespacio') }}" class="btn btn-primary">Ver más detalles</a>
           </div>
         </div>
       </div>

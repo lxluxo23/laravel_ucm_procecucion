@@ -15,8 +15,8 @@ class LandingController extends Controller
     }
 
 
-    public function detventa(){
-        return view('usuario.detventa');
+    public function detaespacio(){
+        return view('usuario.detaespacio');
 
     }
 
