@@ -14,7 +14,7 @@
   <!-- Custom fonts for this template-->
 <link href="{{ asset('assets/administrador/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <link rel="stylesheet" href="assets/landing/css/estilo.css">
   <!-- Custom styles for this template-->
 <link href="{{ asset('assets/administrador/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
@@ -100,6 +100,14 @@
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
 
+
+
+
+      <a href="." class="BotonAtrasAdmin">← Volver a inicio</a>
+
+
+
+
     </ul>
     <!-- End of Sidebar -->
 
@@ -141,6 +149,8 @@
                 </form>
               </div>
             </li>
+
+         
 
 
 

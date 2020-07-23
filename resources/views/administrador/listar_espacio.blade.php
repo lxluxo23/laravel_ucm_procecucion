@@ -35,7 +35,7 @@
                 <td>{{$item->Descripcion}}</td>
                 <td>{{$item->Estado}}</td>
                 <td>{{$item->precio}}</td>
-                <td><IMG SRC="images/{{$item->url_img}}" width="100" height="100"></td>
+                <td><IMG SRC="images/{{$item->url_img}}" width="80" height="80"></td>
                 <td><a href='delete.php?id=".$row["0"]."'><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a> 
                     <a href='delete.php?id=".$row["0"]."'><img id='img_tab_delete' src='images/elim.jpg' width="50"/></a>
                 </td>
