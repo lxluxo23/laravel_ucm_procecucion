@@ -63,8 +63,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestionar usuarios:</h6>
-            <a class="collapse-item" href="{{ route('nuevousuario') }}">Agregar</a>
-            <a class="collapse-item" href="{{ route('listaclientes') }}">Lista clientes</a>
+            <a class="collapse-item" href="{{ route('nuevousuario') }}">Agregar cliente</a>
+            <a class="collapse-item" href="{{ route('listaclientes') }}">Lista de clientes</a>
           </div>
         </div>
       </li>
@@ -79,8 +79,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestionar espacios</h6>
-          <a class="collapse-item" href="{{ route ('agregar')}}">Agregar</a>
-            <a class="collapse-item" href="{{ route ('listar_espacio')}}">Lista salas</a>
+          <a class="collapse-item" href="{{ route ('agregar')}}">Agregar espacio</a>
+            <a class="collapse-item" href="{{ route ('listar_espacio')}}">Lista de espacios</a>
           </div>
         </div>
       </li>
