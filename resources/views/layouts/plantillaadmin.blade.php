@@ -87,10 +87,14 @@
 
 
       
-
-  
-
-
+      
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="." >
+        
+        <i class="fas fa-arrow-left"></i>
+        <span>Volver a la página</span>
+      </a>
+    </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -103,7 +107,7 @@
 
 
 
-      <a href="." class="BotonAtrasAdmin">← Volver a inicio</a>
+      
 
 
 
