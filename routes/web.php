@@ -27,6 +27,8 @@ Route::get ('/algo','LandingController@agregar_espacio')->name('agregar');
 
 Route::get ('/Listarespacio','LandingController@listar_espacio')->name('listar_espacio');
 
+
+
 /*
 |--------------------------------------------------------------------------
 | PARA LOS METODOS POST PEASOS DE LACRA
@@ -36,4 +38,6 @@ Route::get ('/Listarespacio','LandingController@listar_espacio')->name('listar_e
 Route::post('nuevousuariopost','LandingController@crearusuario')->name('crear_usuario');
 
 Route::post('crearespaciopost','LandingController@crear_espacio')->name('crear_espacio');
+
+Route::post('modificarespacio','LandingController@modificarespacio')->name('modificarespacio');
 

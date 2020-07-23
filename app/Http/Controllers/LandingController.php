@@ -30,6 +30,16 @@ class LandingController extends Controller
         return view('administrador.agrgarusuario');
     }
 
+
+    public function modificarespacio(Request $los_datos_modificar_espacio){
+
+        $id_espacio_m->los_datos_modificar_espacio->id_modificar;
+        
+
+        return view('administrador.modificarespacio',compact('id_espacio_m'));
+
+    }
+
     public function listaclientes(){
 
         $hr = DB::select('SELECT * FROM usuario');        
