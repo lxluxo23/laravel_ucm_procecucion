@@ -14,10 +14,18 @@ class LandingController extends Controller
 
     }
 
+
+    public function detventa(){
+        return view('usuario.detventa');
+
+    }
+
     public function pago(){
         return view('usuario.pago');
 
     }
+
+
     public function agregar_espacio(){
         return view('administrador.agregar_espacio');
     }
