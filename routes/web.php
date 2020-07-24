@@ -29,6 +29,10 @@ Route::get ('/Listarespacio','LandingController@listar_espacio')->name('listar_e
 
 Route::get('/modificarespacio/{id}','LandingController@modificarespacio')->name('modificarespacio');
 
+Route::get ('/DetalleEspacio','LandingController@detaespacio')->name('detaespacio');
+
+
+
 /*
 |--------------------------------------------------------------------------
 | PARA LOS METODOS POST PEASOS DE LACRA
