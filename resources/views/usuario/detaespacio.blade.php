@@ -18,7 +18,7 @@
                     
                         @endif
                         <h4 class="mb-3">Características del espacio</h4>
-                        <!--<form action ="{{ route('crear_espacio') }}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data"> -->
+                        <!-- agregar llave <form action ="{ route('ListarDetEspacio') }}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data"> -->
                             @csrf
                             <div class="row">         
                                 <div class="col-md-6 mb-6">
