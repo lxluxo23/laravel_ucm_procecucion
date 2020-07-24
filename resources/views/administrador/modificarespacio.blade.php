@@ -16,7 +16,7 @@
     @endif
    
     @foreach($los_datos_a_modificar as $item)
-    <form action ="{{ route('editar_espacio') }}" method="POST" accept-charset="UTF-8">
+    <form method="POST" accept-charset="UTF-8">
         @csrf
         <div class="row">         
           <div class="col-md-6 mb-6">
