@@ -31,13 +31,17 @@ class LandingController extends Controller
     }
 
 
-    public function modificarespacio(Request $los_datos_modificar_espacio){
+    public function modificarespacio(Request $request, $id){
 
-        $id_espacio_m->los_datos_modificar_espacio->id_modificar;
+        //return view('administrador.modificarespacio',compact('id'));
+       
+        //echo $id;
+
+        $los_datos_a_modificar=DB::select('select * from espacio_trabajo where ID_espacio_trabajo='.$id);
+
+        return view('administrador.modificarespacio',compact('los_datos_a_modificar'));
+
         
-
-        return view('administrador.modificarespacio',compact('id_espacio_m'));
-
     }
 
     public function listaclientes(){

@@ -14,11 +14,35 @@
       </div>
       @csrf
     @endif
-    @foreach($id_espacio_m as $item)
-    <h1>hola {{$item->id_modificar}}</h1>
+   
+    @foreach($los_datos_a_modificar as $item)
+    <form action ="{{ route('editar_espacio') }}" method="POST" accept-charset="UTF-8">
+        @csrf
+        <div class="row">         
+          <div class="col-md-6 mb-6">
+            <label for="Capacidad">Capacidad</label>
+          <input type="number" value="{{$item->Capacidad}}" class="form-control" id="capacidad" name="capacidad" placeholder="" required>
+            <div class="invalid-feedback">
+              Ingrese Cantidad
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+        <label for="precio">Precio</label>
+            <input type="number" class="form-control" id="precio" name="precio" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Ingrese precio
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <label for="descripcion">Descripcion<span class="text-muted"></span></label>
+            <textarea class="form-control" id="descripcion" name="descripcion" rows="5"></textarea>
+          </div>        
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
+      </form>
     @endforeach
-      
-    
+
   </div>
 </div>
 @endsection
