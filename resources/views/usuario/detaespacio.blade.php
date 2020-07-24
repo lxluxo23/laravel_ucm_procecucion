@@ -2,8 +2,7 @@
 
 <div class="contenedordeinicio">
     <div class="fondoblancotransp"></div>
-        <div class="FondoContenedorDetalleEspacio">
-            
-        </div>
+        <div class="FondoContenedorDetalleEspacio"></div>
    
+        
 </div>

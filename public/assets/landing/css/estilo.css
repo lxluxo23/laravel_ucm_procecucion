@@ -89,11 +89,14 @@
 /*---------------Plantilla detespacio------------------*/
 
 .FondoContenedorDetalleEspacio{
+    margin-top: 50px;
     position: absolute;
-    background: #f0f0f0;
+    background: #ffffff;
     width: 80%;
     margin-left: 10%;
     height: 800px;
+    border-radius: 20px;
+    opacity: 0.8;
 }
 
 
