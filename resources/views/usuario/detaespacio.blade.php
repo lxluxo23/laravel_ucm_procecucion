@@ -23,32 +23,25 @@
                             <div class="row">         
                                 <div class="col-md-6 mb-6">
                                     <label for="Capacidad">Capacidad</label>
-                                    <input type="number" class="form-control" id="capacidad" name="capacidad" placeholder="" required>
-
+                                    <label class="form-control" id="capacidad" name="capacidad">Este espacio tiene una capacidad hasta para 100 personas</label>
                                 </div>
+
                                 <div class="col-md-6 mb-3">
                                     <label for="precio">Precio</label>
-                                    <input type="number" class="form-control" id="precio" name="precio" placeholder="" value="" required>
-                                    <div class="invalid-feedback">
-                                        Ingrese precio
-                                    </div>
+                                    <label class="form-control" id="precio" name="precio">200 pesitos x dia</label>
                                 </div>
                         
                                 <div class="col-md-6 mb-4">
                                     <label for="descripcion">Descripcion<span class="text-muted"></span></label>
-                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="5"></textarea>
+                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="5">Ideal para trabajar junto a un grupo decente de personas, el cual trae una cocina y un baño en una misma habitacion, uno al lado de otro.
+                                    </textarea>
                                 </div>
                         
-                                
-                                <div class="col-md-6 mb-4">
-                                    <label class="col-md-4 control-label">Nuevo Archivo</label>
                                     <div class="col-md-6">
-                                        <input type="file" class="form-control" name="file" >
+                                        <button class="btn btn-primary btn-lg btn-block" type="submit">Arrendar</button>
                                     </div>
+
                                 
-                                <hr class="mb-4">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
-                                </div>
                             </div>
                         <!-- </form> -->
                     </div>
