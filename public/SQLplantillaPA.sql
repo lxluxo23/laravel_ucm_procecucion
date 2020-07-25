@@ -37,7 +37,7 @@ DECLARE imagen TEXT;
 select url_img INTO imagen FROM espacio_trabajo WHERE ID_espacio_trabajo=pespacioid; 
 
 
-IF LENGTH (imagen)>1 then 
+IF LENGTH (imagen)>0 then 
 
 	update espacio_trabajo 
 
