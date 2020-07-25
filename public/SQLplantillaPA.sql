@@ -32,25 +32,11 @@ purl TEXT
  
 BEGIN
 
-DECLARE imagen TEXT;
-
-select url_img INTO imagen FROM espacio_trabajo WHERE ID_espacio_trabajo=pespacioid; 
-
-
-IF LENGTH (imagen)>0 then 
-
-	update espacio_trabajo 
-
-	SET 
-	Capacidad=pcapacidad,
-	Descripcion=pdescripcion,
-	Estado=pestado,
-	precio=pprecio,
-	url_img=purl
-
-	WHERE ID_espacio_trabajo=pespacioid;
+	DECLARE imagen TEXT;
 	
-	else
+	select url_img INTO imagen FROM espacio_trabajo WHERE ID_espacio_trabajo=pespacioid;
+	
+	IF purl IS NULL OR purl='' OR LENGTH (purl)= 0 THEN
 		update espacio_trabajo 
 		SET 
 		Capacidad=pcapacidad,
@@ -58,10 +44,16 @@ IF LENGTH (imagen)>0 then
 		Estado=pestado,
 		precio=pprecio,
 		url_img=imagen
-		
 		WHERE ID_espacio_trabajo=pespacioid;
-	
+	ELSE
+		update espacio_trabajo 
+		SET 
+		Capacidad=pcapacidad,
+		Descripcion=pdescripcion,
+		Estado=pestado,
+		precio=pprecio,
+		url_img=purl
+		WHERE ID_espacio_trabajo=pespacioid;
 	END IF;
-
 END$$
 
