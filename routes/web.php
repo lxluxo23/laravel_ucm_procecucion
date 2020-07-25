@@ -43,5 +43,4 @@ Route::post('nuevousuariopost','LandingController@crearusuario')->name('crear_us
 
 Route::post('crearespaciopost','LandingController@crear_espacio')->name('crear_espacio');
 
-
-
+Route::post('actualizarespacio','LandingController@actualizarespacio')->name('actualizarespacio');

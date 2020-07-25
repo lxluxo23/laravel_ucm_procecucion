@@ -66,6 +66,29 @@ class LandingController extends Controller
         return view ('administrador.listar_espacio',compact('espacios'));
     }
 
+    public function actualizarespacio(Request $actualziarespacio){
+
+        
+        $file = $agregar_espacio->file('file');
+
+        $nombre = $file->getClientOriginalName();
+
+        \Storage::disk('local')->put($nombre,  \File::get($file));
+        
+        $capacidad = $agregar_espacio->capacidad;
+        
+        $precio = $agregar_espacio->precio;
+
+        $descripcion =$agregar_espacio->descripcion;
+
+        $estado= 'Disponible';
+
+        $dato = DB::select('call agregar_espacio(?,?,?,?,?)', [$capacidad,$descripcion,$estado,$precio,$nombre]);
+
+        return back()->with('mensaje','Agregado con exito');
+
+    }
+
     public function crear_espacio (Request $agregar_espacio){
 
         //$id_espacio = $agregar_espacio->ID;
