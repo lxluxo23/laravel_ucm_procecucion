@@ -68,24 +68,38 @@ class LandingController extends Controller
 
     public function actualizarespacio(Request $actualziarespacio){
 
-        
-        $file = $agregar_espacio->file('file');
 
-        $nombre = $file->getClientOriginalName();
 
-        \Storage::disk('local')->put($nombre,  \File::get($file));
-        
-        $capacidad = $agregar_espacio->capacidad;
-        
-        $precio = $agregar_espacio->precio;
+        $file = $actualziarespacio->file('file');
 
-        $descripcion =$agregar_espacio->descripcion;
+        if ($file){
+            
+            $nombre = $file->getClientOriginalName();
+        
+            \Storage::disk('local')->put($nombre,  \File::get($file));
+        }
+        else{
+
+            echo "no hay archivo";
+
+            $nombre='';
+        }
+        
+        
+        
+        $id_espacio = $actualziarespacio->id_espacio;
+
+        $capacidad = $actualziarespacio->capacidad;
+        
+        $precio = $actualziarespacio->precio;
+
+        $descripcion =$actualziarespacio->descripcion;
 
         $estado= 'Disponible';
 
-        $dato = DB::select('call agregar_espacio(?,?,?,?,?)', [$capacidad,$descripcion,$estado,$precio,$nombre]);
+        $dato = DB::select('call actualizar_espacio(?,?,?,?,?,?)', [$id_espacio,$capacidad,$descripcion,$estado,$precio,$nombre]);
 
-        return back()->with('mensaje','Agregado con exito');
+        return back()->with('mensaje','Actualizado con exito! con exito');
 
     }
 
