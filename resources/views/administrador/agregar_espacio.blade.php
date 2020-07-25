@@ -42,7 +42,20 @@
           <div class="col-md-6 mb-4">
           <label class="col-md-4 control-label">Nuevo Archivo</label>
               <div class="col-md-6">
-                <input type="file" class="form-control" name="file" >
+                <input type="file" class="form-control" name="file" onchange="loadFile(event)" >
+                <div>
+                </div>  
+                <img name="portada" id="portada" width="250"/>
+                <script>
+                    var loadFile = function(event) {
+                    var reader = new FileReader();
+                    reader.onload = function(){
+                      var output = document.getElementById('portada');
+                      output.src = reader.result;
+                    };
+                    reader.readAsDataURL(event.target.files[0]);
+                    };
+                </script>
               </div>
         
         <hr class="mb-4">
