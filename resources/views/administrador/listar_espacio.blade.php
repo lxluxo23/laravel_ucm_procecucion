@@ -7,7 +7,14 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Espacios de trabajo</h1>
     <p class="mb-4">Modifique o elimine seleccionando los botones a la derecha en la fila correspondiente al espacio de trabajo.</p>
+    @if(session('mensaje'))
 
+    <div class="alert alert-success" onclick="window.close()"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>!</strong>
+        {{ session('mensaje') }}
+    </div>
+    @csrf
+  @endif
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
       <div class="card-header py-3">
@@ -37,7 +44,7 @@
                 <td>{{$item->precio}}</td>
                 <td><IMG SRC="images/{{$item->url_img}}" width="80" height="80"></td>
                 <td><a href='{{('modificarespacio/')}}{{$item->ID_espacio_trabajo}}'><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a> 
-                    <a href='delete.php?id=".$row["0"]."'><img id='img_tab_delete' src='images/elim.jpg' width="50"/></a>
+                    <a href='{{('eliminarespacio/')}}{{$item->ID_espacio_trabajo}}'><img id='img_tab_delete' src='images/elim.jpg' width="50"/></a>
                 </td>
               </tr>
               @endforeach

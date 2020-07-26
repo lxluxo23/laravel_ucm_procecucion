@@ -103,6 +103,15 @@ class LandingController extends Controller
 
     }
 
+
+    public function eliminar_espacio (Request $request,$id){
+
+        $los_datos_a_eliminar=DB::delete('delete from espacio_trabajo where ID_espacio_trabajo='.$id);
+
+        return back()->with('mensaje','Eliminado Correctamente');
+
+    }
+
     public function crear_espacio (Request $agregar_espacio){
 
         //$id_espacio = $agregar_espacio->ID;
@@ -154,4 +163,5 @@ class LandingController extends Controller
         
 
     }
+
 }

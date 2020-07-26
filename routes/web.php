@@ -31,6 +31,8 @@ Route::get('/modificarespacio/{id}','LandingController@modificarespacio')->name(
 
 Route::get ('/DetalleEspacio','LandingController@detaespacio')->name('detaespacio');
 
+Route::get('eliminarespacio/{id}','LandingController@eliminar_espacio')->name('eliminarespacio');
+
 
 
 /*
@@ -44,3 +46,4 @@ Route::post('nuevousuariopost','LandingController@crearusuario')->name('crear_us
 Route::post('crearespaciopost','LandingController@crear_espacio')->name('crear_espacio');
 
 Route::post('actualizarespacio','LandingController@actualizarespacio')->name('actualizarespacio');
+
