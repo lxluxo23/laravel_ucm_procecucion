@@ -84,9 +84,7 @@
           </div>
         </div>
       </li>
-
-
-      
+   
       
     <li class="nav-item">
       <a class="nav-link collapsed" href="." >
@@ -103,13 +101,6 @@
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
-
-
-
-
-      
-
-
 
 
     </ul>
@@ -155,11 +146,6 @@
             </li>
 
          
-
-
-
-
-
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->

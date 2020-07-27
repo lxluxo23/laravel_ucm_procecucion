@@ -32,7 +32,6 @@
                                     </textarea>
                                 </div>
 
-
                                 <div class="col-md-6">
                                     <label for="Capacidad">Capacidad</label>
                                     <label class="form-control" id="capacidad" name="capacidad">Este espacio tiene una capacidad hasta para 100 personas</label>
