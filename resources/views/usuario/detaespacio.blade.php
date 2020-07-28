@@ -1,7 +1,8 @@
 @extends('layouts.landing')
-
+<link rel="stylesheet" href="../assets/landing/css/estilo.css">
 <div class="contenedordeinicio">
-    <div class="fondoblancotransp"></div>
+    <div class="fondoblancotransp">
+    </div>
         <div class="FondoContenedorDetalleEspacio">
 
             <div class="container-fluid">
@@ -20,14 +21,12 @@
                         @csrf
 
                         <h4 class="mb-3">Características del espacio</h4>
-                        <!-- agregar llave <form action ="{ route('ListarDetEspacio') }}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data"> -->
                             
                             <div class="row">    
-                                @foreach ($los_datos_a_mostrar_espacio as $item)
+                            @foreach ($dato_espacio as $item)
                                     
-                                
                                 <div class="col-md-6">
-                                    <img class="card-img-top" src="images/{{$item->url_img}}" alt="">
+                                    <img src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
                                 </div>
                                 
                                 <div class="col-md-6">
@@ -51,7 +50,7 @@
                                 <div class="col-md-6">
                                     <button class="btn btn-success btn-lg btn-block" type="submit">Arrendar espacio</button>
                                 </div>
-                                @endforeach
+                            @endforeach
                                 
                             </div>
                         <!-- </form> -->
@@ -60,7 +59,5 @@
                 </div>
             </div>
 
-
-
-        </div>   
+  
 </div>
