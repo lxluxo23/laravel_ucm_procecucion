@@ -30,13 +30,14 @@
           <div class="card-body">
             <h4 class="card-title">Espacio pequeño</h4>
             <p class="card-text">{{$item->Descripcion}}</p>
+            <p class="card-text">$ {{$item->precio}} x día</p>
           </div>
           <div class="card-footer">
             <a href="{{ route('detaespacio') }}" class="btn btn-primary">Ver más detalles</a>
           </div>
         </div>
       </div>
- 
+      
       @endforeach
     </div>
     
