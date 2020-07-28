@@ -15,7 +15,7 @@
         <a href="#" class="btn btn-primary btn-lg">Ir a nuestro catálogo</a>
       </div>
     </header>
-
+    @csrf
     <!-- Page Features -->
     
     @foreach ($espacioss as $item)
