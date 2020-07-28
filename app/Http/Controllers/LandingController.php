@@ -120,6 +120,8 @@ class LandingController extends Controller
         \Storage::disk('local')->put($nombre,  \File::get($file));
 
         $capacidad = $agregar_espacio->capacidad;
+
+        $cat=1;
         
         $precio = $agregar_espacio->precio;
 
@@ -127,7 +129,7 @@ class LandingController extends Controller
 
         $estado= 'Disponible';
 
-        $dato = DB::select('call agregar_espacio(?,?,?,?,?)', [$capacidad,$descripcion,$estado,$precio,$nombre]);
+        $dato = DB::select('call agregar_espacio(?,?,?,?,?,?)', [$capacidad,$cat,$descripcion,$estado,$precio,$nombre]);
 
         return back()->with('mensaje','Agregado con exito');
 
