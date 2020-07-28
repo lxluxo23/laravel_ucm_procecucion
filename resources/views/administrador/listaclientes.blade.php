@@ -34,7 +34,7 @@
                 <td>{{$item->Telefono_1}}</td>
                 <td><a href='delete.php?id=".$row["0"]."'><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a> 
                   <a href='delete.php?id=".$row["0"]."'><img id='img_tab_delete' src='images/elim.jpg' width="50"/></a>
-              </td>
+                </td>
               </tr>
               @endforeach
 

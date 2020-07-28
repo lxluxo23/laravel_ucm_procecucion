@@ -65,10 +65,9 @@ class LandingController extends Controller
         return view ('administrador.listar_espacio',compact('espacios'));
     }
 
-    public function listar_espacios(){
-
-        $espacioss= DB::select('SELECT * FROM espacio_trabajo'); 
-        return view ('usuario.index',compact('espacioss'));
+    public function espacios_usuario(){
+        $esp= DB::select('SELECT * FROM espacio_trabajo'); 
+        return view ('usuario.index',compact('esp'));
     }
 
     public function actualizarespacio(Request $actualziarespacio){

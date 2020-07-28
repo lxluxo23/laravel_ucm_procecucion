@@ -18,9 +18,11 @@
 
     <!-- Page Features -->
     
-    @foreach ($espacioss as $item)
+   
         
     <div class="row text-center">
+
+      @foreach ($esp as $item)
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="contendorimagenesinicio h-100">
@@ -35,47 +37,9 @@
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="contendorimagenesinicio h-100">
-        <img class="card-img-top" src="images/espacio2.jpg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Espacio medio</h4>
-            <p class="card-text">De 2cm x 3cm el cual incluye una mesa para 200 personas, cocina, pista de baile, cancha de tenis y un baño</p>
-          </div>
-          <div class="card-footer">
-            <a href="{{ route('detaespacio') }}" class="btn btn-primary">Ver más detalles</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="contendorimagenesinicio h-100">
-          <img class="card-img-top" src="images/espacio3.jpg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Espacio grande</h4>
-            <p class="card-text">De 3cm x 4cm el cual incluye una mesa para 300 personas, cocina, pista de baile, cancha de tenis, una base militar y un baño</p>
-          </div>
-          <div class="card-footer">
-            <a href="{{ route('detaespacio') }}" class="btn btn-primary">Ver más detalles</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="contendorimagenesinicio h-100">
-          <img class="card-img-top" src="images/espacio4.jpg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Espacio titánico</h4>
-            <p class="card-text">De 4cm x 4cm el cual incluye una mesa para 400 personas, cocina, pista de baile, cancha de tenis, una base militar, un planeta y un baño</p>
-          </div>
-          <div class="card-footer">
-            <a href="{{ route('detaespacio') }}" class="btn btn-primary">Ver más detalles</a>
-          </div>
-        </div>
-      </div>
-
+      @endforeach
     </div>
-    @endforeach
+    
     <!-- /.row -->
 
   </div>
