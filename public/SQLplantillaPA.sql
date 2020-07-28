@@ -2,6 +2,29 @@
 --cabros dejare los pa para que no se olviden como hacerlos 
 --Uwu
 
+
+DROP TABLE espacio_trabajo 
+CREATE TABLE espacio_trabajo (
+id_espacio_trabajo INT PRIMARY KEY AUTO_INCREMENT,
+capacidad INT NOT NULL,
+categoria INT NOT NULL,
+descripcion VARCHAR(100) NOT NULL,
+estado VARCHAR (20) NOT NULL,
+precio INT NOT NULL,
+url_img VARCHAR(100) NOT NULL 
+);
+
+ALTER TABLE espacio_trabajo ADD CONSTRAINT la_fk_de_categoria FOREIGN KEY (categoria) REFERENCES categoria (id_categoria);
+
+
+-------------------------------------------------------------------------------------------
+
+CREATE TABLE categoria (
+id_categoria INT PRIMARY KEY auto_increment,
+nombre_cat VARCHAR (50) NOT null 
+);
+
+---------------------------------------------------------------------------------------------
 DELIMITER $$
 
 CREATE PROCEDURE agregar_espacio (
@@ -60,10 +83,7 @@ END$$
 
 
 -------------------------------------------------------------------------------------------------------
-CREATE TABLE categoria (
-id_categoria INT PRIMARY KEY auto_increment,
-nombre_cat VARCHAR (50) NOT null 
-);
+
 
 
 DELIMITER $$
