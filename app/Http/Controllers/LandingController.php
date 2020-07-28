@@ -95,7 +95,7 @@ class LandingController extends Controller
 
         $descripcion =$actualziarespacio->descripcion;
 
-        $estado= 'Disponible';
+        $estado= $actualziarespacio->combobo;
 
         $dato = DB::select('call actualizar_espacio(?,?,?,?,?,?)', [$id_espacio,$capacidad,$descripcion,$estado,$precio,$nombre]);
 
