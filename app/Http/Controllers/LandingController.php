@@ -10,8 +10,8 @@ class LandingController extends Controller
 {
 
     public function index(){
-        return view('usuario.index');
-
+        $espacioss= DB::select('SELECT * FROM espacio_trabajo'); 
+        return view ('usuario.index',compact('espacioss'));
     }
 
 
@@ -65,11 +65,6 @@ class LandingController extends Controller
         return view ('administrador.listar_espacio',compact('espacios'));
     }
 
-    public function listar_espacios(){
-
-        $espacioss= DB::select('SELECT * FROM espacio_trabajo'); 
-        return view ('usuario.index',compact('espacioss'));
-    }
 
     public function actualizarespacio(Request $actualziarespacio){
 
