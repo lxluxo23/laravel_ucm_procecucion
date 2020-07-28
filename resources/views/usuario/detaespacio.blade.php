@@ -32,8 +32,8 @@
                                     
                                     <div class="col-md-6">
                                         <label for="descripcion"><b>Descripcion</b></label>
-                                        <textarea class="form-control" style="border: 1px solid  #2ba7e044" id="descripcion" name="descripcion" rows="5">{{$item->descripcion}}
-                                        </textarea>
+                                        <label class="form-control" style="border: 1px solid  #2ba7e044; height: 6.5em" id="descripcion" name="descripcion" rows="5">{{$item->descripcion}}
+                                        </label>
                                         <br>
                                         <label for="Capacidad"><b>Capacidad</b></label>
                                         <label class="form-control" style="border: 1px solid  #2ba7e044" id="capacidad" name="capacidad">Para {{$item->capacidad}} personas</label>
