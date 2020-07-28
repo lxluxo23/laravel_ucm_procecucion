@@ -9,12 +9,12 @@
     <p class="mb-4">Modifique o elimine seleccionando los botones a la derecha en la fila correspondiente al espacio de trabajo.</p>
     @if(session('mensaje'))
 
-    <div class="alert alert-success" onclick="window.close()"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-      <strong>!</strong>
+      <div class="alert alert-success" onclick="window.close()"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>!</strong>
         {{ session('mensaje') }}
-    </div>
+      </div>
     @csrf
-  @endif
+    @endif
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
       <div class="card-header py-3">
@@ -54,6 +54,6 @@
       </div>
     </div>
 
-  </div>
+</div>
 
 @endsection
