@@ -30,7 +30,7 @@ Route::get ('/Listarespacio','LandingController@listar_espacio')->name('listar_e
 
 Route::get('/modificarespacio/{id}','LandingController@modificarespacio')->name('modificarespacio');
 
-Route::get ('/DetalleEspacio/{id}','LandingController@detaespacio')->name('detaespacio');
+Route::get ('/DetalleEspacio/{id}','LandingController@mostrardatosespacio')->name('mostrardatosespacio');
 
 Route::get('eliminarespacio/{id}','LandingController@eliminar_espacio')->name('eliminarespacio');
 

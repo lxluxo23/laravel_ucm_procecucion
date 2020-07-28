@@ -23,7 +23,7 @@
                             <div class="row">    
                                 @foreach ($los_datos_a_mostrar_espacio as $item)
                                     
-                                @endforeach
+                                
                                 <div class="col-md-6">
                                     <img src="images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
                                 </div>
