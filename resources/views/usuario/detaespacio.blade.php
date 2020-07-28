@@ -17,6 +17,8 @@
                             </div>
                     
                         @endif
+                        @csrf
+
                         <h4 class="mb-3">Características del espacio</h4>
                         <!-- agregar llave <form action ="{ route('ListarDetEspacio') }}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data"> -->
                             
@@ -25,7 +27,7 @@
                                     
                                 
                                 <div class="col-md-6">
-                                    <img src="images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
+                                    <img class="card-img-top" src="images/{{$item->url_img}}" alt="">
                                 </div>
                                 
                                 <div class="col-md-6">
