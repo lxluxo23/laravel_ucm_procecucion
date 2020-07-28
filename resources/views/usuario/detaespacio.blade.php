@@ -18,6 +18,8 @@
                             </div>
                     
                         @endif
+                        @csrf
+
                         <h4 class="mb-3">Características del espacio</h4>
                             
                             <div class="row">    

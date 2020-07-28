@@ -57,3 +57,39 @@ BEGIN
 	END IF;
 END$$
 
+
+
+-------------------------------------------------------------------------------------------------------
+CREATE TABLE categoria (
+id_categoria INT PRIMARY KEY auto_increment,
+nombre_cat VARCHAR (50) NOT null 
+);
+
+
+DELIMITER $$
+CREATE  PROCEDURE agregar_categoria (
+pnombre TEXT)
+BEGIN 
+INSERT INTO categoria (nombre_cat) VALUES (pnombre);
+
+END $$
+
+DELIMITER $$
+CREATE PROCEDURE actualizar_categoria (
+pid INT ,
+pnombre TEXT)
+
+BEGIN
+
+UPDATE categoria SET nombre_cat=pnombre WHERE id_categoria=pid;
+
+END $$
+
+
+
+
+
+
+
+
+
