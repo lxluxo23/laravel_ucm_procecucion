@@ -22,7 +22,7 @@
         
     <div class="row text-center">
 
-      @foreach ($esp as $item)
+      @foreach ($espacioss as $item)
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="contendorimagenesinicio h-100">
@@ -75,7 +75,7 @@
           </div>
         </div>
       </div>
-
+      @endforeach
     </div>
     
     <!-- /.row -->
