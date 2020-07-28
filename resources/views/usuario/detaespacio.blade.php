@@ -19,16 +19,18 @@
                         @endif
                         <h4 class="mb-3">Características del espacio</h4>
                         <!-- agregar llave <form action ="{ route('ListarDetEspacio') }}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data"> -->
-                            @csrf
+                            
                             <div class="row">    
-                                
+                                @foreach ($los_datos_a_mostrar_espacio as $item)
+                                    
+                                @endforeach
                                 <div class="col-md-6">
-                                    <img src="images/espacio1.jpg" alt="" class="imagenDeTVenta">
+                                    <img src="images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="descripcion">Descripcion</label>
-                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="5">Ideal para trabajar junto a un grupo decente de personas, el cual trae una cocina y un baño en una misma habitacion, uno al lado de otro.
+                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="5">{{$item->Descripcion}}
                                     </textarea>
                                 </div>
 
@@ -47,7 +49,7 @@
                                 <div class="col-md-6">
                                     <button class="btn btn-success btn-lg btn-block" type="submit">Arrendar espacio</button>
                                 </div>
-
+                                @endforeach
                                 
                             </div>
                         <!-- </form> -->

@@ -43,7 +43,7 @@
           <label for="Estado">Estado</label>
           <select id="combobo" name="combobo" class="form-control">
             
-            @@foreach ($los_datos_a_modificar as $item2)
+            @foreach ($los_datos_a_modificar as $item)
             <option value="Disponible">Disponible</option>
             <option value="No disponible">No disponible</option>
             @endforeach

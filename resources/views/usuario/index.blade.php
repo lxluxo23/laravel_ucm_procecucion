@@ -33,7 +33,7 @@
             <p class="card-text">$ {{$item->precio}} x día</p>
           </div>
           <div class="card-footer">
-            <a href="{{ route('detaespacio') }}" class="btn btn-primary">Ver más detalles</a>
+            <a href='{{('detaespacio/')}}{{$item->ID_espacio_trabajo}}' class="btn btn-primary">Ver más detalles</a>
           </div>
         </div>
       </div>
