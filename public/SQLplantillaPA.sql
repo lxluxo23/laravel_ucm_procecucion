@@ -8,7 +8,7 @@ CREATE TABLE espacio_trabajo (
 id_espacio_trabajo INT PRIMARY KEY AUTO_INCREMENT,
 capacidad INT NOT NULL,
 categoria INT NOT NULL,
-descripcion VARCHAR(100) NOT NULL,
+descripcion VARCHAR(200) NOT NULL,
 estado VARCHAR (20) NOT NULL,
 precio INT NOT NULL,
 url_img VARCHAR(100) NOT NULL 
