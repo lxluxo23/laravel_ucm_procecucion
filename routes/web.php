@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'LandingController@index')->name('inicio');
+//Route::get('/', 'LandingController@index')->name('inicio');
 
 Route::get('/pagogogogo', 'LandingController@pago')->name('pago');
 
@@ -27,7 +27,6 @@ Route::get ('/algo','LandingController@agregar_espacio')->name('agregar');
 
 Route::get ('/Listarespacio','LandingController@listar_espacio')->name('listar_espacio');
 
-Route::get ('/espaciosusuario','LandingController@espacios_usuario')->name('espacios_usuario');
 
 Route::get('/modificarespacio/{id}','LandingController@modificarespacio')->name('modificarespacio');
 
