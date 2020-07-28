@@ -41,9 +41,14 @@
         </div>
         <div class="col-md-3 mb-3">
           <label for="Estado">Estado</label>
-          <select class="form-control">
-            <option value="1">Disponible</option>
-            <option value="2">No disponible</option>
+          <select id="combobo" name="combobo" class="form-control">
+            
+            @@foreach ($los_datos_a_modificar as $item2)
+            <option value="Disponible">Disponible</option>
+            <option value="No disponible">No disponible</option>
+            @endforeach
+         
+           
           </select>
         </div>
         <div class="col-md-12 mb-4">
