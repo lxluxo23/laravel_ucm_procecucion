@@ -21,14 +21,22 @@
         <div class="row">         
           <div class="col-md-3 mb-3">
             <label for="id_espacio">ID</label>
-            <input type="number" class="form-control" id="id_espacio" name="id_espacio" placeholder="" value="{{$item->ID_espacio_trabajo}}" required>
+            <input type="number" class="form-control" id="id_espacio" name="id_espacio" placeholder="" value="{{$item->id_espacio_trabajo}}" required>
             <div class="invalid-feedback">
             </div>
           </div>
 
           <div class="col-md-3 mb-3">
+            <label for="categoria">Categoria</label>
+            <input type="number" class="form-control" id="categoria" name="categoria" placeholder="" value="{{$item->categoria}}" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+
+
+          <div class="col-md-3 mb-3">
             <label for="capacidad">Capacidad</label>
-            <input type="number" class="form-control" id="capacidad" name="capacidad" placeholder="" value="{{$item->Capacidad}}" required>
+            <input type="number" class="form-control" id="capacidad" name="capacidad" placeholder="" value="{{$item->capacidad}}" required>
             <div class="invalid-feedback">
               Ingrese Capacidad
             </div>
@@ -54,7 +62,7 @@
 
           <div class="col-md-12 mb-4">
             <label for="descripcion">Descripcion<span class="text-muted"></span></label>
-            <textarea class="form-control" id="descripcion" name="descripcion" rows="5">{{$item->Descripcion}}</textarea>
+            <textarea class="form-control" id="descripcion" name="descripcion" rows="5">{{$item->descripcion}}</textarea>
           </div>
 
           <div class="col-md-6 mb-4">

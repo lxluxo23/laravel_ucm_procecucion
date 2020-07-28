@@ -37,14 +37,14 @@
             <tbody>
               @foreach($espacios as $item)
               <tr>
-                <td>{{$item->ID_espacio_trabajo}}</td>
-                <td>{{$item->Capacidad}}</td>
-                <td>{{$item->Descripcion}}</td>
-                <td>{{$item->Estado}}</td>
+                <td>{{$item->id_espacio_trabajo}}</td>
+                <td>{{$item->capacidad}}</td>
+                <td>{{$item->descripcion}}</td>
+                <td>{{$item->estado}}</td>
                 <td>{{$item->precio}}</td>
                 <td><IMG SRC="images/{{$item->url_img}}" width="80" height="80"></td>
-                <td><a href='{{('modificarespacio/')}}{{$item->ID_espacio_trabajo}}'><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a> 
-                    <a href='{{('eliminarespacio/')}}{{$item->ID_espacio_trabajo}}' class="bot" onclick="if(!confirm('¿Deseas realmente borrar este ESPACIO DE TRABAJO ?'))return false"><img id='img_tab_delete' src='images/elim.jpg' width="50"/></a>
+                <td><a href='{{('modificarespacio/')}}{{$item->id_espacio_trabajo}}'><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a> 
+                    <a href='{{('eliminarespacio/')}}{{$item->id_espacio_trabajo}}' class="bot" onclick="if(!confirm('¿Deseas realmente borrar este ESPACIO DE TRABAJO ?'))return false"><img id='img_tab_delete' src='images/elim.jpg' width="50"/></a>
                 </td>
               </tr>
               @endforeach

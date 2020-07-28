@@ -31,13 +31,13 @@
                                 
                                 <div class="col-md-6">
                                     <label for="descripcion">Descripcion</label>
-                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="5">{{$item->Descripcion}}
+                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="5">{{$item->descripcion}}
                                     </textarea>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="Capacidad">Capacidad</label>
-                                    <label class="form-control" id="capacidad" name="capacidad">{{$item->Capacidad}}</label>
+                                    <label class="form-control" id="capacidad" name="capacidad">{{$item->capacidad}}</label>
                                 </div>
 
                                 <div class="col-md-6">
