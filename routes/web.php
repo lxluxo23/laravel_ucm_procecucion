@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', 'LandingController@index')->name('inicio');
+Route::get('/', 'LandingController@index')->name('inicio');
 
 Route::get('/pagogogogo', 'LandingController@pago')->name('pago');
 
