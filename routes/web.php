@@ -28,7 +28,6 @@ Route::get ('/algo','LandingController@agregar_espacio')->name('agregar');
 Route::get ('/Listarespacio','LandingController@listar_espacio')->name('listar_espacio');
 
 
-
 Route::get('/modificarespacio/{id}','LandingController@modificarespacio')->name('modificarespacio');
 
 Route::get ('/DetalleEspacio','LandingController@detaespacio')->name('detaespacio');
