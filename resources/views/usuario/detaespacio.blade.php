@@ -31,14 +31,14 @@
                                     </div>
                                     
                                     <div class="col-md-6">
-                                        <label for="descripcion">Descripcion</label>
+                                        <label for="descripcion"><b>Descripcion</b></label>
                                         <textarea class="form-control" style="border: 1px solid  #2ba7e044" id="descripcion" name="descripcion" rows="5">{{$item->descripcion}}
                                         </textarea>
-
-                                        <label for="Capacidad">Capacidad</label>
+                                        <br>
+                                        <label for="Capacidad"><b>Capacidad</b></label>
                                         <label class="form-control" style="border: 1px solid  #2ba7e044" id="capacidad" name="capacidad">Para {{$item->capacidad}} personas</label>
-
-                                        <label for="precio">Precio</label>
+                                        <br>
+                                        <label for="precio"><b>Precio</b></label>
                                         <label class="form-control" style="border: 1px solid  #2ba7e044" id="precio" name="precio">${{$item->precio}} x día</label>
 
                                     </div>
