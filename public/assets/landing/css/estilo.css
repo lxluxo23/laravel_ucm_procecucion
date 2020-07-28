@@ -95,6 +95,8 @@
     margin-left: 10%;
     height: 800px;
     border-radius: 20px;
+    border:20px solid #4a96b9;
+    
 
 }
 
@@ -103,9 +105,10 @@
     background: #ffffff;
     position: absolute;
     width: 100%;
-    height: 800px;
-    border-radius: 20px;
-    opacity: 0.8;
+    height: 760px;
+ 
+    opacity: 0.9;
+
 }
 
 .imagenDeTVenta{

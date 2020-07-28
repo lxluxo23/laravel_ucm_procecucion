@@ -19,38 +19,37 @@
                     
                         @endif
                         @csrf
-
+                        <br>
                         <h4 class="mb-3">Características del espacio</h4>
+                        <br>
                             
                             <div class="row">    
-                            @foreach ($dato_espacio as $item)
+                                @foreach ($dato_espacio as $item)
+                                        
+                                    <div class="col-md-6">
+                                        <img src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
+                                    </div>
                                     
-                                <div class="col-md-6">
-                                    <img src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
-                                </div>
-                                
-                                <div class="col-md-6">
-                                    <label for="descripcion">Descripcion</label>
-                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="5">{{$item->descripcion}}
-                                    </textarea>
-                                </div>
+                                    <div class="col-md-6">
+                                        <label for="descripcion">Descripcion</label>
+                                        <textarea class="form-control" style="border: 1px solid  #2ba7e044" id="descripcion" name="descripcion" rows="5">{{$item->descripcion}}
+                                        </textarea>
 
-                                <div class="col-md-6">
-                                    <label for="Capacidad">Capacidad</label>
-                                    <label class="form-control" id="capacidad" name="capacidad">{{$item->capacidad}}</label>
-                                </div>
+                                        <label for="Capacidad">Capacidad</label>
+                                        <label class="form-control" style="border: 1px solid  #2ba7e044" id="capacidad" name="capacidad">Para {{$item->capacidad}} personas</label>
 
-                                <div class="col-md-6">
-                                    <label for="precio">Precio</label>
-                                    <label class="form-control" id="precio" name="precio">{{$item->precio}}</label>
-                                </div>
-                
-                                <div class="col-md-6"></div>
+                                        <label for="precio">Precio</label>
+                                        <label class="form-control" style="border: 1px solid  #2ba7e044" id="precio" name="precio">${{$item->precio}} x día</label>
 
-                                <div class="col-md-6">
-                                    <button class="btn btn-success btn-lg btn-block" type="submit">Arrendar espacio</button>
-                                </div>
-                            @endforeach
+                                    </div>
+          
+                                    <div class="col-md-6"></div>
+
+                                    <div class="col-md-6">
+                                  
+                                        <button class="btn btn-success btn-lg btn-block" type="submit">Arrendar espacio</button>
+                                    </div>
+                                @endforeach
                                 
                             </div>
                         <!-- </form> -->
