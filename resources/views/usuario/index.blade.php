@@ -12,7 +12,7 @@
       <div class="imagenheader">
         <h1 class="display-3"><b class="TextoTituloInicio">Bienvenidos a nuestra casa!</b></h1>
         <p class="lead"><b class="TextoTituloInicio" >Busque un lugar comodo y perfecto para el cual puedas ejercer tus proyectos</b></p>
-        <a href="#" class="btn btn-primary btn-lg">Ir a nuestro catálogo</a>
+        <a href="#" class="btn btn-primary btn-lg" style="visibility: hidden">Ir a nuestro catálogo</a>
       </div>
     </header>
     @csrf
@@ -26,9 +26,9 @@
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="contendorimagenesinicio h-100">
-          <img class="card-img-top" src="images/espacio1.jpg" alt="">
+          <img class="card-img-top" src="images/{{$item->url_img}}" alt="">
           <div class="card-body">
-            <h4 class="card-title">Espacio pequeño</h4>
+            <h4 class="card-title">Espacio Trabajo</h4>
             <p class="card-text">{{$item->Descripcion}}</p>
             <p class="card-text">$ {{$item->precio}} x día</p>
           </div>
