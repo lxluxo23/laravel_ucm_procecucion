@@ -41,15 +41,14 @@ class LandingController extends Controller
 
     public function modificarespacio(Request $request, $id){
 
-        //return view('administrador.modificarespacio',compact('id'));
-       
-        //echo $id;
-
         $los_datos_a_modificar=DB::select('select * from espacio_trabajo where ID_espacio_trabajo='.$id);
-
         return view('administrador.modificarespacio',compact('los_datos_a_modificar'));
 
-        
+    }
+
+    public function mostrardatosespacio(Request $request, $id){
+        $los_datos_a_mostrar_espacio=DB::select('select * from espacio_trabajo where ID_espacio_trabajo='.$id);
+        return view('administrador.modificarespacio',compact('los_datos_a_mostrar_espacio'));
     }
 
     public function listaclientes(){
@@ -64,6 +63,12 @@ class LandingController extends Controller
 
         $espacios= DB::select('SELECT * FROM espacio_trabajo'); 
         return view ('administrador.listar_espacio',compact('espacios'));
+    }
+
+    public function listar_espacios(){
+
+        $espacioss= DB::select('SELECT * FROM espacio_trabajo'); 
+        return view ('usuario.index',compact('espacioss'));
     }
 
     public function actualizarespacio(Request $actualziarespacio){

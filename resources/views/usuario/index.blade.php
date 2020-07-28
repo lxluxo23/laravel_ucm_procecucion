@@ -17,6 +17,9 @@
     </header>
 
     <!-- Page Features -->
+    
+    @foreach ($espacioss as $item)
+        
     <div class="row text-center">
 
       <div class="col-lg-3 col-md-6 mb-4">
@@ -24,7 +27,7 @@
           <img class="card-img-top" src="images/espacio1.jpg" alt="">
           <div class="card-body">
             <h4 class="card-title">Espacio pequeño</h4>
-            <p class="card-text">De 1cm x 2cm el cual incluye una mesa para 100 personas con un cocina y baño</p>
+            <p class="card-text">{{$item->Descripcion}}</p>
           </div>
           <div class="card-footer">
             <a href="{{ route('detaespacio') }}" class="btn btn-primary">Ver más detalles</a>
@@ -72,6 +75,7 @@
       </div>
 
     </div>
+    @endforeach
     <!-- /.row -->
 
   </div>
