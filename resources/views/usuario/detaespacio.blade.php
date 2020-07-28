@@ -35,12 +35,12 @@
 
                                 <div class="col-md-6">
                                     <label for="Capacidad">Capacidad</label>
-                                    <label class="form-control" id="capacidad" name="capacidad">Este espacio tiene una capacidad hasta para 100 personas</label>
+                                    <label class="form-control" id="capacidad" name="capacidad">{{$item->Capacidad}}</label>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="precio">Precio</label>
-                                    <label class="form-control" id="precio" name="precio">200 pesitos x dia</label>
+                                    <label class="form-control" id="precio" name="precio">{{$item->precio}}</label>
                                 </div>
                 
                                 <div class="col-md-6"></div>
