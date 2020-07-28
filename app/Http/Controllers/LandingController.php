@@ -14,6 +14,7 @@ class LandingController extends Controller
         return view ('usuario.index',compact('espacioss'));
     }
 
+
     public function pago(){
         return view('usuario.pago');
 
@@ -33,6 +34,7 @@ class LandingController extends Controller
     }
 
 
+
     public function modificarespacio(Request $request, $id){
 
         $los_datos_a_modificar=DB::select('select * from espacio_trabajo where ID_espacio_trabajo='.$id);
@@ -40,9 +42,9 @@ class LandingController extends Controller
 
     }
 
-    public function mostrardatosespacio(Request $request, $id){
-        $los_datos_a_mostrar_espacio=DB::select('select * from espacio_trabajo where ID_espacio_trabajo='.$id);
-        return view('usuario.detaespacio',compact('los_datos_a_mostrar_espacio'));
+    public function detaespacio(Request $request, $id){
+        $dato_espacio=DB::select('select * from espacio_trabajo where ID_espacio_trabajo='.$id);
+        return view('usuario.detaespacio',compact('dato_espacio'));
     }
 
     public function listaclientes(){
