@@ -19,12 +19,13 @@
                     
                         @endif
                         @csrf
+                        @foreach ($dato_espacio as $item)
                         <br>
-                        <h4 class="mb-3">Características del espacio</h4>
+                        <h4 class="mb-3">Características de {{$item->nombre_cat}}</h4>
                         <br>
                             
                             <div class="row">    
-                                @foreach ($dato_espacio as $item)
+                                
                                         
                                     <div class="col-md-6">
                                         <img src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
@@ -49,9 +50,10 @@
                                   
                                         <button class="btn btn-success btn-lg btn-block" type="submit">Arrendar espacio</button>
                                     </div>
-                                @endforeach
+                                
                                 
                             </div>
+                        @endforeach
                         <!-- </form> -->
                     </div>
                     

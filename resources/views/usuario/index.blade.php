@@ -28,7 +28,7 @@
         <div class="contendorimagenesinicio h-100">
           <img class="card-img-top" src="images/{{$item->url_img}}" alt="">
           <div class="card-body">
-            <h4 class="card-title">Espacio Trabajo</h4>
+            <h4 class="card-title">{{$item->nombre_cat}}</h4>
             <p class="card-text">{{$item->descripcion}}</p>
             <p class="card-text">$ {{$item->precio}} x día</p>
           </div>
