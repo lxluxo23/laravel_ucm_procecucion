@@ -11,6 +11,10 @@ DROP PROCEDURE actualizar_espacio;
 DROP PROCEDURE agregar_categoria;
 DROP PROCEDURE actualizar_categoria;
 
+
+--------------------------------------------------------------------------------------------------------ESPACIO DE TRABAJO-
+
+------------------------------------------------CREAR TABLA----------------------
 CREATE TABLE espacio_trabajo (
 id_espacio_trabajo INT PRIMARY KEY AUTO_INCREMENT,
 capacidad INT NOT NULL,
@@ -23,15 +27,7 @@ url_img VARCHAR(100) NOT NULL
 
 ALTER TABLE espacio_trabajo ADD CONSTRAINT la_fk_de_categoria FOREIGN KEY (categoria) REFERENCES categoria (id_categoria);
 
-
--------------------------------------------------------------------------------------------
-
-CREATE TABLE categoria (
-id_categoria INT PRIMARY KEY auto_increment,
-nombre_cat VARCHAR (50) NOT null 
-);
-
----------------------------------------------------------------------------------------------
+------------------------------------------------PROCEDIMIENTO AGREGAR-------------
 DELIMITER $$
 
 CREATE PROCEDURE agregar_espacio (
@@ -47,8 +43,9 @@ INSERT INTO espacio_trabajo (Capacidad,Descripcion,Estado,precio,url_img) VALUES
 END$$
 
 DELIMITER $$
--------------------------------------------------------------------------------------------------------------------------------------
 
+
+------------------------------------------------PROCEDIMIENTO MODIFICAR-------------
 DELIMITER $$
 
 CREATE PROCEDURE actualizar_espacio(
@@ -91,11 +88,14 @@ BEGIN
 END$$
 
 
+---------------------------------------------------------------------------------------------------------CATEGORIA-
+------------------------------------------------CREAR TABLA----------------------
+CREATE TABLE categoria (
+id_categoria INT PRIMARY KEY auto_increment,
+nombre_cat VARCHAR (50) NOT null 
+);
 
--------------------------------------------------------------------------------------------------------
-
-
-
+------------------------------------------------PROCEDIMIENTO AGREGAR-------------
 DELIMITER $$
 CREATE  PROCEDURE agregar_categoria (
 pnombre TEXT)
@@ -105,6 +105,8 @@ INSERT INTO categoria (nombre_cat) VALUES (pnombre);
 END $$
 
 DELIMITER $$
+
+------------------------------------------------PROCEDIMIENTO MODIFICAR-------------
 CREATE PROCEDURE actualizar_categoria (
 pid INT ,
 pnombre TEXT)
@@ -116,9 +118,30 @@ UPDATE categoria SET nombre_cat=pnombre WHERE id_categoria=pid;
 END $$
 
 
------------------------------------------------------
 
-SELECT espacio_trabajo.id_espacio_trabajo,espacio_trabajo.capacidad,espacio_trabajo.descripcion,espacio_trabajo.estado,espacio_trabajo.precio,espacio_trabajo.url_img,categoria.nombre_cat FROM espacio_trabajo INNER JOIN categoria ON  espacio_trabajo.id_espacio_trabajo = categoria.id_categoria;
+
+
+
+------------------------------------------------------------------------------------------------------------CONSULTAS
+------------------------------------------------PROCEDIMIENTO CONSULTAR ESPACIO-------------
+DELIMITER $$
+CREATE PROCEDURE consulta_espacio_concategoria ()
+BEGIN
+
+SELECT categoria.nombre_cat, categoria.id_categoria, espacio_trabajo.descripcion, espacio_trabajo.id_espacio_trabajo, espacio_trabajo.estado, espacio_trabajo.capacidad, espacio_trabajo.precio, espacio_trabajo.url_img 
+FROM espacio_trabajo 
+INNER JOIN categoria 
+ON categoria.id_categoria = espacio_trabajo.categoria;
+
+END $$
+
+
+------------------------------------------------PROCEDIMIENTO CONSULTAR ESPACIO POR ID-------------
+
+
+
+
+
 
 
 
