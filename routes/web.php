@@ -23,15 +23,15 @@ Route::get('/agragarusuario', 'LandingController@nuevousuario')->name('nuevousua
 
 Route::get('/listaclientes', 'LandingController@listaclientes')->name('listaclientes');
 
-Route::get ('/algo','LandingController@agregar_espacio')->name('agregar');
+Route::get ('/algo','Espacio_trabajo@agregar_espacio')->name('agregar');
 
-Route::get ('/Listarespacio','LandingController@listar_espacio')->name('listar_espacio');
+Route::get ('/Listarespacio','Espacio_trabajo@listar_espacio')->name('listar_espacio');
 
-Route::get('/modificarespacio/{id}','LandingController@modificarespacio')->name('modificarespacio');
+Route::get('/modificarespacio/{id}','Espacio_trabajo@modificarespacio')->name('modificarespacio');
 
 Route::get ('/detaespacio/{id}','LandingController@detaespacio')->name('detaespacio');
 
-Route::get('eliminarespacio/{id}','LandingController@eliminar_espacio')->name('eliminarespacio');
+Route::get('eliminarespacio/{id}','Espacio_trabajo@eliminar_espacio')->name('eliminarespacio');
 
 
 

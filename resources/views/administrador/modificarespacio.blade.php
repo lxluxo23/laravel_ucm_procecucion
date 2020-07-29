@@ -27,10 +27,12 @@
           </div>
 
           <div class="col-md-3 mb-3">
-            <label for="categoria">Categoria</label>
-            <input type="number" class="form-control" id="categoria" name="categoria" placeholder="" value="{{$item->categoria}}" required>
-            <div class="invalid-feedback">
-            </div>
+            <label for="Categoria">Categoria</label>
+              <select id="categoria" name="categoria" class="form-control"> 
+                <option value="1">Espacio pequeño</option>
+                <option value="2">Espacio mediano</option>
+                <option value="2">Espacio grande</option>
+              </select>
           </div>
 
 
