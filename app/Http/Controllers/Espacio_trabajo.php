@@ -18,7 +18,7 @@ class Espacio_trabajo extends Controller
 
     public function listar_espacio(){
 
-        $espacios= DB::select('SELECT * FROM espacio_trabajo'); 
+        $espacios= DB::select('SELECT espacio_trabajo.id_espacio_trabajo,espacio_trabajo.capacidad,espacio_trabajo.descripcion,espacio_trabajo.estado,espacio_trabajo.precio,espacio_trabajo.url_img,categoria.nombre_cat FROM espacio_trabajo INNER JOIN categoria ON  espacio_trabajo.id_espacio_trabajo = categoria.id_categoria;'); 
         return view ('administrador.listar_espacio',compact('espacios'));
     }
 

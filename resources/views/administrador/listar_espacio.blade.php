@@ -40,7 +40,7 @@
               <tr>
                 <td>{{$item->id_espacio_trabajo}}</td>
                 <td>{{$item->capacidad}}</td>
-                <td>{{$item->categoria}}</td>
+                <td>{{$item->nombre_cat}}</td>
                 <td>{{$item->descripcion}}</td>
                 <td>{{$item->estado}}</td>
                 <td>{{$item->precio}}</td>
