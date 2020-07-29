@@ -41,9 +41,7 @@
               <tr>
                 <td>{{$item->id_espacio_trabajo}}</td>
                 <td>{{$item->capacidad}}</td>
-                <td>{{if ($item->categoria=0){
-                  echo "Espacio pequeño"
-                } }}</td>
+                <td>{{$item->categoria}}</td>
                 <td>{{$item->descripcion}}</td>
                 <td>{{$item->estado}}</td>
                 <td>{{$item->precio}}</td>
