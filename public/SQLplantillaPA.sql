@@ -1,15 +1,10 @@
-
---cabros dejare los pa para que no se olviden como hacerlos 
---Uwu
-
-
 DROP TABLE espacio_trabajo;
 DROP TABLE categoria;
-
 DROP PROCEDURE agregar_espacio;
 DROP PROCEDURE actualizar_espacio;
 DROP PROCEDURE agregar_categoria;
 DROP PROCEDURE actualizar_categoria;
+DROP PROCEDURE consulta_espacio_concategoria;
 
 
 --------------------------------------------------------------------------------------------------------ESPACIO DE TRABAJO-
@@ -122,7 +117,10 @@ END $$
 
 
 
-------------------------------------------------------------------------------------------------------------CONSULTAS
+-----------------------------------------------------------------------------------------------------------------------------------CONSULTAS
+
+
+-------------------------------------------------------------------------------------------------C. ESPACIOS DE TRABAJO
 ------------------------------------------------PROCEDIMIENTO CONSULTAR ESPACIO-------------
 DELIMITER $$
 CREATE PROCEDURE consulta_espacio_concategoria ()
@@ -138,7 +136,16 @@ END $$
 
 ------------------------------------------------PROCEDIMIENTO CONSULTAR ESPACIO POR ID-------------
 
+DELIMITER $$
+CREATE PROCEDURE consulta_espacio_concategoria_por_id (pid_espacio int)
+BEGIN
 
+SELECT categoria.nombre_cat, categoria.id_categoria, espacio_trabajo.descripcion, espacio_trabajo.id_espacio_trabajo, espacio_trabajo.estado, espacio_trabajo.capacidad, espacio_trabajo.precio, espacio_trabajo.url_img 
+FROM espacio_trabajo 
+INNER JOIN categoria 
+ON categoria.id_categoria = espacio_trabajo.categoria and espacio_trabajo.id_espacio_trabajo=pid_espacio;
+
+END $$
 
 
 
