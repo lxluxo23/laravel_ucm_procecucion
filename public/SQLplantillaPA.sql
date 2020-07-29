@@ -3,7 +3,14 @@
 --Uwu
 
 
-DROP TABLE espacio_trabajo 
+DROP TABLE espacio_trabajo;
+DROP TABLE categoria;
+ 
+DROP PROCEDURE agregar_espacio;
+DROP PROCEDURE actualizar_espacio;
+DROP PROCEDURE agregar_categoria;
+DROP PROCEDURE actualizar_categoria;
+
 CREATE TABLE espacio_trabajo (
 id_espacio_trabajo INT PRIMARY KEY AUTO_INCREMENT,
 capacidad INT NOT NULL,
@@ -47,6 +54,7 @@ DELIMITER $$
 CREATE PROCEDURE actualizar_espacio(
 pespacioid INT,
 pcapacidad INT,
+pcategoria INT,
 pdescripcion TEXT,
 pestado TEXT,
 pprecio INT,
@@ -62,18 +70,20 @@ BEGIN
 	IF purl IS NULL OR purl='' OR LENGTH (purl)= 0 THEN
 		update espacio_trabajo 
 		SET 
-		Capacidad=pcapacidad,
-		Descripcion=pdescripcion,
-		Estado=pestado,
+		capacidad=pcapacidad,
+		categoria=pcategoria,
+		descripcion=pdescripcion,
+		estado=pestado,
 		precio=pprecio,
 		url_img=imagen
 		WHERE ID_espacio_trabajo=pespacioid;
 	ELSE
 		update espacio_trabajo 
 		SET 
-		Capacidad=pcapacidad,
-		Descripcion=pdescripcion,
-		Estado=pestado,
+		capacidad=pcapacidad,
+		categoria=pcategoria,
+		descripcion=pdescripcion,
+		estado=pestado,
 		precio=pprecio,
 		url_img=purl
 		WHERE ID_espacio_trabajo=pespacioid;
