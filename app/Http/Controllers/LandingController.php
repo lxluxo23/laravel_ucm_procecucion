@@ -28,11 +28,6 @@ class LandingController extends Controller
         return view('administrador.agrgarusuario');
     }
 
-    public function detaespacio(Request $request, $id){
-        $dato_espacio=DB::select('select * from espacio_trabajo where ID_espacio_trabajo='.$id);
-        return view('usuario.detaespacio',compact('dato_espacio'));
-    }
-
     public function listaclientes(){
 
         $hr = DB::select('SELECT * FROM usuario');        

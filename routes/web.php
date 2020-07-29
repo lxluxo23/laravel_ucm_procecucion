@@ -29,7 +29,7 @@ Route::get ('/Listarespacio','Espacio_trabajo@listar_espacio')->name('listar_esp
 
 Route::get('/modificarespacio/{id}','Espacio_trabajo@modificarespacio')->name('modificarespacio');
 
-Route::get ('/detaespacio/{id}','LandingController@detaespacio')->name('detaespacio');
+Route::get ('/detaespacio/{id}','Espacio_trabajo@detaespacio')->name('detaespacio');
 
 Route::get('eliminarespacio/{id}','Espacio_trabajo@eliminar_espacio')->name('eliminarespacio');
 

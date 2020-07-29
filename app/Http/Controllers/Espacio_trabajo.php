@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App;
 use Illuminate\Support\Facades\DB;
 
-
 class Espacio_trabajo extends Controller
 {
     public function modificarespacio(Request $request, $id){
@@ -98,4 +97,10 @@ class Espacio_trabajo extends Controller
         return back()->with('mensaje','Agregado con exito');
 
     }
+
+    public function detaespacio(Request $request, $id){
+        $dato_espacio=DB::select('select * from espacio_trabajo where ID_espacio_trabajo='.$id);
+        return view('usuario.detaespacio',compact('dato_espacio'));
+    }
+
 }
