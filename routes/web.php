@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'LandingController@index')->name('inicio');
+Route::get('/', 'Espacio_trabajoController@index')->name('inicio');
 
 Route::get('/pagogogogo', 'LandingController@pago')->name('pago');
 
@@ -34,12 +34,6 @@ Route::get ('/detaespacio/{id}','Espacio_trabajoController@detaespacio')->name('
 Route::get('eliminarespacio/{id}','Espacio_trabajoController@eliminar_espacio')->name('eliminarespacio');
 
 
-
-/*
-|--------------------------------------------------------------------------
-| PARA LOS METODOS POST PEASOS DE LACRA
-|--------------------------------------------------------------------------
-*/
 
 Route::post('nuevousuariopost','LandingController@crearusuario')->name('crear_usuario');
 

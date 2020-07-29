@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\DB;
 
 class Espacio_trabajoController extends Controller
 {
+
+
+    public function index(){
+        $espacioss= DB::select('SELECT * FROM espacio_trabajo'); 
+        return view ('usuario.index',compact('espacioss'));
+    }
+
     public function modificarespacio(Request $request, $id){
 
         $los_datos_a_modificar=DB::select('select * from espacio_trabajo where ID_espacio_trabajo='.$id);

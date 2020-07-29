@@ -9,12 +9,6 @@ use Illuminate\Support\Facades\DB;
 class LandingController extends Controller
 {
 
-    public function index(){
-        $espacioss= DB::select('SELECT * FROM espacio_trabajo'); 
-        return view ('usuario.index',compact('espacioss'));
-    }
-
-
     public function pago(){
         return view('usuario.pago');
 
