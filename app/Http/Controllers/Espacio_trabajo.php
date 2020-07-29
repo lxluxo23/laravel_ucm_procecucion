@@ -55,7 +55,7 @@ class Espacio_trabajo extends Controller
 
         $estado= $actualziarespacio->combobo;
 
-        $dato = DB::select('call actualizar_espacio(?,?,?,?,?,?)', [$id_espacio,$capacidad,$descripcion,$estado,$precio,$nombre]);
+        $dato = DB::select('call actualizar_espacio(?,?,?,?,?,?,?)', [$id_espacio,$capacidad,$categoria,$descripcion,$estado,$precio,$nombre]);
 
         return back()->with('mensaje','Actualizado con exito! con exito');
 

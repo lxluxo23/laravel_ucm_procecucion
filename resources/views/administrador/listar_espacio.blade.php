@@ -27,6 +27,7 @@
               <tr>
                 <th>ID</th>
                 <th>Capacidad</th>
+                <th>categoria</th>
                 <th>Descripcion</th>
                 <th>Estado</th>
                 <th>precio</th>
@@ -35,10 +36,14 @@
               </tr>
             </thead>
             <tbody>
+              $categoria_temporal;
               @foreach($espacios as $item)
               <tr>
                 <td>{{$item->id_espacio_trabajo}}</td>
                 <td>{{$item->capacidad}}</td>
+                <td>{{if ($item->categoria=0){
+                  echo "Espacio pequeño"
+                } }}</td>
                 <td>{{$item->descripcion}}</td>
                 <td>{{$item->estado}}</td>
                 <td>{{$item->precio}}</td>
