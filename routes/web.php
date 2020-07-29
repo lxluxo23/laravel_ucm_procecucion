@@ -43,7 +43,7 @@ Route::get('eliminarespacio/{id}','Espacio_trabajo@eliminar_espacio')->name('eli
 
 Route::post('nuevousuariopost','LandingController@crearusuario')->name('crear_usuario');
 
-Route::post('crearespaciopost','LandingController@crear_espacio')->name('crear_espacio');
+Route::post('crearespaciopost','Espacio_trabajo@crear_espacio')->name('crear_espacio');
 
 Route::post('actualizarespacio','Espacio_trabajo@actualizarespacio')->name('actualizarespacio');
 

@@ -15,6 +15,9 @@ class Espacio_trabajo extends Controller
         return view('administrador.modificarespacio',compact('los_datos_a_modificar'));
 
     }
+    public function agregar_espacio(){
+        return view('administrador.agregar_espacio');
+    }
 
     public function listar_espacio(){
 

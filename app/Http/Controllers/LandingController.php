@@ -20,10 +20,6 @@ class LandingController extends Controller
 
     }
     
-    public function agregar_espacio(){
-        return view('administrador.agregar_espacio');
-    }
-
     public function indexadmin(){
         return view('administrador.indexadmin');
     }
