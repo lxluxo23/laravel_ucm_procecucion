@@ -5,7 +5,7 @@
 
 DROP TABLE espacio_trabajo;
 DROP TABLE categoria;
- 
+
 DROP PROCEDURE agregar_espacio;
 DROP PROCEDURE actualizar_espacio;
 DROP PROCEDURE agregar_categoria;
@@ -116,6 +116,9 @@ UPDATE categoria SET nombre_cat=pnombre WHERE id_categoria=pid;
 END $$
 
 
+-----------------------------------------------------
+
+SELECT espacio_trabajo.id_espacio_trabajo,espacio_trabajo.capacidad,espacio_trabajo.descripcion,espacio_trabajo.estado,espacio_trabajo.precio,espacio_trabajo.url_img,categoria.nombre_cat FROM espacio_trabajo INNER JOIN categoria ON  espacio_trabajo.id_espacio_trabajo = categoria.id_categoria;
 
 
 

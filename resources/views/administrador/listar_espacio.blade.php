@@ -36,7 +36,6 @@
               </tr>
             </thead>
             <tbody>
-              $categoria_temporal;
               @foreach($espacios as $item)
               <tr>
                 <td>{{$item->id_espacio_trabajo}}</td>
