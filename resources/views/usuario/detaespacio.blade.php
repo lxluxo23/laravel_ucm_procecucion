@@ -33,14 +33,14 @@
                                     
                                     <div class="col-md-6">
                                         <label for="descripcion"><b>Descripcion</b></label>
-                                        <label class="form-control" style="border: 1px solid  #2ba7e044; height: 6.5em" id="descripcion" name="descripcion" rows="5">{{$item->descripcion}}
+                                        <label class="form-control" style="border: 1px solid  #2ba7e044; height: 6.5em; font-size: 1.15rem; overflow: scroll" id="descripcion" name="descripcion" rows="5">{{$item->descripcion}}
                                         </label>
                                         <br>
                                         <label for="Capacidad"><b>Capacidad</b></label>
-                                        <label class="form-control" style="border: 1px solid  #2ba7e044" id="capacidad" name="capacidad">Para {{$item->capacidad}} personas</label>
+                                        <label class="form-control" style="border: 1px solid  #2ba7e044; font-size: 1.15rem" id="capacidad" name="capacidad">Para {{$item->capacidad}} personas</label>
                                         <br>
                                         <label for="precio"><b>Precio</b></label>
-                                        <label class="form-control" style="border: 1px solid  #2ba7e044" id="precio" name="precio">${{$item->precio}} x día</label>
+                                        <label class="form-control" style="border: 1px solid  #2ba7e044; font-size: 1.15rem" id="precio" name="precio">${{$item->precio}} x día</label>
 
                                     </div>
           
