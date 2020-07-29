@@ -121,7 +121,7 @@ class LandingController extends Controller
 
         $capacidad = $agregar_espacio->capacidad;
 
-        $cat=1;
+        $categoria=$agregar_espacio->categoria;
         
         $precio = $agregar_espacio->precio;
 
@@ -129,7 +129,7 @@ class LandingController extends Controller
 
         $estado= 'Disponible';
 
-        $dato = DB::select('call agregar_espacio(?,?,?,?,?,?)', [$capacidad,$cat,$descripcion,$estado,$precio,$nombre]);
+        $dato = DB::select('call agregar_espacio(?,?,?,?,?,?)', [$capacidad,$categoria,$descripcion,$estado,$precio,$nombre]);
 
         return back()->with('mensaje','Agregado con exito');
 

@@ -26,12 +26,13 @@
               </div>
             </div>
 
-            <div class="col-md-6 mb-6">
-              <label for="categoria">Categoria</label>
-              <input type="number" class="form-control" id="categoria" name="categoria" placeholder="" required>
-              <div class="invalid-feedback">
-                Ingrese Categoria
-              </div>
+            <div class="col-md-3 mb-3">
+              <label for="Categoria">Categoria</label>
+                <select id="categoria" name="categoria" class="form-control"> 
+                  <option value="1">Espacio pequeño</option>
+                  <option value="2">Espacio mediano</option>
+                  <option value="2">Espacio grande</option>
+                </select>
             </div>
 
             <div class="col-md-6 mb-4">
@@ -39,7 +40,7 @@
               <textarea class="form-control" id="descripcion" name="descripcion" rows="5"></textarea>
             </div>
 
-            <div class="col-md-6 mb-6">
+            <div class="col-md-3 mb-3">
               <label for="precio">Precio</label>
               <input type="number" class="form-control" id="precio" name="precio" placeholder="" value="" required>
               <div class="invalid-feedback">
