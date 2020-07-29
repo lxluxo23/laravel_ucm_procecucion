@@ -11,7 +11,7 @@ class Espacio_trabajoController extends Controller
 
 
     public function index(){
-        $espacioss= DB::select('SELECT * FROM espacio_trabajo'); 
+        $espacioss= DB::select('call consulta_espacio_concategoria()'); 
         return view ('usuario.index',compact('espacioss'));
     }
 
