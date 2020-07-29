@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App;
 use Illuminate\Support\Facades\DB;
 
-class Espacio_trabajo extends Controller
+class Espacio_trabajoController extends Controller
 {
     public function modificarespacio(Request $request, $id){
 
