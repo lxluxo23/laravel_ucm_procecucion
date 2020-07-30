@@ -34,7 +34,7 @@
                 <td>{{$item->email}}</td>
                 <td>{{$item->estado}}</td>
                 <td>{{$item->telefono}}</td>
-                <td><a href='delete.php?id=".$row["0"]."'><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a> 
+                <td><a href='{{('modificar_usuario/')}}{{$item->rut}}'><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a> 
                   <a href='delete.php?id=".$row["0"]."'><img id='img_tab_delete' src='images/elim.jpg' width="50"/></a>
                 </td>
               </tr>
