@@ -54,7 +54,7 @@ class LandingController extends Controller
     public function modificar_usuario(Request $request, $id){
 
         $datos_usuario=DB::select('select * from usuario where rut='.$id);
-        return view('administrador.modificarespacio',compact('datos_usuario'));
+        return view('administrador.modificar_usuario',compact('datos_usuario'));
 
     }
 
