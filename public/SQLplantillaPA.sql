@@ -126,10 +126,17 @@ DELIMITER $$
 CREATE PROCEDURE consulta_espacio_concategoria ()
 BEGIN
 
-SELECT categoria.nombre_cat, categoria.id_categoria, espacio_trabajo.descripcion, espacio_trabajo.id_espacio_trabajo, espacio_trabajo.estado, espacio_trabajo.capacidad, espacio_trabajo.precio, espacio_trabajo.url_img 
-FROM espacio_trabajo 
-INNER JOIN categoria 
-ON categoria.id_categoria = espacio_trabajo.categoria;
+SELECT
+ espacio_trabajo.id_espacio_trabajo,
+ espacio_trabajo.capacidad,
+ espacio_trabajo.descripcion,
+ espacio_trabajo.estado,
+ espacio_trabajo.precio,
+ espacio_trabajo.url_img,
+ categoria.nombre_cat
+ FROM espacio_trabajo INNER JOIN
+ categoria ON  espacio_trabajo.categoria = categoria.id_categoria;
+
 
 END $$
 
@@ -146,6 +153,10 @@ INNER JOIN categoria
 ON categoria.id_categoria = espacio_trabajo.categoria and espacio_trabajo.id_espacio_trabajo=pid_espacio;
 
 END $$
+
+
+
+------------------------------------------------PROCEDIMIENTO PARA SELECT CON INNER JOIN ESPACIO DE TRABAJO-------------
 
 
 
