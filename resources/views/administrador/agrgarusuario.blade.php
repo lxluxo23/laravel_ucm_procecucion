@@ -18,7 +18,7 @@
 
     @endif
 
-      <h4 class="mb-3">Billing address</h4>
+      <h4 class="mb-3">Nuevo cliente</h4>
       <form action="{{ route('crear_usuario') }}" method="POST">
         @csrf
         <div class="row">
