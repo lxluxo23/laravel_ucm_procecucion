@@ -72,10 +72,9 @@
                                                                 <div class="row">
 
                                                                     <div class="col-md-6">
-                                                                        <img src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
+                                                                        <img style="background-size: 1rem" src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
                                                                         <label>{{$item->descripcion}}</label>
-                                                                    </div>
-                                                              
+                                                                    </div>                                                             
                                                                                                                                                                                                        
                                                                     <div class="col-md-6">
                                                                         <div class="row">
@@ -90,14 +89,13 @@
                                                                             </div>   
                                                                         </div>                                                            
                                                                     </div>
-
-
                                                                 </div>
-
-                                                                
+                                                           
                                                             </div>
                                                         </div>
                                                     </form>
+
+
                                                 </div>
                                                 <div class="modal-footer">
                                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
