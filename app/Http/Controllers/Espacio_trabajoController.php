@@ -91,7 +91,7 @@ class Espacio_trabajoController extends Controller
 
         $capacidad = $agregar_espacio->capacidad;
 
-        $categoria=$agregar_espacio->categoria;
+        $categoria= $agregar_espacio->categoria;
         
         $precio = $agregar_espacio->precio;
 

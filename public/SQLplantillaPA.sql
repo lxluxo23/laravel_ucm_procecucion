@@ -56,6 +56,40 @@ BEGIN
 	WHERE rut=prut;
 END$$
 
+
+---------------------------------------------------------------------------------------------------------CATEGORIA-
+------------------------------------------------CREAR TABLA CATEGORIA----------------------
+CREATE TABLE categoria (
+id_categoria INT PRIMARY KEY auto_increment,
+nombre_cat VARCHAR (50) NOT null 
+);
+
+
+
+------------------------------------------------PROCEDIMIENTO AGREGAR-------------
+DELIMITER $$
+CREATE  PROCEDURE agregar_categoria (
+pnombre TEXT)
+BEGIN 
+INSERT INTO categoria (nombre_cat) VALUES (pnombre);
+
+END $$
+
+DELIMITER $$
+
+------------------------------------------------PROCEDIMIENTO MODIFICAR-------------
+CREATE PROCEDURE actualizar_categoria (
+pid INT ,
+pnombre TEXT)
+
+BEGIN
+
+UPDATE categoria SET nombre_cat=pnombre WHERE id_categoria=pid;
+
+END $$
+
+
+
 --------------------------------------------------------------------------------------------------------ESPACIO DE TRABAJO-
 
 ------------------------------------------------CREAR TABLA----------------------
@@ -74,7 +108,7 @@ ALTER TABLE espacio_trabajo ADD CONSTRAINT la_fk_de_categoria FOREIGN KEY (categ
 ------------------------------------------------PROCEDIMIENTO AGREGAR-------------
 DELIMITER $$
 
-CREATE PROCEDURE agregar_espacio (
+CREATE or REPLACE PROCEDURE agregar_espacio (
 pcapacidad INT,
 pcategoria INT,
 pdescripcion TEXT,
@@ -83,7 +117,7 @@ pprecio INT,
 prul text)
 BEGIN
 
-INSERT INTO espacio_trabajo (Capacidad,categoria,Descripcion,Estado,precio,url_img) VALUES (pcapacidad,categoria,pdescripcion,pestado,pprecio,prul);
+INSERT INTO espacio_trabajo (capacidad,categoria,descripcion,estado,precio,url_img) VALUES (pcapacidad,pcategoria,pdescripcion,pestado,pprecio,prul);
 
 END$$
 
@@ -131,39 +165,6 @@ BEGIN
 		WHERE ID_espacio_trabajo=pespacioid;
 	END IF;
 END$$
-
-
----------------------------------------------------------------------------------------------------------CATEGORIA-
-------------------------------------------------CREAR TABLA CATEGORIA----------------------
-CREATE TABLE categoria (
-id_categoria INT PRIMARY KEY auto_increment,
-nombre_cat VARCHAR (50) NOT null 
-);
-
-
-
-------------------------------------------------PROCEDIMIENTO AGREGAR-------------
-DELIMITER $$
-CREATE  PROCEDURE agregar_categoria (
-pnombre TEXT)
-BEGIN 
-INSERT INTO categoria (nombre_cat) VALUES (pnombre);
-
-END $$
-
-DELIMITER $$
-
-------------------------------------------------PROCEDIMIENTO MODIFICAR-------------
-CREATE PROCEDURE actualizar_categoria (
-pid INT ,
-pnombre TEXT)
-
-BEGIN
-
-UPDATE categoria SET nombre_cat=pnombre WHERE id_categoria=pid;
-
-END $$
-
 
 
 
