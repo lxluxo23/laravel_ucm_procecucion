@@ -27,13 +27,19 @@ Route::get ('/algo','Espacio_trabajoController@agregar_espacio')->name('agregar'
 
 Route::get ('/Listarespacio','Espacio_trabajoController@listar_espacio')->name('listar_espacio');
 
+Route::get ('/Listararriendo','AdminController@listar_arriendo')->name('listar_arriendo');
+
 Route::get('/modificarespacio/{id}','Espacio_trabajoController@modificarespacio')->name('modificarespacio');
 
 Route::get ('/detaespacio/{id}','Espacio_trabajoController@detaespacio')->name('detaespacio');
 
 Route::get('eliminarespacio/{id}','Espacio_trabajoController@eliminar_espacio')->name('eliminarespacio');
 
+//----------------------- AdminController get ----------------------------------------------------------------
 
+Route::get ('/Listararriendo','AdminController@listar_arriendo')->name('listar_arriendo');
+
+//-------------------------------- post ----------------------------------------------------------------------
 
 Route::post('nuevousuariopost','LandingController@crearusuario')->name('crear_usuario');
 
