@@ -16,7 +16,7 @@
     @endif
 
     @foreach($datos_usuario as $item)
-    <form method="POST" action="{{route('actualizarespacio')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+    <form method="POST" action="{{route('actualizar_usuario')}}" accept-charset="UTF-8" enctype="multipart/form-data">
         @csrf
         <div class="row">         
           <div class="col-md-6 mb-3">
@@ -27,36 +27,30 @@
           </div>
           <div class="col-md-6 mb-3">
             <label for="nombre">Nombre</label>
-          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="{{}}" required>
-            <div class="invalid-feedback">
-              ingrese un nombre.
-            </div>
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="{{$item->nombre}}" required>
           </div>
 
           <div class="col-md-4 mb-3">
             <label for="email">E-mail <span class="text-muted"></span></label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="">
-            <div class="invalid-feedback">
-                Porfavor ingrese un E-mail valido.
-            </div>
+            <input type="email" class="form-control" id="email" name="email" value="{{$item->email}}" placeholder="">
+            
         </div>
 
         <div class="col-md-4 mb-3">
             <label for="telefono">Telefono</label>
-            <input type="number"  class="form-control" id="telefono" name="telefono" placeholder="" required>
+            <input type="number" class="form-control" id="telefono" name="telefono" value="{{$item->telefono}}" placeholder="" required>
           </div>
 
           <div class="col-md-4 mb-3">
             <label for="Estado">Estado</label>
-              <select id="categoria" name="categoria" class="form-control"> 
-                <option value="1">Activo</option>
-                <option value="2">Inactivo</option>
-                
+              <select id="estado" name="estado" class="form-control"> 
+                <option value="Activo">Activo</option>
+                <option value="Inactivo">Inactivo</option>
               </select>
           </div>
 
           <hr class="mb-4">
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Actualizar</button>
         </div>
     </form>
     @endforeach

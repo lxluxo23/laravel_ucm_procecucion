@@ -36,6 +36,26 @@ INSERT INTO usuario VALUES (prut,pnombre,contrasena,ptipo,pestado,ptelefono,pema
 
 END$$
 
+------------------------------------------------PROCEDIMIENTO ACTUALIZAR USUARIO----------------------
+DELIMITER $$
+CREATE PROCEDURE actualizar_usuario(
+prut INT ,
+pnombre TEXT,
+ptipo TEXT,
+pestado TEXT,
+ptelefono INT,
+pemail text
+)
+BEGIN 
+	UPDATE usuario SET 
+	nombre=pnombre,
+	tipo=ptipo,
+	estado=pestado,
+	telefono=ptelefono,
+	email=pemail
+	WHERE rut=prut;
+END$$
+
 --------------------------------------------------------------------------------------------------------ESPACIO DE TRABAJO-
 
 ------------------------------------------------CREAR TABLA----------------------

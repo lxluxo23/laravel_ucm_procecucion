@@ -58,6 +58,28 @@ class LandingController extends Controller
 
     }
 
+
+    public function actualizar_usuario(Request $actualizar_usuario){
+
+    $rut=$actualizar_usuario->rut;
+
+    $nombre=$actualizar_usuario->nombre;
+
+    $email=$actualizar_usuario->email;
+
+    $telefono=$actualizar_usuario->telefono;
+
+    $estado=$actualizar_usuario->estado;
+
+    $tipo='usuario'; //no webeen
+
+    
+    $dato = DB::select('call actualizar_usuario(?,?,?,?,?,?)', [$rut,$nombre,$tipo,$estado,$telefono,$email]);
+
+    return back()->with('mensaje','Actualizado con exito! con exito');
+        
+    }
+
     public function hora2(){
 
         

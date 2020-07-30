@@ -49,3 +49,5 @@ Route::post('crearespaciopost','Espacio_trabajoController@crear_espacio')->name(
 
 Route::post('actualizarespacio','Espacio_trabajoController@actualizarespacio')->name('actualizarespacio');
 
+Route::post('actualizar_usuario','LandingController@actualizar_usuario')->name('actualizar_usuario');
+
