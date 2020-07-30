@@ -12,7 +12,15 @@ class AdminController extends Controller
 {
     public function listar_arriendo(){
 
-        
+        $arr= DB::select('SELECT id_reserva, fecha_reserva, fecha_ini_solicitada, fecha_fin_solicitada,titular,estado,tipo_pago,valor_total FROM arriendo '); 
+        return view ('administrador.listar_arriendo',compact('arr'));
+
+    }
+
+    public function agregar_arriendo(){
+
+        $categorias= DB::select('call consulta_espacio_concategoria()'); 
+        return view ('administrador.agregar_arriendo',compact('categorias'));
 
     }
 }
