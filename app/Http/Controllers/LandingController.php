@@ -38,17 +38,24 @@ class LandingController extends Controller
 
         $pass = $recuperar->pass;
 
-        $tipo = 'Fantasma';
+        $tipo = 'Usuario';
 
-        $estado = 'Soy admin';
+        $estado = 'ACTIVO';
 
         $telefono = $recuperar->telefono;
 
         $email = $recuperar->email;
 
-        $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,$pass,$tipo,$telefono,$email,$estado]);
+        $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,$pass,$tipo,$estado,$telefono,$email]);
 
         return back()->with('mensaje','Agregado con exito');                
+    }
+
+    public function modificar_usuario(Request $request, $id){
+
+        $datos_usuario=DB::select('select * from usuario where rut='.$id);
+        return view('administrador.modificarespacio',compact('datos_usuario'));
+
     }
 
     public function hora2(){
