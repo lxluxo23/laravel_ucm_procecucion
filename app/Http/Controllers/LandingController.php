@@ -81,7 +81,7 @@ class LandingController extends Controller
 
     $estado=$actualizar_usuario->estado;
 
-    $tipo='usuario'; //no webeen
+    $tipo='usuario'; 
 
     
     $dato = DB::select('call actualizar_usuario(?,?,?,?,?,?)', [$rut,$nombre,$tipo,$estado,$telefono,$email]);
