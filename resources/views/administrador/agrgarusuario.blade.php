@@ -18,6 +18,15 @@
 
     @endif
 
+    @if (session('error'))
+
+    <div class="alert alert-warning" onclick="window.close()"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>!</strong>
+        {{ session('error') }}
+    </div>
+        
+    @endif
+
       <h4 class="mb-3">Nuevo cliente</h4>
       <form action="{{ route('crear_usuario') }}" method="POST">
         @csrf
