@@ -71,23 +71,25 @@
                                                         <div class="container-fluid">
                                                             <div class="col-md-12 order-md-1">
                                                                 <div class="row">
+
                                                                     <div class="col-md-6">
-                                                                        <img src="../images/{{$item->url_img}}" style="background-size: 20%" alt="" class="imagenDeTVenta">
+                                                                        <img src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
                                                                         {{$item->descripcion}}
                                                                     </div>
                                                               
-                                                                                                                                                                                                
+                                                                                                                                                                                                      
                                                                     <div class="col-md-6">
                                                                         <div class="col-md-6">
                                                                             <label for="fini">Elija el día que desea usar el servicio</label>                                                               
-                                                                            <input type="number" class="form-control" id="fini" name="fini" placeholder="" required>
+                                                                            <input type="date" class="form-control" id="fini" name="fini" placeholder="" required>
                                                                         </div>
                                                                         <div class="col-md-6">
                                                                             <label for="fini">Hasta el día (incluyéndose)</label>
-                                                                            <input type="number" class="form-control" id="fini" name="fini" placeholder="" required>
-                                                                        </div>
-                                                                 
+                                                                            <input type="date" class="form-control" id="fini" name="fini" placeholder="" required>
+                                                                        </div>                                                               
                                                                     </div>
+
+
                                                                 </div>
 
                                                                 
