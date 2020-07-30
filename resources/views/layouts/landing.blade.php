@@ -59,6 +59,9 @@
   <script src="{{ asset('assets/landing/vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{ asset('assets/landing/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
+ 
+  <script src="{{ asset('assets/landing/vendor/bootstrap/bootstrap.js') }}"></script>
+
 </body>
 
 </html>

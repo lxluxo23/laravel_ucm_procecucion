@@ -1,10 +1,11 @@
 @extends('layouts.landing')
 <link rel="stylesheet" href="../assets/landing/css/estilo.css">
+
+
 <div class="contenedordeinicio">
     <div class="fondoblancotransp">
     </div>
         <div class="FondoContenedorDetalleEspacio">
-
             <div class="container-fluid">
                 <div class="row">
                    
@@ -48,17 +49,73 @@
 
                                     <div class="col-md-6">
                                   
-                                        <button class="btn btn-success btn-lg btn-block" type="submit">Arrendar espacio</button>
+                                        <button class="btn btn-success btn-lg btn-block" type="submit" data-toggle="modal" data-target="#exampleModal">Arrendar espacio</button>
+                                        
+                                        <!-- Modal -->
+                                        
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-xl">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Desea arrendar {{$item->nombre_cat}}?</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <label style="margin-bottom: 2em">Porfavor complete los datos a continuación</label>
+
+                                                    <!-- Formulario Modal -->
+                                                    <form>
+                                                        <div class="container-fluid">
+                                                            <div class="col-md-12 order-md-1">
+                                                                <div class="row">
+
+                                                                    <div class="col-md-6">
+                                                                        <img src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
+                                                                        <label>{{$item->descripcion}}</label>
+                                                                    </div>
+                                                              
+                                                                                                                                                                                                       
+                                                                    <div class="col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                <label for="fini" style="font-size: 0.9em">Elija el día que desea usar el servicio</label>                                                               
+                                                                                <input type="date" class="form-control" id="fini" name="fini" placeholder="" required>
+                                                                            </div>
+
+                                                                            <div class="col-md-6">
+                                                                                <label for="fini" style="font-size: 0.9em">Hasta el día (incluyéndose)</label>
+                                                                                <input type="date" class="form-control" id="fini" name="fini" placeholder="" required>
+                                                                            </div>   
+                                                                        </div>                                                            
+                                                                    </div>
+
+
+                                                                </div>
+
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                  <button type="button" class="btn btn-primary">Hacer compra</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 
                                 
                             </div>
                         @endforeach
-                        <!-- </form> -->
+                        
                     </div>
                     
                 </div>
             </div>
-
-  
+        </div>
 </div>
