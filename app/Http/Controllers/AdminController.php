@@ -23,4 +23,9 @@ class AdminController extends Controller
         return view ('administrador.agregar_arriendo',compact('categorias'));
 
     }
+
+    public function detallearriendo(Request $request, $id){
+        $detalle_esp=DB::select('call consulta_espacio_concategoria_por_id('.$id.')');
+        return view('administrador.detalle_arriendo',compact('detalle_esp'));
+    }
 }
