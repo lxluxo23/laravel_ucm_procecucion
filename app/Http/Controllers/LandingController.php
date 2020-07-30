@@ -38,17 +38,27 @@ class LandingController extends Controller
 
         $pass = $recuperar->pass;
 
+        $pass2=$recuperar->pass2;
+
         $tipo = 'Usuario';
-
+        
         $estado = 'ACTIVO';
-
+    
         $telefono = $recuperar->telefono;
-
+    
         $email = $recuperar->email;
 
-        $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,$pass,$tipo,$estado,$telefono,$email]);
+        if (strcmp($pass, $pass2) === 0){
 
-        return back()->with('mensaje','Agregado con exito');                
+            $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,$pass,$tipo,$estado,$telefono,$email]);
+    
+            return back()->with('mensaje','Agregado con exito');
+        }
+        else{
+
+            return back()->with('error','Las contraseñas no coinciden');
+
+        }             
     }
 
     public function modificar_usuario(Request $request, $id){
@@ -80,9 +90,11 @@ class LandingController extends Controller
         
     }
 
-    public function hora2(){
+    public function eliminar_usuario (Request $request,$id){
 
-        
+        $eliminar_usuario=DB::delete('call eliminar_usuario('.$id.')');
+
+        return back()->with('mensaje','Eliminado Correctamente');
 
     }
 

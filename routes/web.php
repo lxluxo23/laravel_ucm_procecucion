@@ -19,21 +19,24 @@ Route::get('/pagogogogo', 'LandingController@pago')->name('pago');
 
 Route::get('/admin', 'LandingController@indexadmin')->name('inicioadmin');
 
-Route::get('/agragarusuario', 'LandingController@nuevousuario')->name('nuevousuario');
-
-Route::get('/listaclientes', 'LandingController@listaclientes')->name('listaclientes');
-
 Route::get ('/algo','Espacio_trabajoController@agregar_espacio')->name('agregar');
 
 Route::get ('/Listarespacio','Espacio_trabajoController@listar_espacio')->name('listar_espacio');
 
 Route::get('/modificarespacio/{id}','Espacio_trabajoController@modificarespacio')->name('modificarespacio');
 
-Route::get('/modificar_usuario/{id}','LandingController@modificar_usuario')->name('modificar_usuario');
-
 Route::get ('/detaespacio/{id}','Espacio_trabajoController@detaespacio')->name('detaespacio');
 
 Route::get('eliminarespacio/{id}','Espacio_trabajoController@eliminar_espacio')->name('eliminarespacio');
+
+//----------------------- Rutas usuario ----------------------------------------------------------------
+Route::get('/modificar_usuario/{id}','LandingController@modificar_usuario')->name('modificar_usuario');
+
+Route::get('/listaclientes', 'LandingController@listaclientes')->name('listaclientes');
+
+Route::get('/agragarusuario', 'LandingController@nuevousuario')->name('nuevousuario');
+
+Route::get('eliminar_usuario/{id}','LandingController@eliminar_usuario')->name('eliminar_usuario');
 
 //----------------------- AdminController get ----------------------------------------------------------------
 
