@@ -62,12 +62,12 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="pass">Contraseña</label>
-            <input type="password" class="form-control" id="pass" name="pass" placeholder="" required>
+            <input type="password" class="form-control" id="pass1" name="pass1" placeholder="" required>
             
           </div>
           <div class="col-md-6 mb-3">
             <label for="pass2">Confirmar contraseña</label>
-            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="" required>
+            <input type="password" class="form-control" id="pass2" name="pass2"  placeholder="" required>
           </div>
         </div>
 
