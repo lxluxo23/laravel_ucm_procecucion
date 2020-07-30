@@ -55,6 +55,13 @@ BEGIN
 	email=pemail
 	WHERE rut=prut;
 END$$
+------------------------------------------------PROCEDIMIENTO ELIMINAR USUARIO----------------------
+DELIMITER $$
+CREATE PROCEDURE eliminar_usuario(
+prut INT)
+BEGIN 
+	DELETE FROM usuario WHERE rut=prut;
+END $$
 
 
 ---------------------------------------------------------------------------------------------------------CATEGORIA-
