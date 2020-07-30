@@ -21,7 +21,7 @@
         <div class="row">         
           <div class="col-md-3 mb-3">
             <label for="id_espacio">ID</label>
-            <input type="number" class="form-control" id="id_espacio" name="id_espacio" placeholder="" value="{{$item->id_espacio_trabajo}}" required>
+            <input type="number" readonly class="form-control" id="id_espacio" name="id_espacio" placeholder="" value="{{$item->id_espacio_trabajo}}" required>
             <div class="invalid-feedback">
             </div>
           </div>
@@ -31,7 +31,8 @@
               <select id="categoria" name="categoria" class="form-control"> 
                 <option value="1">Espacio pequeño</option>
                 <option value="2">Espacio mediano</option>
-                <option value="2">Espacio grande</option>
+                <option value="3">Espacio grande</option>
+                <option value="4">Titanico</option>
               </select>
           </div>
 
