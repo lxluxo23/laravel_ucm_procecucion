@@ -1,11 +1,40 @@
 DROP TABLE espacio_trabajo;
 DROP TABLE categoria;
+DROP TABLE usuario;
 DROP PROCEDURE agregar_espacio;
 DROP PROCEDURE actualizar_espacio;
 DROP PROCEDURE agregar_categoria;
 DROP PROCEDURE actualizar_categoria;
 DROP PROCEDURE consulta_espacio_concategoria;
 
+
+--------------------------------------------------------------------------------------------------------USUARIO-
+------------------------------------------------CREAR TABLA USUARIO----------------------
+CREATE TABLE usuario(
+rut INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+nombre TEXT NOT NULL,
+contrasena VARCHAR(15) NOT NULL,
+tipo VARCHAR(15) NOT NULL,
+estado VARCHAR(15) NOT NULL,
+telefono INT NOT NULL,
+email VARCHAR(40) NOT null
+
+);
+------------------------------------------------PROCEDIMIENTO AGREGAR USUARIO----------------------
+DELIMITER $$
+CREATE PROCEDURE agregar_usuario (
+prut INT,
+pnombre text,
+contrasena TEXT,
+ptipo TEXT,
+pestado text,
+ptelefono INT,
+pemail text)
+BEGIN
+
+INSERT INTO usuario VALUES (prut,pnombre,contrasena,ptipo,pestado,ptelefono,pemail);
+
+END$$
 
 --------------------------------------------------------------------------------------------------------ESPACIO DE TRABAJO-
 
@@ -84,11 +113,13 @@ END$$
 
 
 ---------------------------------------------------------------------------------------------------------CATEGORIA-
-------------------------------------------------CREAR TABLA----------------------
+------------------------------------------------CREAR TABLA CATEGORIA----------------------
 CREATE TABLE categoria (
 id_categoria INT PRIMARY KEY auto_increment,
 nombre_cat VARCHAR (50) NOT null 
 );
+
+
 
 ------------------------------------------------PROCEDIMIENTO AGREGAR-------------
 DELIMITER $$
