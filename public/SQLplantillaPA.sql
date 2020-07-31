@@ -220,7 +220,14 @@ END $$
 
 
 
+DELIMITER $$
+CREATE or REPLACE PROCEDURE agregar_arriendo ( pfecha_ini_solicitada date, pfecha_fin_solicitada date, ptitular int, pvalor_total int,pid_espacio_trabajo int )
+BEGIN
 
+INSERT INTO arriendo(fecha_reserva, fecha_ini_solicitada, fecha_fin_solicitada, titular, estado, tipo_pago, valor_total,id_espacio_trabajo) 
+VALUES (CURDATE(),pfecha_ini_solicitada,pfecha_fin_solicitada,ptitular,'vigente',1,pvalor_total,pid_espacio_trabajo);
+
+END$$
 
 
 
