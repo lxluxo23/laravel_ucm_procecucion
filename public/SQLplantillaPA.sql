@@ -220,6 +220,18 @@ END $$
 
 
 
+
+-----------------------------------------------------------------------------------------ARRIENDO--
+---------------------------------------------------------------TABLA ARRIENDO--
+
+
+---------------------------------------------------------------CLAVE FK ARRIENDO--
+
+ALTER TABLE arriendo ADD CONSTRAINT la_fk_de_espacioarriendo FOREIGN KEY (id_espacio_trabajo) REFERENCES espacio_trabajo (id_espacio_trabajo);
+
+
+---------------------------------------------------------------PA AGREGAR ARRIENDO--
+
 DELIMITER $$
 CREATE or REPLACE PROCEDURE agregar_arriendo ( pfecha_ini_solicitada date, pfecha_fin_solicitada date, ptitular int, pvalor_total int,pid_espacio_trabajo int )
 BEGIN
@@ -228,8 +240,6 @@ INSERT INTO arriendo(fecha_reserva, fecha_ini_solicitada, fecha_fin_solicitada, 
 VALUES (CURDATE(),pfecha_ini_solicitada,pfecha_fin_solicitada,ptitular,'vigente',1,pvalor_total,pid_espacio_trabajo);
 
 END$$
-
-
 
 
 

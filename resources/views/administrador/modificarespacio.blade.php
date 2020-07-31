@@ -48,6 +48,7 @@
           <div class="col-md-3 mb-3">
             <label for="precio">Precio</label>
             <input type="number" class="form-control" id="precio" name="precio" placeholder="" value="{{$item->precio}}" required>
+         
             <div class="invalid-feedback">
               Ingrese Precio
             </div>
@@ -70,11 +71,16 @@
 
           <div class="col-md-6 mb-4">
             <label class="col-md-4 control-label">Editar Foto</label>
+            
+            
                 <div class="col-md-6">
+                  
                   <input type="file" class="form-control" name="file" onchange="loadFile(event)" >
                   <img name="portada" id="portada" width="250"/>
+                  
                   <script>
                       var loadFile = function(event) {
+                        
                       var reader = new FileReader();
                       reader.onload = function(){
                         var output = document.getElementById('portada');

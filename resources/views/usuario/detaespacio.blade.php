@@ -87,7 +87,10 @@
                                                                                 <label for="fini" style="font-size: 0.9em">Hasta el día (incluyéndose)</label>
                                                                                 <input type="date" class="form-control" id="fini" name="fini" placeholder="" required>
                                                                             </div>   
-                                                                        </div>                                                            
+                                                                        </div>  
+                                                                        <div class="col-md-6">
+                                                                            <label style="margin-top: 30">AAAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</label> 
+                                                                        </div>                                                
                                                                     </div>
                                                                 </div>
                                                            
