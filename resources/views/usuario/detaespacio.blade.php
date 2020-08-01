@@ -89,7 +89,7 @@
                                                                             </div>   
                                                                         </div>  
                                                                         <div class="col-md-6">
-                                                                            <label style="margin-top: 30">AAAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</label> 
+                                                                          
                                                                         </div>                                                
                                                                     </div>
                                                                 </div>
