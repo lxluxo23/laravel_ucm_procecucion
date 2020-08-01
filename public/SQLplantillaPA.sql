@@ -224,11 +224,23 @@ END $$
 -----------------------------------------------------------------------------------------ARRIENDO--
 ---------------------------------------------------------------TABLA ARRIENDO--
 
+CREATE TABLE arriendo(
+ID_repeserva INT PRIMARY KEY,
+Fecha_reserva DATE NOT NULL,
+Fecha_ini_solicitada DATE NOT NULL,
+Fecha_fin_solicitada DATE NOT NULL,
+Titular INT NOT NULL,
+Estado VARCHAR(15) NOT NULL,
+Tipo_pago INT NOT NULL,
+Valor_Total INT NOT NULL,
+id_espacio_trabajo NOT null  
+);
 
----------------------------------------------------------------CLAVE FK ARRIENDO--
+---------------------------------------------------------------LAS FORANEAS DE ARRIENDO--
 
 ALTER TABLE arriendo ADD CONSTRAINT la_fk_de_espacioarriendo FOREIGN KEY (id_espacio_trabajo) REFERENCES espacio_trabajo (id_espacio_trabajo);
-
+ALTER TABLE arriendo add constraint la_fk_de_pago FOREIGN KEY (Tipo_pago) REFERENCES tipo_de_pago (ID_pago);
+ALTER TABLE arriendo ADD CONSTRAINT la_fk_de_titular FOREIGN KEY (Titular) REFERENCES usuario (rut);
 
 ---------------------------------------------------------------PA AGREGAR ARRIENDO--
 
@@ -236,10 +248,19 @@ DELIMITER $$
 CREATE or REPLACE PROCEDURE agregar_arriendo ( pfecha_ini_solicitada date, pfecha_fin_solicitada date, ptitular int, pvalor_total int,pid_espacio_trabajo int )
 BEGIN
 
-INSERT INTO arriendo(fecha_reserva, fecha_ini_solicitada, fecha_fin_solicitada, titular, estado, tipo_pago, valor_total,id_espacio_trabajo) 
+INSERT INTO arriendo(
+fecha_reserva,
+fecha_ini_solicitada,
+fecha_fin_solicitada,
+titular,
+estado,
+tipo_pago,
+valor_total,
+id_espacio_trabajo) 
 VALUES (CURDATE(),pfecha_ini_solicitada,pfecha_fin_solicitada,ptitular,'vigente',1,pvalor_total,pid_espacio_trabajo);
-
 END$$
+
+
 
 
 
