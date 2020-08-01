@@ -83,9 +83,10 @@ INSERT INTO categoria (nombre_cat) VALUES (pnombre);
 
 END $$
 
-DELIMITER $$
+
 
 ------------------------------------------------PROCEDIMIENTO MODIFICAR-------------
+DELIMITER $$
 CREATE PROCEDURE actualizar_categoria (
 pid INT ,
 pnombre TEXT)
@@ -96,7 +97,15 @@ UPDATE categoria SET nombre_cat=pnombre WHERE id_categoria=pid;
 
 END $$
 
+------------------------------------------------PROCEDIMIENTO ELIMINAR-------------
+DELIMITER $$
+CREATE PROCEDURE eliminar_categoria(
+pid int
+)
+BEGIN
+DELETE FROM categoria where id_categoria=pid; 
 
+END $$
 
 --------------------------------------------------------------------------------------------------------ESPACIO DE TRABAJO-
 
