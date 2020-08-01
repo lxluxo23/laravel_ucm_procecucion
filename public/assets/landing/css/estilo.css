@@ -10,19 +10,20 @@
     height: 100%;
     position: absolute;
     /*background: #a7d5fa;*/
-    background-image: url("../../../images/ofifondo.png");
-    background-attachment: fixed;
     background-size: 100% 100%;
+    
 }
 
 .fondoblancotransp{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
-    background: #fde9d2;
+    background-image: url("../../../images/ofifondo.png");
     opacity: 0.5;
+   
 
 }
+
 
 
 .contenedorheader{

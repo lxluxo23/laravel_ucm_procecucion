@@ -139,4 +139,11 @@ class LandingController extends Controller
             return false;
     }
 
+
+    public function validar_horario($id,$fini,$ffin){
+        $hr = DB::select('call validar_ingreso_arriendo(?,?,?)', [$id,$fini,$ffin]);
+        return $hr;
+
+    }
+
 }
