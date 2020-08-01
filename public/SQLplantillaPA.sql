@@ -1,6 +1,7 @@
 DROP TABLE espacio_trabajo;
 DROP TABLE categoria;
 DROP TABLE usuario;
+DROP TABLE arriendo;
 DROP PROCEDURE agregar_espacio;
 DROP PROCEDURE actualizar_espacio;
 DROP PROCEDURE agregar_categoria;
@@ -11,15 +12,15 @@ DROP PROCEDURE consulta_espacio_concategoria;
 --------------------------------------------------------------------------------------------------------USUARIO-
 ------------------------------------------------CREAR TABLA USUARIO----------------------
 CREATE TABLE usuario(
-rut INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+rut INT NOT NULL PRIMARY KEY,
 nombre TEXT NOT NULL,
 contrasena VARCHAR(15) NOT NULL,
 tipo VARCHAR(15) NOT NULL,
 estado VARCHAR(15) NOT NULL,
 telefono INT NOT NULL,
 email VARCHAR(40) NOT null
-
 );
+
 ------------------------------------------------PROCEDIMIENTO AGREGAR USUARIO----------------------
 DELIMITER $$
 CREATE PROCEDURE agregar_usuario (

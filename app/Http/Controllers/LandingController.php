@@ -42,7 +42,7 @@ class LandingController extends Controller
 
         $nombre = $recuperar->nombre;
 
-        $pass = $recuperar->pass;
+        $pass1 = $recuperar->pass1;
 
         $pass2=$recuperar->pass2;
 
@@ -54,20 +54,22 @@ class LandingController extends Controller
     
         $email = $recuperar->email;
 
-        if (strcmp($pass, $pass2) === 0 &&  $valido==1){
-
-            $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,$pass,$tipo,$estado,$telefono,$email]);
-    
-            return back()->with('mensaje','Agregado con exito');
-        }
-        else{
+        if (strcmp($pass1, $pass2) === 0){
 
             if ($valido == 0){
                 return back()->with('error','Por favor ingrese un rut valido');
             }
 
-            return back()->with('error','Las contraseñas no coinciden');
+            if ($valido == 1){
 
+            $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,$pass1,$tipo,$estado,$telefono,$email]);
+    
+            return back()->with('mensaje','Agregado con exito ' );
+
+            }
+        }
+        else{
+            return back()->with('error','Las contraseñas no coinciden' .$pass .$pass2);
         }             
     }
 
