@@ -32,7 +32,13 @@ class LandingController extends Controller
     
     public function crearusuario(Request $recuperar){
 
-        $rut = $recuperar->rut;
+        $rut = preg_replace('/[^k0-9]/i', '', $recuperar->rut);
+
+        if($this->valida_rut($rut) == true){
+            $valido = 1;
+        }else{
+            $valido = 0;
+        }
 
         $nombre = $recuperar->nombre;
 
@@ -48,13 +54,17 @@ class LandingController extends Controller
     
         $email = $recuperar->email;
 
-        if (strcmp($pass, $pass2) === 0){
+        if (strcmp($pass, $pass2) === 0 &&  $valido==1){
 
             $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,$pass,$tipo,$estado,$telefono,$email]);
     
             return back()->with('mensaje','Agregado con exito');
         }
         else{
+
+            if ($valido == 0){
+                return back()->with('error','Por favor ingrese un rut valido');
+            }
 
             return back()->with('error','Las contraseñas no coinciden');
 
@@ -96,6 +106,35 @@ class LandingController extends Controller
 
         return back()->with('mensaje','Eliminado Correctamente');
 
+    }
+
+    public function valida_rut($rut)
+    {
+        $rut = preg_replace('/[^k0-9]/i', '', $rut);
+        $dv  = substr($rut, -1);
+        $numero = substr($rut, 0, strlen($rut)-1);
+        $i = 2;
+        $suma = 0;
+        foreach(array_reverse(str_split($numero)) as $v)
+        {
+            if($i==8)
+                $i = 2;
+    
+            $suma += $v * $i;
+            ++$i;
+        }
+    
+        $dvr = 11 - ($suma % 11);
+        
+        if($dvr == 11)
+            $dvr = 0;
+        if($dvr == 10)
+            $dvr = 'K';
+    
+        if($dvr == strtoupper($dv))
+            return true;
+        else
+            return false;
     }
 
 }
