@@ -28,4 +28,11 @@ class AdminController extends Controller
         $detalle_esp=DB::select('call consulta_espacio_concategoria_por_id('.$id.')');
         return view('administrador.detalle_arriendo',compact('detalle_esp'));
     }
+
+    public function agregar_categoria(){
+
+        $categorias= DB::select('call agregar_categoria()'); 
+        return view ('administrador.agregar_categoria',compact('categorias'));
+
+    }
 }
