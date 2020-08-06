@@ -42,14 +42,7 @@
                                         <br>
                                         <label for="precio" style="font-size: 1.1rem"><b>Precio</b></label>
                                         <label class="form-control" style="border: 1px solid  #2ba7e044; font-size: 1.1rem" id="precio" name="precio">${{$item->precio}} x día</label>
-
-                                    </div>
-
-                                    
-          
-                                    <div class="col-md-6"></div>
-
-                                    <div class="col-md-6">
+                                        <br>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label for="fini" style="font-size: 0.9em">Elija el día que desea usar el servicio</label>                                                               
@@ -62,7 +55,7 @@
                                                 <input type="date" class="form-control" id="fini" name="fini" placeholder="" required>
                                             </div>   
                                         </div>  
-                                        <br>
+                                        <br><br>
                                         <button class="btn btn-success btn-lg btn-block" type="submit" data-toggle="modal" data-target="#exampleModal">Arrendar espacio</button>
                                         
                                         <!-- Modal -->
