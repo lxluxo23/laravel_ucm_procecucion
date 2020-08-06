@@ -141,8 +141,14 @@ class LandingController extends Controller
 
 
     public function validar_horario($id,$fini,$ffin){
-        $hr = DB::select('call validar_ingreso_arriendo(?,?,?)', [$id,$fini,$ffin]);
+        $hr = DB::select('call calcular_horario_disp(5,2020-08-17,2020-08-19,@temp)');
         return $hr;
+
+    }
+
+    public function prueb(){
+     
+        return "asd";
 
     }
 

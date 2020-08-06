@@ -44,11 +44,25 @@
                                         <label class="form-control" style="border: 1px solid  #2ba7e044; font-size: 1.1rem" id="precio" name="precio">${{$item->precio}} x día</label>
 
                                     </div>
+
+                                    
           
                                     <div class="col-md-6"></div>
 
                                     <div class="col-md-6">
-                                  
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="fini" style="font-size: 0.9em">Elija el día que desea usar el servicio</label>                                                               
+                                                <input type="date" class="form-control" id="fini" name="fini" placeholder="" required>
+                            
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="fini" style="font-size: 0.9em">Hasta el día (incluyéndose)</label>
+                                                <input type="date" class="form-control" id="fini" name="fini" placeholder="" required>
+                                            </div>   
+                                        </div>  
+                                        <br>
                                         <button class="btn btn-success btn-lg btn-block" type="submit" data-toggle="modal" data-target="#exampleModal">Arrendar espacio</button>
                                         
                                         <!-- Modal -->
@@ -64,9 +78,9 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <label style="margin-bottom: 2em">Porfavor complete los datos a continuación</label>
-
+                                                
                                                     <!-- Formulario Modal -->
-                                                    <form>
+                                                    <form >
                                                         <div class="container-fluid">
                                                             <div class="col-md-12 order-md-1">
                                                                 <div class="row">
@@ -75,23 +89,11 @@
                                                                         <img style="background-size: 1rem" src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
                                                                         <label>{{$item->descripcion}}</label>
                                                                     </div>                                                             
-                                                                                                                                                                                                       
                                                                     <div class="col-md-6">
-                                                                        <div class="row">
-                                                                            <div class="col-md-6">
-                                                                                <label for="fini" style="font-size: 0.9em">Elija el día que desea usar el servicio</label>                                                               
-                                                                                <input type="date" class="form-control" id="fini" name="fini" placeholder="" required>
-                                                                            </div>
-
-                                                                            <div class="col-md-6">
-                                                                                <label for="fini" style="font-size: 0.9em">Hasta el día (incluyéndose)</label>
-                                                                                <input type="date" class="form-control" id="fini" name="fini" placeholder="" required>
-                                                                            </div>   
-                                                                        </div>  
-                                                                        <div class="col-md-6">
-                                                                          
-                                                                        </div>                                                
-                                                                    </div>
+                                                                       
+                                                                        <label></label>
+                                                                    </div>                                                                                                                                     
+                      
                                                                 </div>
                                                            
                                                             </div>
