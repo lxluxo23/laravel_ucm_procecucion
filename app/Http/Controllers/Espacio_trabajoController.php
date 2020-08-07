@@ -14,6 +14,8 @@ class Espacio_trabajoController extends Controller
         $espacioss= DB::select('call consulta_espacio_concategoria()'); 
         return view ('usuario.index',compact('espacioss'));
     }
+  
+ 
 
     public function modificarespacio(Request $request, $id){
 
@@ -107,7 +109,8 @@ class Espacio_trabajoController extends Controller
 
     public function detaespacio(Request $request, $id){
         $dato_espacio=DB::select('call consulta_espacio_concategoria_por_id('.$id.')');
-        return view('usuario.detaespacio',compact('dato_espacio'));
+        $okilp = DB::select('select fecha_ini_disp(5, 2020-08-04, 2020-08-07) as fec');
+        return view('usuario.detaespacio',compact('dato_espacio','okilp'));
     }
 
 }

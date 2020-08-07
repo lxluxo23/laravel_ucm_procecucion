@@ -303,6 +303,18 @@ BEGIN
 	
 END $$
 
+-------------PARA LLAMAR A ESTE PA INOUT SE UTILIZA UNA FUNCION SQL
+
+DELIMITER $$
+create or replace function fecha_ini_disp(id int, ini text, fin text)
+RETURNS date 
+BEGIN
+	DECLARE fec date;
+    
+    call calcular_horario_disp(5,'2020-08-04','2020-08-07',fec);
+    return fec;
+END $$
+
 
 
 

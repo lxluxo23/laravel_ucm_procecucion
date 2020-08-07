@@ -34,7 +34,16 @@
                                     
                                     <div class="col-md-6">
                                         <label for="descripcion" style="font-size: 1.1rem"><b>Descripcion</b></label>
-                                        <label class="form-control" style="border: 1px solid  #2ba7e044; height: 6.5em; font-size: 1.1rem; overflow: auto" id="descripcion" name="descripcion" rows="5">{{$item->descripcion}}
+
+                                        <label class="form-control" style="border: 1px solid  #2ba7e044; height: 6.5em; font-size: 1.1rem; overflow: auto" id="descripcion" name="descripcion" rows="5">
+                                            @endforeach
+                                            @foreach ($okilp as $item)
+                                               
+                                                {{$item->fec}}
+                                            @endforeach
+                                            @foreach ($dato_espacio as $item)
+                                            
+                                            {{$item->descripcion}}
                                         </label>
                                         <br>
                                         <label for="Capacidad" style="font-size: 1.1rem"><b>Capacidad</b></label>
@@ -65,6 +74,7 @@
                                               <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">Desea arrendar {{$item->nombre_cat}}?</h5>
+                                                    
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -115,6 +125,8 @@
             </div>
         </div>
 </div>
+
+
 <script>
 
 
@@ -138,13 +150,19 @@
         })
 
         document.getElementById("ffin").addEventListener("change",function(){
+            
             if ((document.getElementById('fini').value)>(document.getElementById('ffin').value)){
                 $("#ffin").val("");
                 alert("La fecha no puede ser menor a la inicial, vuelva a ingresar")
             };
 
             if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
+        
                 alert("consultando...");
+              
+                
+                
+                
             };
 
         })
