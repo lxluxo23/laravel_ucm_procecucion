@@ -124,16 +124,18 @@
         var day = ("0" + now.getDate()).slice(-2);
         var month = ("0" + (now.getMonth() + 1)).slice(-2);
         var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+        $("#fini").val(today);
   
         document.getElementById("fini").addEventListener("change",function(){
-            if (today>(document.getElementById('fini').value)){
-                $("#fini").val(today);
+            if (today>(document.getElementById('fini').value) || (document.getElementById('fini').value)>(document.getElementById('ffin').value)){
+                alert("La fecha no puede ser menor a la de hoy o mayor a la fecha final")
+                $("#fini").val("");
             };
         })
 
         document.getElementById("ffin").addEventListener("change",function(){
             if ((document.getElementById('fini').value)>(document.getElementById('ffin').value)){
-                $("#ffin").val(today);
+                $("#ffin").val("");
             };
         })
 
