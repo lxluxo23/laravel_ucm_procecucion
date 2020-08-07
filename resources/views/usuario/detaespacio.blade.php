@@ -51,8 +51,8 @@
                                             </div>
 
                                             <div class="col-md-6">
-                                                <label for="fini" style="font-size: 0.9em">Hasta el día (incluyéndose)</label>
-                                                <input type="date" class="form-control" id="fini" name="fini" placeholder="" required>
+                                                <label for="ffin" style="font-size: 0.9em">Hasta el día (incluyéndose)</label>
+                                                <input type="date" class="form-control" id="ffin" name="ffin" placeholder="" required>
                                             </div>   
                                         </div>  
                                         <br><br>
@@ -115,3 +115,27 @@
             </div>
         </div>
 </div>
+<script>
+
+
+    window.addEventListener("load",function(){
+
+        var now = new Date();
+        var day = ("0" + now.getDate()).slice(-2);
+        var month = ("0" + (now.getMonth() + 1)).slice(-2);
+        var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+  
+        document.getElementById("fini").addEventListener("change",function(){
+            if (today>(document.getElementById('fini').value)){
+                $("#fini").val(today);
+            };
+        })
+
+        document.getElementById("ffin").addEventListener("change",function(){
+            if ((document.getElementById('fini').value)>(document.getElementById('ffin').value)){
+                $("#ffin").val(today);
+            };
+        })
+
+    })
+</script>
