@@ -128,15 +128,25 @@
   
         document.getElementById("fini").addEventListener("change",function(){
             if (today>(document.getElementById('fini').value) || (document.getElementById('ffin').value) && (document.getElementById('fini').value)>(document.getElementById('ffin').value)){
-                alert("La fecha no puede ser menor a la de hoy o mayor a la fecha final")
                 $("#fini").val("");
+                alert("La fecha no puede ser menor a la de hoy o mayor a la fecha final, vuelva a ingresar")
+            };
+
+            if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
+                alert("consultando...");
             };
         })
 
         document.getElementById("ffin").addEventListener("change",function(){
             if ((document.getElementById('fini').value)>(document.getElementById('ffin').value)){
                 $("#ffin").val("");
+                alert("La fecha no puede ser menor a la inicial, vuelva a ingresar")
             };
+
+            if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
+                alert("consultando...");
+            };
+
         })
 
     })

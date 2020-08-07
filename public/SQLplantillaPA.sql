@@ -272,6 +272,39 @@ END$$
 
 
 
+--------------------------------------------------------------PA PARA VERIFICAR LA FECHA Y LA MAS PROXIMA CON EL MISMO RANGO DE DIAS QUE SE CONSULTA-----------------
+
+DELIMITER $$
+    CREATE or replace PROCEDURE calcular_horario_disp(IN pidesp int, IN pfini date, IN pffin date, OUT resultado date)
+BEGIN
+
+  DECLARE fecha_ultima date DEFAULT 0;
+  SET max_sp_recursion_depth = 50;
+
+  
+   	select max(arriendo.fecha_fin_solicitada)
+    from espacio_trabajo 
+    inner join arriendo on espacio_trabajo.id_espacio_trabajo = arriendo.id_espacio_trabajo
+    and espacio_trabajo.id_espacio_trabajo = pidesp
+    and arriendo.fecha_ini_solicitada <= pffin
+    AND arriendo.fecha_fin_solicitada >= pfini
+    order by arriendo.fecha_fin_solicitada desc
+    into fecha_ultima;
+    
+    if fecha_ultima THEN
+    	set pfini=(select DATE_ADD(pfini,INTERVAL 1 DAY));
+        set pffin=(select DATE_ADD(pffin,INTERVAL 1 DAY));
+		
+        call calcular_horario_dispprueba(pidesp, pfini,pffin, resultado);
+     else
+     	set resultado=pfini;
+      	
+    end if;
+	
+END $$
+
+
+
 
 
 
