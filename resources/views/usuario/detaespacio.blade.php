@@ -34,7 +34,7 @@
                                     
                                     <div class="col-md-6">
                                         <label for="descripcion" style="font-size: 1.1rem"><b>Descripcion</b></label>
-
+                                        <div id="prrr"></div>                                       
                                         <label class="form-control" style="border: 1px solid  #2ba7e044; height: 6.5em; font-size: 1.1rem; overflow: auto" id="descripcion" name="descripcion" rows="5">
                                             @endforeach
                                             @foreach ($okilp as $item)
@@ -156,14 +156,22 @@
                 alert("La fecha no puede ser menor a la inicial, vuelva a ingresar")
             };
 
+
+            
+
             if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
-        
-                alert("consultando...");
-              
                 
-                
-                
-            };
+               // fetch(`detaespacio/5?texto2=${document.getElementById("ffin").value}`,{method:'get'})
+                fetch(`detaespacio/5?texto2=2020-08-12`,{method:'get'})
+                .then(response => response.text() )
+                .then(html => {
+                    document.getElementById("prrr").innerHTML += html
+                   alert(document.getElementById("prrr").innerHTML += html);
+                })    
+
+
+
+            }
 
         })
 

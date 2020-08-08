@@ -21,6 +21,7 @@
    
         
     <div class="row text-center">
+      
 
       @foreach ($espacioss as $item)
 
@@ -33,7 +34,7 @@
             <p class="card-text">$ {{$item->precio}} x día</p>
           </div>
           <div class="card-footer">
-            <a href="{{('detaespacio/')}}{{$item->id_espacio_trabajo}}{{('-')}}{{('0')}}{{('-')}}{{('0')}}" class="btn btn-primary">Ver más detalles</a>
+            <a href="{{('detaespacio/')}}{{$item->id_espacio_trabajo}}" class="btn btn-primary">Ver más detalles</a>
           </div>
         </div>
       </div>

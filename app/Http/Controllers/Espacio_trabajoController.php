@@ -107,10 +107,14 @@ class Espacio_trabajoController extends Controller
 
     }
 
-    public function detaespacio(Request $request, $id, $fini, $ffin){
+    public function detaespacio(Request $request, $id){
+
+        $pru1 = "2020-08-04";
+        $pru2 = "2020-08-07";
         $dato_espacio=DB::select('call consulta_espacio_concategoria_por_id('.$id.')');
-        $okilp = DB::select('select fecha_ini_disp('.$id.',"2020-08-04","2020-08-07") as fec');
+        $okilp = DB::select("select fecha_ini_disp('.$id.','2020-08-04','.$request->texto2.') as fec");
         return view('usuario.detaespacio',compact('dato_espacio','okilp'));
+        
     }
 
 }
