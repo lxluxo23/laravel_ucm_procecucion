@@ -34,15 +34,7 @@
                                     
                                     <div class="col-md-6">
                                         <label for="descripcion" style="font-size: 1.1rem"><b>Descripcion</b></label>
-                                        <div id="prrr">
-                                            @endforeach
-                                            @foreach ($okilp as $item)
-                                               
-                                                {{$item->fec}}
-                                            @endforeach
-                                            @foreach ($dato_espacio as $item)
-
-                                        </div>                                       
+                                                  
                                         <label class="form-control" style="border: 1px solid  #2ba7e044; height: 6.5em; font-size: 1.1rem; overflow: auto" id="descripcion" name="descripcion" rows="5">
                                            
                                             
@@ -134,7 +126,7 @@
 
 
     window.addEventListener("load",function(){
-
+        var asd;
         var now = new Date();
         var day = ("0" + now.getDate()).slice(-2);
         var month = ("0" + (now.getMonth() + 1)).slice(-2);
@@ -163,9 +155,11 @@
             
 
             if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
+                <?php use app\Http\Controllers\Espacio_trabajoController ?>
                 
-               
-                })    
+                asd={{Espacio_trabajoController::valorprueba()}};
+                alert("La fecha libre es : "+asd);
+              
 
 
 

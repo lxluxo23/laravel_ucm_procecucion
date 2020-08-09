@@ -113,5 +113,9 @@ class Espacio_trabajoController extends Controller
         return view('usuario.detaespacio',compact('dato_espacio'));
         
     }
+    public static function valorprueba(){
+        
+        return "2020-08-08";
+    }
 
 }
