@@ -115,7 +115,9 @@ class Espacio_trabajoController extends Controller
     }
     public static function valorprueba(){
         
-        return "2020-08-08";
+        $asd = "2020-08-08";
+        return $asd;
+
     }
 
 }

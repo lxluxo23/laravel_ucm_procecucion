@@ -1,6 +1,6 @@
 @extends('layouts.landing')
 <link rel="stylesheet" href="../assets/landing/css/estilo.css">
-
+@inject('provider', 'app\Http\Controllers\Espacio_trabajoController')
 
 <div class="contenedordeinicio" id="pr1">
     <div class="fondoblancotransp" id="pr2"> 
@@ -155,9 +155,9 @@
             
 
             if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
-                <?php use app\Http\Controllers\Espacio_trabajoController ?>
-                
-                asd={{Espacio_trabajoController::valorprueba()}};
+               
+      
+                asd='{{ Espacio_trabajo::valorprueba()}}';
                 alert("La fecha libre es : "+asd);
               
 
