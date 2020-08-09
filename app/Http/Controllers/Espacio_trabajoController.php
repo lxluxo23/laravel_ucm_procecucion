@@ -115,8 +115,13 @@ class Espacio_trabajoController extends Controller
     }
     public static function valorprueba(){
         
-        $asd = "2020-08-08";
-        return $asd;
+        $asd1=5;
+        $asd2="2020-08-04";
+        $asd3="2020-08-08";
+
+        $asd = DB::select("select fecha_ini_disp(?,?,?) as fec", [$asd1,$asd2,$asd3]);
+
+        return $asd2;
 
     }
 

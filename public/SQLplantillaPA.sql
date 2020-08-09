@@ -295,7 +295,7 @@ BEGIN
     	set pfini=(select DATE_ADD(pfini,INTERVAL 1 DAY));
         set pffin=(select DATE_ADD(pffin,INTERVAL 1 DAY));
 		
-        call calcular_horario_dispprueba(pidesp, pfini,pffin, resultado);
+        call calcular_horario_disp(pidesp, pfini,pffin, resultado);
      else
      	set resultado=pfini;
       	
