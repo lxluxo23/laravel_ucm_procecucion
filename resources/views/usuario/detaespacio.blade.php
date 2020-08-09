@@ -2,10 +2,10 @@
 <link rel="stylesheet" href="../assets/landing/css/estilo.css">
 
 
-<div class="contenedordeinicio">
-    <div class="fondoblancotransp">
+<div class="contenedordeinicio" id="pr1">
+    <div class="fondoblancotransp" id="pr2"> 
     </div>
-        <div class="FondoContenedorDetalleEspacio">
+        <div class="FondoContenedorDetalleEspacio" id="pr3">
             <div class="container-fluid">
                 <div class="row">
                    
@@ -34,14 +34,17 @@
                                     
                                     <div class="col-md-6">
                                         <label for="descripcion" style="font-size: 1.1rem"><b>Descripcion</b></label>
-                                        <div id="prrr"></div>                                       
-                                        <label class="form-control" style="border: 1px solid  #2ba7e044; height: 6.5em; font-size: 1.1rem; overflow: auto" id="descripcion" name="descripcion" rows="5">
+                                        <div id="prrr">
                                             @endforeach
                                             @foreach ($okilp as $item)
                                                
                                                 {{$item->fec}}
                                             @endforeach
                                             @foreach ($dato_espacio as $item)
+
+                                        </div>                                       
+                                        <label class="form-control" style="border: 1px solid  #2ba7e044; height: 6.5em; font-size: 1.1rem; overflow: auto" id="descripcion" name="descripcion" rows="5">
+                                           
                                             
                                             {{$item->descripcion}}
                                         </label>
@@ -161,12 +164,7 @@
 
             if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
                 
-               // fetch(`detaespacio/5?texto2=${document.getElementById("ffin").value}`,{method:'get'})
-                fetch(`detaespacio/5?texto2=2020-08-12`,{method:'get'})
-                .then(response => response.text() )
-                .then(html => {
-                    document.getElementById("prrr").innerHTML += html
-                   alert(document.getElementById("prrr").innerHTML += html);
+               
                 })    
 
 
