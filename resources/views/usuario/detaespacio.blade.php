@@ -157,7 +157,7 @@
             if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
                
       
-                asd='{{ Espacio_trabajo::valorprueba()}}';
+                asd='{{ $provider::valorprueba()}}';
                 alert("La fecha libre es : "+asd);
               
 
