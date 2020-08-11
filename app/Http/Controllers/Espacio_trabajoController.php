@@ -119,7 +119,12 @@ class Espacio_trabajoController extends Controller
         $asd2="2020-08-04";
         $asd3="2020-08-08";
 
-        $asd = DB::select('select fecha_ini_disp('.$asd1.','.$asd2.','.$asd3.')');
+        //$asd = DB::select('select fecha_ini_disp('.$asd1.','.$asd2.','.$asd3.')');
+        $asd = DB::select('select id_reserva from arriendo where id_reserva=2');
+        
+        foreach($asd as &$valor) {
+            $asdy = $valor;
+        };
 
         return $asd2;
 

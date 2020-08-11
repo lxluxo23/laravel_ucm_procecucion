@@ -121,9 +121,9 @@
         </div>
 </div>
 
-
+                
 <script>
-
+ 
 
     window.addEventListener("load",function(){
         var asd;
@@ -157,8 +157,17 @@
             if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
                
       
-                asd="{{$validacion_fecha::valorprueba()}}";
-                alert("La fecha libre es : "+asd);
+         alert(
+                <?php 
+                
+                    echo $validacion_fecha::valorprueba();
+     
+                ?>
+
+                ); 
+                 
+           
+              
               
 
 
