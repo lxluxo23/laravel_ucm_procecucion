@@ -46,6 +46,9 @@
           <li class="nav-item">
           <a class="nav-link" href="{{ route('inicioadmin') }}">Administrador</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">Login</a>
+            </li>
         </ul>
       </div>
     </div>

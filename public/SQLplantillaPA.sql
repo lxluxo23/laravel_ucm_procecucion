@@ -235,7 +235,7 @@ END $$
 ---------------------------------------------------------------TABLA ARRIENDO--
 
 CREATE TABLE arriendo(
-ID_repeserva INT PRIMARY KEY,
+ID_repeserva INT PRIMARY KEY AUTO_INCREMENT,
 Fecha_reserva DATE NOT NULL,
 Fecha_ini_solicitada DATE NOT NULL,
 Fecha_fin_solicitada DATE NOT NULL,
@@ -243,8 +243,9 @@ Titular INT NOT NULL,
 Estado VARCHAR(15) NOT NULL,
 Tipo_pago INT NOT NULL,
 Valor_Total INT NOT NULL,
-id_espacio_trabajo NOT null  
+id_espacio_trabajo INT NOT NULL  
 );
+
 
 ---------------------------------------------------------------LAS FORANEAS DE ARRIENDO--
 

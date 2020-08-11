@@ -13,6 +13,10 @@ class LandingController extends Controller
         return view('usuario.pago');
 
     }
+
+    public function login (){
+        return view ('usuario.login');
+    }
     
     public function indexadmin(){
         return view('administrador.indexadmin');
