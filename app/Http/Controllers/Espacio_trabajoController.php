@@ -119,9 +119,9 @@ class Espacio_trabajoController extends Controller
         $asd2="2020-08-04";
         $asd3="2020-08-08";
 
-        $asd = DB::select("select fecha_ini_disp(?,?,?) as fec", [$asd1,$asd2,$asd3]);
+        $asd = DB::select('select fecha_ini_disp('.$asd1.','.$asd2.','.$asd3.')');
 
-        return $asd2;
+        return $asd;
 
     }
 
