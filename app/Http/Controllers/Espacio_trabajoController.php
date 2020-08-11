@@ -121,7 +121,7 @@ class Espacio_trabajoController extends Controller
 
         $asd = DB::select('select fecha_ini_disp('.$asd1.','.$asd2.','.$asd3.')');
 
-        return $asd;
+        return $asd2;
 
     }
 
