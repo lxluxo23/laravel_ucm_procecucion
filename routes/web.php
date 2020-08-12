@@ -43,6 +43,9 @@ Route::get ('/arreindodetalle/{id}','AdminController@detallearriendo')->name('de
 
 //-------------------------------- post ----------------------------------------------------------------------
 
+
+Route::post('logueame','LandingController@logueame')->name('logueame');
+
 Route::post('nuevousuariopost','LandingController@crearusuario')->name('crear_usuario');
 
 Route::post('crearespaciopost','Espacio_trabajoController@crear_espacio')->name('crear_espacio');
