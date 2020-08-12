@@ -113,6 +113,15 @@ class Espacio_trabajoController extends Controller
         return view('usuario.detaespacio',compact('dato_espacio'));
         
     }
+
+    public function white(Request $request){
+     
+    
+        $asde = DB::select("select fecha_ini_disp(".$request->texto0.",'".$request->texto1."','".$request->texto2."') as fec");
+        return view('usuario.white',compact('asde'));
+        
+    }
+
     public static function valorprueba(){
         
         $asd1=5;

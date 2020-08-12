@@ -157,14 +157,13 @@
             if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
                
       
-         alert(
-                <?php 
+                fetch(`../white?texto0=`+{{$item->id}}+`&texto1=2020-08-04&texto2=2020-08-09`,{method:'get'})
                 
-                    echo $validacion_fecha::valorprueba();
-     
-                ?>
-
-                ); 
+                .then(response => response.text() )
+                .then(html => {
+                    document.getElementById("descripcion").innerHTML += html
+                   alert(html);
+                })    
                  
            
               
