@@ -16,6 +16,8 @@ Route::get('/modificarespacio/{id}','Espacio_trabajoController@modificarespacio'
 
 Route::get ('/detaespacio/{id}','Espacio_trabajoController@detaespacio')->name('detaespacio');
 
+Route::get ('/white','Espacio_trabajoController@white')->name('white');
+
 Route::get('eliminarespacio/{id}','Espacio_trabajoController@eliminar_espacio')->name('eliminarespacio');
 
 //----------------------- Rutas usuario ----------------------------------------------------------------

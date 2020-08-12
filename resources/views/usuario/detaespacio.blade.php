@@ -30,14 +30,14 @@
                                         
                                     <div class="col-md-6">
                                         <img src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
+                                        <label id="capsulatemp"></label>
                                     </div>
+                                    
                                     
                                     <div class="col-md-6">
                                         <label for="descripcion" style="font-size: 1.1rem"><b>Descripcion</b></label>
                                                   
                                         <label class="form-control" style="border: 1px solid  #2ba7e044; height: 6.5em; font-size: 1.1rem; overflow: auto" id="descripcion" name="descripcion" rows="5">
-                                           
-                                            
                                             {{$item->descripcion}}
                                         </label>
                                         <br>
@@ -61,6 +61,7 @@
                                         </div>  
                                         <br><br>
                                         <button class="btn btn-success btn-lg btn-block" type="submit" data-toggle="modal" data-target="#exampleModal">Arrendar espacio</button>
+                                       
                                         
                                         <!-- Modal -->
                                         
@@ -126,7 +127,7 @@
  
 
     window.addEventListener("load",function(){
-        var asd;
+        var fecha_ini_res;
         var now = new Date();
         var day = ("0" + now.getDate()).slice(-2);
         var month = ("0" + (now.getMonth() + 1)).slice(-2);
@@ -155,22 +156,23 @@
             
 
             if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
-               
-      
-         alert(
-                <?php 
+              
+                fetch(`../white?texto0=+{{$item->id_espacio_trabajo}}+&texto1=${document.getElementById("fini").value}&texto2=${document.getElementById("ffin").value}`,{method:'get'})
                 
-                    echo $validacion_fecha::valorprueba();
-     
-                ?>
-
-                ); 
+                .then(response => response.text() )
+                .then(html => {
+                    document.getElementById("capsulatemp").innerHTML += html
+                    fecha_ini_res = document.getElementById("capsulatemp").textContent;
+                    if(String(fecha_ini_res) == `2020-08-17`){
+                        alert("esigual");  
+                    }else{
+                        alert("no es igual");  
+                    }
+                                  
+                })    
                  
-           
+               
               
-              
-
-
 
             }
 
