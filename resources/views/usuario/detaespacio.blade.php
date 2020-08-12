@@ -162,11 +162,17 @@
                 .then(response => response.text() )
                 .then(html => {
                     document.getElementById("capsulatemp").innerHTML += html
+
                     fecha_ini_res = document.getElementById("capsulatemp").textContent;
-                    if(String(fecha_ini_res) == `2020-08-17`){
-                        alert("esigual");  
+
+                    var fecha_ini_resf = new Date (document.getElementById("ffin").value);
+            
+
+                    if(fecha_ini_res == document.getElementById("fini").value){
+                        alert("Dirigiendo a detalle pre compra");  
                     }else{
-                        alert("no es igual");  
+                        document.getElementById("capsulatemp").textContent = "Fecha no disponible, la mas proxima a la consultada seria desde "+fecha_ini_res+" hasta el "+fecha_ini_resf+" ";
+
                     }
                                   
                 })    
