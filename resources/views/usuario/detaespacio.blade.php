@@ -157,7 +157,7 @@
             if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
                
       
-                fetch(`../white?texto0=`+{{$item->id}}+`&texto1=2020-08-04&texto2=2020-08-09`,{method:'get'})
+                fetch(`../white?texto0=+{{$item->id_espacio_trabajo}}+&texto1=${document.getElementById("fini").value}&texto2=${document.getElementById("ffin").value}`,{method:'get'})
                 
                 .then(response => response.text() )
                 .then(html => {
