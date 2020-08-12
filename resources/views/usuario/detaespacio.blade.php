@@ -164,14 +164,23 @@
                     document.getElementById("capsulatemp").innerHTML += html
 
                     fecha_ini_res = document.getElementById("capsulatemp").textContent;
+                    var fecha_fin_res;
 
-                    var fecha_ini_resf = new Date (document.getElementById("ffin").value);
-            
+                    var fecha_ini_resfini = new Date (document.getElementById("fini").value);
+                    var fecha_ini_resffin = new Date (document.getElementById("ffin").value);
+
+                    var milisegDia = 24*60*60*1000;
+                    var milisegTrans= Math.abs(fecha_ini_resfini.getTime()- fecha_ini_resffin.getTime());
+                    var diasTrans = Math.round(milisegTrans/milisegDia);
+                    
+                    fecha_fin_res= new Date(fecha_ini_res)+diasTrans;
+
+                    
 
                     if(fecha_ini_res == document.getElementById("fini").value){
                         alert("Dirigiendo a detalle pre compra");  
                     }else{
-                        document.getElementById("capsulatemp").textContent = "Fecha no disponible, la mas proxima a la consultada seria desde "+fecha_ini_res+" hasta el "+fecha_ini_resf+" ";
+                        document.getElementById("capsulatemp").textContent = "Fecha no disponible, la mas proxima a la consultada seria desde "+fecha_ini_res+" hasta el "+fecha_fin_res+" ";
 
                     }
                                   
