@@ -30,7 +30,7 @@
                                 
                                         
                                     <div class="col-md-6">
-                                        <img src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
+                                        <img src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta" style="margin-top:10px;margin-left:20px;border-radius: 10px; width: 93%">
                                         <label id="capsulatemp" style="text-align: center; font-size: 1.5rem"></label>
                                     </div>
                                     
@@ -66,11 +66,11 @@
                                         
                                         <!-- Modal -->
                                         
-                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" style="margin-top:50px ;background: rgba(9, 20, 36, 0.5)" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-xl">
                                               <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Desea arrendar {{$item->nombre_cat}}?</h5>
+                                                <div class="modal-header" style="background: #0066ff9b">
+                                                    <h5 class="modal-title" id="exampleModalLabel" style="color: whitesmoke">Desea arrendar {{$item->nombre_cat}}?</h5>
                                                     
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -86,8 +86,8 @@
                                                                 <div class="row">
 
                                                                     <div class="col-md-6">
-                                                                        <img style="width: 90%" src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
-                                                                        <h6>{{$item->descripcion}}.</h6>
+                                                                        <img style="border-radius: 10px; width: 90%" src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
+                                                                        <h5 style="text-align: justify; width: 90%">{{$item->descripcion}}.</h5>
                                                                     </div>                                                             
                                                                     <div class="col-md-6">
                                                                         
@@ -95,18 +95,18 @@
                                                                         <br>
                                                                         <h4>Numero de Sala: {{$item->id_espacio_trabajo}}.</h4>
                                                                         <br>
-                                                                        <h5 style="color:red">El número de sala es importante guardarlo ya que será el número con el que
+                                                                        <h5 style="color:red; text-align:justify">El número de sala es importante guardarlo ya que será el número con el que
                                                                         se identifique la sala que arrendará a continuación. </h5>
 
                                                                         <h6 id="rango_f"></h6>
                                                                         
                                                                         <br>
-                                                                        <div style="margin-top:60px; margin-left:140px; border-radius: 10px; border: 1px solid #2a2a2a">
+                                                                        <div style="margin-top:60px; margin-left:140px; border-radius: 10px; border: 1px solid #2a2a2aa8">
                                                                         <h6 style="margin-top:20px; margin-left:20px; text-aling:right;">Precio x dia: ${{$item->precio}}</h6>
-                                                                        <br>
+                                                                        
                                                                         <h6 style="margin-left:20px;" id="DiasSolici"></h6>
                                                                         <br>
-                                                                        <h5 style="margin-left:20px; margin-bottom:20px;" id="TotalPago"></h5>
+                                                                        <h5 style="margin-left:20px; margin-bottom:20px; text-align:right; margin-right:20px " id="TotalPago"></h5>
 
                                                                         </div>
                                                                     </div>                                                                                                                                     
