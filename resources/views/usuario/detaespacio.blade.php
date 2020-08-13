@@ -21,6 +21,7 @@
                         @endif
                         @csrf
                         @foreach ($dato_espacio as $item)
+                        @endforeach
                         <br>
                         <h4 class="mb-3" style="font-size: 1.5rem">Características de {{$item->nombre_cat}}</h4>
                         <br>
@@ -113,7 +114,6 @@
                                 
                                 
                             </div>
-                        @endforeach
                         
                     </div>
                     
@@ -129,63 +129,60 @@
 
     function validar_horario(){
         document.getElementById('boton_arriendo').disabled = false;
-            document.getElementById("capsulatemp").innerHTML = ""
-            fetch(`../white?texto0=+{{$item->id_espacio_trabajo}}+&texto1=${document.getElementById("fini").value}&texto2=${document.getElementById("ffin").value}`,{method:'get'})
+        document.getElementById("capsulatemp").innerHTML = ""
+        fetch(`../white?texto0=+{{$item->id_espacio_trabajo}}+&texto1=${document.getElementById("fini").value}&texto2=${document.getElementById("ffin").value}`,{method:'get'})
         
-            .then(response => response.text() )
-            .then(html => {
-            document.getElementById("capsulatemp").innerHTML += html
+        .then(response => response.text() )
+        .then(html => {
+        document.getElementById("capsulatemp").innerHTML += html
 
-            fecha_ini_res = document.getElementById("capsulatemp").textContent;
+        fecha_ini_res = document.getElementById("capsulatemp").textContent;
 
-            var fecha_ini_resfini = new Date (document.getElementById("fini").value);
-            var fecha_ini_resffin = new Date (document.getElementById("ffin").value);
+        var fecha_ini_resfini = new Date (document.getElementById("fini").value);
+        var fecha_ini_resffin = new Date (document.getElementById("ffin").value);
 
-            var milisegDia = 24*60*60*1000;
-            var milisegTrans= Math.abs(fecha_ini_resfini.getTime()- fecha_ini_resffin.getTime());
-            var diasTrans = Math.round(milisegTrans/milisegDia);
-            cant_dias=diasTrans;
+        var milisegDia = 24*60*60*1000;
+        var milisegTrans= Math.abs(fecha_ini_resfini.getTime()- fecha_ini_resffin.getTime());
+        var diasTrans = Math.round(milisegTrans/milisegDia);
+        cant_dias=diasTrans;
                     
-            var TuFecha = new Date(fecha_ini_res);
-            TuFecha.setDate(TuFecha.getDate() + diasTrans);
+        var TuFecha = new Date(fecha_ini_res);
+        TuFecha.setDate(TuFecha.getDate() + diasTrans);
                     
-            var dd = TuFecha.getDate() + 1;
-            var mm = (TuFecha.getMonth() + 1);
-            var yyyy = TuFecha.getFullYear();
+        var dd = TuFecha.getDate() + 1;
+        var mm = (TuFecha.getMonth() + 1);
+        var yyyy = TuFecha.getFullYear();
 
-            if(dd>31){
-                dd='1'
-                mm=mm+1
-            }
+        if(dd>31){
+            dd='1'
+            mm=mm+1
+        }
 
-            if(mm>12){
-                yyyy=yyyy+1
-            }
+        if(mm>12){
+            yyyy=yyyy+1
+        }
 
-            if(dd<10) {
-                dd='0'+dd;
-            } 
+        if(dd<10) {
+            dd='0'+dd;
+        } 
 
-            if(mm<10){
-                mm='0'+mm;
-            } 
+        if(mm<10){
+            mm='0'+mm;
+        } 
 
-            var fecha_fin_res = yyyy + '-' + mm + '-' + dd;
-
-
+        var fecha_fin_res = yyyy + '-' + mm + '-' + dd;
                   
-            if(fecha_ini_res == document.getElementById("fini").value){
-                document.getElementById('boton_arriendo').disabled = false;  
-                document.getElementById('fini').style="background: default"
-                document.getElementById('ffin').style="background: default"              
-            }else{
-                document.getElementById('fini').style="background: #fbb9afcc"
-                document.getElementById('ffin').style="background: #fbb9afcc"
-                document.getElementById("capsulatemp").textContent = "Fecha no disponible, la más proxima a la consultada seria desde "+fecha_ini_res+" hasta el "+fecha_fin_res+" ";
-                document.getElementById('boton_arriendo').disabled = true;
-            }
-                                  
-            })  
+        if(fecha_ini_res == document.getElementById("fini").value){
+            document.getElementById('boton_arriendo').disabled = false;  
+            document.getElementById('fini').style="background: default"
+            document.getElementById('ffin').style="background: default"              
+        }else{
+            document.getElementById('fini').style="background: #fbb9afcc"
+            document.getElementById('ffin').style="background: #fbb9afcc"
+            document.getElementById("capsulatemp").textContent = "Fecha no disponible, la más próxima a la consultada seria desde "+fecha_ini_res+" hasta el "+fecha_fin_res+" ";
+            document.getElementById('boton_arriendo').disabled = true;
+        }                           
+        })  
 
     }
 
@@ -216,8 +213,7 @@
         if ((document.getElementById('fini').value)>(document.getElementById('ffin').value)){
             $("#ffin").val("");
             alert("La fecha no puede ser menor a la inicial, vuelva a ingresar")
-            document.getElementById('boton_arriendo').disabled = true;
-            
+            document.getElementById('boton_arriendo').disabled = true;          
         };
 
         if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
