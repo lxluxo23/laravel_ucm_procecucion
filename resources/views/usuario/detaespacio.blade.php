@@ -30,7 +30,7 @@
                                         
                                     <div class="col-md-6">
                                         <img src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
-                                        <label id="capsulatemp"></label>
+                                        <label id="capsulatemp" style="text-align: center; font-size: 1.5rem"></label>
                                     </div>
                                     
                                     
@@ -60,7 +60,7 @@
                                             </div>   
                                         </div>  
                                         <br><br>
-                                        <button class="btn btn-success btn-lg btn-block" type="submit" data-toggle="modal" data-target="#exampleModal">Arrendar espacio</button>
+                                        <button class="btn btn-success btn-lg btn-block" disabled="true" type="submit" data-toggle="modal" data-target="#exampleModal" id="boton_arriendo">Arrendar espacio</button>
                                        
                                         
                                         <!-- Modal -->
@@ -76,7 +76,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <label style="margin-bottom: 2em">Porfavor complete los datos a continuación</label>
+                                                    <label style="margin-bottom: 2em">Confirme la compra de arriendo</label>
                                                 
                                                     <!-- Formulario Modal -->
                                                     <form >
@@ -125,6 +125,70 @@
                 
 <script>
  
+    var cant_dias;
+
+    function validar_horario(){
+        document.getElementById('boton_arriendo').disabled = false;
+            document.getElementById("capsulatemp").innerHTML = ""
+            fetch(`../white?texto0=+{{$item->id_espacio_trabajo}}+&texto1=${document.getElementById("fini").value}&texto2=${document.getElementById("ffin").value}`,{method:'get'})
+        
+            .then(response => response.text() )
+            .then(html => {
+            document.getElementById("capsulatemp").innerHTML += html
+
+            fecha_ini_res = document.getElementById("capsulatemp").textContent;
+
+            var fecha_ini_resfini = new Date (document.getElementById("fini").value);
+            var fecha_ini_resffin = new Date (document.getElementById("ffin").value);
+
+            var milisegDia = 24*60*60*1000;
+            var milisegTrans= Math.abs(fecha_ini_resfini.getTime()- fecha_ini_resffin.getTime());
+            var diasTrans = Math.round(milisegTrans/milisegDia);
+            cant_dias=diasTrans;
+                    
+            var TuFecha = new Date(fecha_ini_res);
+            TuFecha.setDate(TuFecha.getDate() + diasTrans);
+                    
+            var dd = TuFecha.getDate() + 1;
+            var mm = (TuFecha.getMonth() + 1);
+            var yyyy = TuFecha.getFullYear();
+
+            if(dd>31){
+                dd='1'
+                mm=mm+1
+            }
+
+            if(mm>12){
+                yyyy=yyyy+1
+            }
+
+            if(dd<10) {
+                dd='0'+dd;
+            } 
+
+            if(mm<10){
+                mm='0'+mm;
+            } 
+
+            var fecha_fin_res = yyyy + '-' + mm + '-' + dd;
+
+
+                  
+            if(fecha_ini_res == document.getElementById("fini").value){
+                document.getElementById('boton_arriendo').disabled = false;  
+                document.getElementById('fini').style="background: default"
+                document.getElementById('ffin').style="background: default"              
+            }else{
+                document.getElementById('fini').style="background: #fbb9afcc"
+                document.getElementById('ffin').style="background: #fbb9afcc"
+                document.getElementById("capsulatemp").textContent = "Fecha no disponible, la más proxima a la consultada seria desde "+fecha_ini_res+" hasta el "+fecha_fin_res+" ";
+                document.getElementById('boton_arriendo').disabled = true;
+            }
+                                  
+            })  
+
+    }
+
 
     window.addEventListener("load",function(){
         var fecha_ini_res;
@@ -134,63 +198,31 @@
         var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
         $("#fini").val(today);
   
-        document.getElementById("fini").addEventListener("change",function(){
-            if (today>(document.getElementById('fini').value) || (document.getElementById('ffin').value) && (document.getElementById('fini').value)>(document.getElementById('ffin').value)){
-                $("#fini").val("");
-                alert("La fecha no puede ser menor a la de hoy o mayor a la fecha final, vuelva a ingresar")
-            };
+    document.getElementById("fini").addEventListener("change",function(){
+        if (today>(document.getElementById('fini').value) || (document.getElementById('ffin').value) && (document.getElementById('fini').value)>(document.getElementById('ffin').value)){
+            $("#fini").val("");
+            alert("La fecha no puede ser menor a la de hoy o mayor a la fecha final, vuelva a ingresar")
+            document.getElementById('boton_arriendo').disabled = true;
+        };
 
-            if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
-                alert("consultando...");
-            };
-        })
+        if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
+            validar_horario();
+        };
 
-        document.getElementById("ffin").addEventListener("change",function(){
+    })
+
+    document.getElementById("ffin").addEventListener("change",function(){
             
-            if ((document.getElementById('fini').value)>(document.getElementById('ffin').value)){
-                $("#ffin").val("");
-                alert("La fecha no puede ser menor a la inicial, vuelva a ingresar")
-            };
-
-
+        if ((document.getElementById('fini').value)>(document.getElementById('ffin').value)){
+            $("#ffin").val("");
+            alert("La fecha no puede ser menor a la inicial, vuelva a ingresar")
+            document.getElementById('boton_arriendo').disabled = true;
             
+        };
 
-            if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
-              
-                fetch(`../white?texto0=+{{$item->id_espacio_trabajo}}+&texto1=${document.getElementById("fini").value}&texto2=${document.getElementById("ffin").value}`,{method:'get'})
-                
-                .then(response => response.text() )
-                .then(html => {
-                    document.getElementById("capsulatemp").innerHTML += html
-
-                    fecha_ini_res = document.getElementById("capsulatemp").textContent;
-                    var fecha_fin_res;
-
-                    var fecha_ini_resfini = new Date (document.getElementById("fini").value);
-                    var fecha_ini_resffin = new Date (document.getElementById("ffin").value);
-
-                    var milisegDia = 24*60*60*1000;
-                    var milisegTrans= Math.abs(fecha_ini_resfini.getTime()- fecha_ini_resffin.getTime());
-                    var diasTrans = Math.round(milisegTrans/milisegDia);
-                    
-                    fecha_fin_res= new Date(fecha_ini_res)+diasTrans;
-
-                    
-
-                    if(fecha_ini_res == document.getElementById("fini").value){
-                        alert("Dirigiendo a detalle pre compra");  
-                    }else{
-                        document.getElementById("capsulatemp").textContent = "Fecha no disponible, la mas proxima a la consultada seria desde "+fecha_ini_res+" hasta el "+fecha_fin_res+" ";
-
-                    }
-                                  
-                })    
-                 
-               
-              
-
-            }
-
+        if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
+            validar_horario()  
+        }
         })
 
     })
