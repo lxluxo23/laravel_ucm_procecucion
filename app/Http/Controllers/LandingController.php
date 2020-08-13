@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App;
 use Illuminate\Support\Facades\DB;
-
+use Auth;
+use Illuminate\Support\Collection;
 class LandingController extends Controller
 {
 
@@ -17,8 +18,35 @@ class LandingController extends Controller
     public function login (){
         return view ('usuario.login');
     }
-    public function logueame(){
+    public function logueame(Request $login){
         
+
+        $usuario=$login->email;
+        $contraseña=$login->password;
+
+        $pass=md5($contraseña);
+
+        //echo $pass;
+        //$eliminar_usuario=DB::delete('call eliminar_usuario('.$id.')');
+
+        $sql= DB::select('call loguear(?,?)',[$usuario,$pass]);
+
+        foreach($sql as $algo){
+            $validar=$algo->resultado;
+           
+        }
+        if ($validar==1){
+            session(['logueado' => 1]);
+            session(['email' => $usuario]);
+
+
+            return session('email');
+        }
+        elseif ($validar==0){
+
+
+            
+        }   
     }
     
     public function indexadmin(){
@@ -69,7 +97,7 @@ class LandingController extends Controller
 
             if ($valido == 1){
 
-            $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,$pass1,$tipo,$estado,$telefono,$email]);
+            $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,md5($pass1),$tipo,$estado,$telefono,$email]);
     
             return back()->with('mensaje','Agregado con exito ' );
 

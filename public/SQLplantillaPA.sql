@@ -64,6 +64,19 @@ BEGIN
 	DELETE FROM usuario WHERE rut=prut;
 END $$
 
+------------------------------------------------PROCEDIMIENTO LOGIN----------------------
+
+DELIMITER $$
+CREATE PROCEDURE loguear (
+pemail TEXT ,
+ppass TEXT
+)
+BEGIN 
+	declare resultado INT;
+	SELECT COUNT(*) INTO resultado FROM usuario WHERE email=pemail AND contrasena=ppass;
+	SELECT resultado;
+END$$
+
 
 ---------------------------------------------------------------------------------------------------------CATEGORIA-
 ------------------------------------------------CREAR TABLA CATEGORIA----------------------
