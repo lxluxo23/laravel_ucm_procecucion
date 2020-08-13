@@ -38,17 +38,27 @@
             </a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="{{ route('pago') }}">Pagar</a>
+            <a class="nav-link" href="{{ route('pago') }}">Pagar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Nuestro servicio</a>
           </li>
-          <li class="nav-item">
-          <a class="nav-link" href="{{ route('inicioadmin') }}">Administrador</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">Login</a>
+
+          @if (session('logueado')!=1)
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('login') }}">Login</a>
             </li>
+          @endif
+          @if (session('logueado')==1)
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('logout') }}">Cerrar sesión</a>
+            </li>
+          @endif
+          @if (session('admin')==1)
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('inicioadmin') }}">Administrador</a>
+            </li>
+          @endif
         </ul>
       </div>
     </div>

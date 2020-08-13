@@ -72,8 +72,21 @@ pemail TEXT ,
 ppass TEXT
 )
 BEGIN 
-	declare resultado INT;
-	SELECT COUNT(*) INTO resultado FROM usuario WHERE email=pemail AND contrasena=ppass;
+	DECLARE resultado INT;
+	DECLARE tipo_usuario INT;
+	SELECT COUNT(*) INTO resultado FROM usuario WHERE email=pemail AND contrasena=ppass;	
+	SELECT COUNT(*) INTO tipo_usuario FROM usuario WHERE email=pemail AND contrasena=ppass AND tipo='Administrador';
+	
+	IF resultado=1 AND tipo_usuario=0 THEN 
+		 SET resultado=1;
+	
+	ELSEIF resultado=1 AND tipo_usuario=1 THEN
+		SET resultado=2;
+		
+	ELSE
+		SET resultado=3;
+	END IF;
+
 	SELECT resultado;
 END$$
 

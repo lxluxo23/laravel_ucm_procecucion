@@ -36,21 +36,39 @@ class LandingController extends Controller
            
         }
         if ($validar==1){
+            
+            session(['logueado' => 1]);
+            session(['email' => $usuario]);
+            return redirect('/');
+
+            //return session('email');
+        }
+        elseif ($validar==2){
+
+            session(['admin' =>1]);
             session(['logueado' => 1]);
             session(['email' => $usuario]);
 
-
-            return session('email');
-        }
-        elseif ($validar==0){
-
-
+            return view('administrador.indexadmin');
+            //return session('email');
             
-        }   
+        }
+        
+        
+        else{
+            return back()
+            ->withErrors(['email' => 'Error al iniciar sesión  verifique mail y contraseña'])
+            ->withInput(['email'=>$usuario]);
+        }
     }
     
     public function indexadmin(){
         return view('administrador.indexadmin');
+    }
+
+    public function logout(){
+        session()->flush();
+        return redirect('/');
     }
 
     public function nuevousuario(){
