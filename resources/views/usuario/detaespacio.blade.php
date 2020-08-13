@@ -77,7 +77,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <label style="margin-bottom: 2em">Confirme la compra de arriendo</label>
+                                                    <h4 style="margin-bottom: 2em">Verifique los datos de la compra de arriendo</h4>
                                                 
                                                     <!-- Formulario Modal -->
                                                     <form >
@@ -86,12 +86,29 @@
                                                                 <div class="row">
 
                                                                     <div class="col-md-6">
-                                                                        <img style="background-size: 1rem" src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
-                                                                        <label>{{$item->descripcion}}</label>
+                                                                        <img style="width: 90%" src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
+                                                                        <h6>{{$item->descripcion}}.</h6>
                                                                     </div>                                                             
                                                                     <div class="col-md-6">
-                                                                       
-                                                                        <label></label>
+                                                                        
+                                                                        <h2>{{$item->nombre_cat}}</h2><h6>Capacidad: {{$item->capacidad}} personas.</h6>
+                                                                        <br>
+                                                                        <h4>Numero de Sala: {{$item->id_espacio_trabajo}}.</h4>
+                                                                        <br>
+                                                                        <h5 style="color:red">El número de sala es importante guardarlo ya que será el número con el que
+                                                                        se identifique la sala que arrendará a continuación. </h5>
+
+                                                                        <h6 id="rango_f"></h6>
+                                                                        
+                                                                        <br>
+                                                                        <div style="margin-top:60px; margin-left:140px; border-radius: 10px; border: 1px solid #2a2a2a">
+                                                                        <h6 style="margin-top:20px; margin-left:20px; text-aling:right;">Precio x dia: ${{$item->precio}}</h6>
+                                                                        <br>
+                                                                        <h6 style="margin-left:20px;" id="DiasSolici"></h6>
+                                                                        <br>
+                                                                        <h5 style="margin-left:20px; margin-bottom:20px;" id="TotalPago"></h5>
+
+                                                                        </div>
                                                                     </div>                                                                                                                                     
                       
                                                                 </div>
@@ -111,10 +128,8 @@
                                         </div>
 
                                     </div>
-                                
-                                
-                            </div>
-                        
+                                                              
+                            </div>                      
                     </div>
                     
                 </div>
@@ -144,12 +159,13 @@
         var milisegDia = 24*60*60*1000;
         var milisegTrans= Math.abs(fecha_ini_resfini.getTime()- fecha_ini_resffin.getTime());
         var diasTrans = Math.round(milisegTrans/milisegDia);
+        diasTrans = diasTrans+1;
         cant_dias=diasTrans;
                     
         var TuFecha = new Date(fecha_ini_res);
         TuFecha.setDate(TuFecha.getDate() + diasTrans);
                     
-        var dd = TuFecha.getDate() + 1;
+        var dd = TuFecha.getDate();
         var mm = (TuFecha.getMonth() + 1);
         var yyyy = TuFecha.getFullYear();
 
@@ -175,8 +191,12 @@
         if(fecha_ini_res == document.getElementById("fini").value){
             document.getElementById('boton_arriendo').disabled = false;  
             document.getElementById('fini').style="background: default"
-            document.getElementById('ffin').style="background: default"              
+            document.getElementById('ffin').style="background: default"  
+            document.getElementById("capsulatemp").innerHTML = ""           
         }else{
+            $("#ffin").val("");
+            $("#fini").val("");
+            
             document.getElementById('fini').style="background: #fbb9afcc"
             document.getElementById('ffin').style="background: #fbb9afcc"
             document.getElementById("capsulatemp").textContent = "Fecha no disponible, la más próxima a la consultada seria desde "+fecha_ini_res+" hasta el "+fecha_fin_res+" ";
@@ -195,31 +215,43 @@
         var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
         $("#fini").val(today);
   
-    document.getElementById("fini").addEventListener("change",function(){
-        if (today>(document.getElementById('fini').value) || (document.getElementById('ffin').value) && (document.getElementById('fini').value)>(document.getElementById('ffin').value)){
-            $("#fini").val("");
-            alert("La fecha no puede ser menor a la de hoy o mayor a la fecha final, vuelva a ingresar")
-            document.getElementById('boton_arriendo').disabled = true;
-        };
+        document.getElementById("fini").addEventListener("change",function(){
+            if (today>(document.getElementById('fini').value) || (document.getElementById('ffin').value) && (document.getElementById('fini').value)>(document.getElementById('ffin').value)){
+                $("#fini").val("");
+                
+                alert("La fecha no puede ser menor a la de hoy o mayor a la fecha final, vuelva a ingresar")
+                document.getElementById('boton_arriendo').disabled = true;
+            };
 
-        if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
-            validar_horario();
-        };
+            if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
+                validar_horario();
+            };
 
-    })
-
-    document.getElementById("ffin").addEventListener("change",function(){
-            
-        if ((document.getElementById('fini').value)>(document.getElementById('ffin').value)){
-            $("#ffin").val("");
-            alert("La fecha no puede ser menor a la inicial, vuelva a ingresar")
-            document.getElementById('boton_arriendo').disabled = true;          
-        };
-
-        if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
-            validar_horario()  
-        }
         })
 
+        document.getElementById("ffin").addEventListener("change",function(){
+                
+            if ((document.getElementById('fini').value)>(document.getElementById('ffin').value)){
+                $("#ffin").val("");
+                alert("La fecha no puede ser menor a la inicial, vuelva a ingresar")
+                document.getElementById('boton_arriendo').disabled = true;          
+            };
+
+            if((document.getElementById('ffin').value) && (document.getElementById('fini').value)){
+                validar_horario()  
+            }
+            })
+
+        document.getElementById("boton_arriendo").addEventListener("click",function(){
+            document.getElementById("rango_f").textContent= 'Desde '+document.getElementById("fini").value+ ' Hasta ' +document.getElementById("ffin").value;
+            document.getElementById("DiasSolici").textContent = 'Días solicitados: '+ cant_dias;
+            document.getElementById("TotalPago").textContent = 'Total: $'+ (cant_dias)*({{$item->precio}});
+            
+            
+        })
+        
+
     })
+
+
 </script>
