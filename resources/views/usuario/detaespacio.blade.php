@@ -79,7 +79,7 @@
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <div style="background: rgba(203, 227, 255, 0.295); width:48%; height:100%; position:absolute;"></div>
+                                                <div style="background: rgba(203, 227, 255, 0.295); width:100%; height:100%; position:absolute;"></div>
                                                 <form method="POST" action="{{route('agregararriendo')}}" accept-charset="UTF-8" enctype="multipart/form-data">
                                                     
                                                     @csrf

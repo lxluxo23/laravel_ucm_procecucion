@@ -5,8 +5,8 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Espacios de trabajo</h1>
-    <p class="mb-4">Modifique o elimine seleccionando los botones a la derecha en la fila correspondiente al espacio de trabajo.</p>
+    <h1 class="h3 mb-2 text-gray-800">Arriendos</h1>
+    <p class="mb-4">Elimine seleccionando el boton a la derecha en la fila correspondiente al arriendo.</p>
     @if(session('mensaje'))
 
       <div class="alert alert-success" onclick="window.close()"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -18,7 +18,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Listado de Espacios</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Listado de Arriendo</h6>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -26,14 +26,14 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Capacidad</th>
-                <th>categoria</th>
-                <th>Descripcion</th>
+                <th>Fecha de reserva</th>
+                <th>Fecha inicio</th>
+                <th>Fecha final</th>
+                <th>Titular</th>
                 <th>Estado</th>
-                <th>precio</th>
-                <th>Imagen</th>
-                <th>precio</th>
-                <th>Imagen</th>
+                <th>Tipo de pago</th>
+                <th>Total</th>
+                
                 <th></th>
               </tr>
             </thead>

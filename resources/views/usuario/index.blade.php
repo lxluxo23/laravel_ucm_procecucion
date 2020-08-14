@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="assets/landing/css/estilo.css">
 @extends('layouts.landing')
 @section('contenido')
+
 <div class="contenedordeinicio">
   <div class="fondoblancotransp">
   </div>
