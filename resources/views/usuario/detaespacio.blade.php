@@ -67,27 +67,34 @@
                                         <!-- Modal -->
                                         
                                         <div class="modal fade" id="exampleModal" tabindex="-1" style="margin-top:50px ;background: rgba(9, 20, 36, 0.5)" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            
                                             <div class="modal-dialog modal-xl">
+                                                
                                               <div class="modal-content">
-                                                <div class="modal-header" style="background: #0066ff9b">
+                                                
+                                                <div class="modal-header" style="z-index:90;background: #30acb8">
                                                     <h5 class="modal-title" id="exampleModalLabel" style="color: whitesmoke">Desea arrendar {{$item->nombre_cat}}?</h5>
                                                     
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
+                                                <div style="background: rgba(203, 227, 255, 0.295); width:48%; height:100%; position:absolute;"></div>
                                                 <form method="POST" action="{{route('agregararriendo')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+                                                    
                                                     @csrf
                                                 <div class="modal-body">
+                                                    
                                                     <h4 style="margin-bottom: 2em">Verifique los datos de la compra de arriendo</h4>
                                                 
                                                     <!-- Formulario Modal -->
                                                     
                                                     
                                                         <div class="container-fluid">
+                                                            
                                                             <div class="col-md-12 order-md-1">
                                                                 
-                                                                <div class="row">
+                                                                <div class="row" >
 
                                                                     <div class="col-md-6">
                                                                         <img style="border-radius: 10px; width: 90%" src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta">
@@ -136,9 +143,9 @@
                                                         </div>
                                                     
                                                 </div>
-                                                <div class="modal-footer">
-                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                                  <button type="submit" class="btn btn-primary">Hacer compra</button>
+                                                <div class="modal-footer" style="width:100%;position: absolute;background: #ade5eb; z-index: 100">
+                                          
+                                                  <button type="submit" class="btn btn-primary">Realizar compra</button>
                                                 
                                                 </div>
                                             </form>
