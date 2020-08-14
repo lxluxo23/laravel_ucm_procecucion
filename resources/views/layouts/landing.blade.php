@@ -21,7 +21,7 @@
 </head>
 
 <body>
-
+  php 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container">
@@ -97,14 +97,9 @@
                         <div class="panel-heading">
                             <div class="h1 panel-title">Acceso</div>
                         </div>
-                        <div class="panel-body">
-                    
-                        @if (session('logueado')==1)
-                        <script>window.location = "/";</script>
-                        @endif   
-                        <form method="POST" action="{{route('logueame')}}" >
-            
-                            {{ csrf_field() }}
+                        <div class="panel-body">          
+                        <form method="POST" action="{{route('logueame')}}">
+                            {{csrf_field()}}
                                 <div class="form-group {{$errors->has('email') ? 'has-error':''}}">
                                     <label for="email">Email</label>
                                     <input class="form-control" type="email" name="email" placeholder="Ingresa Email">
@@ -121,12 +116,6 @@
                 </div>   
             </div>
         </div>
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Hacer compra</button>
       </div>
     </div>
   </div>
