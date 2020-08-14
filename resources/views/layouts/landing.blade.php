@@ -99,9 +99,7 @@
                         </div>
                         <div class="panel-body">
                     
-                        @if (session('logueado')==1)
-                        <script>window.location = "/";</script>
-                        @endif   
+                         
                         <form method="POST" action="{{route('logueame')}}" >
             
                             {{ csrf_field() }}
