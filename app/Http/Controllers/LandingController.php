@@ -193,15 +193,10 @@ class LandingController extends Controller
     }
 
 
-    public function validar_horario($id,$fini,$ffin){
-        $hr = DB::select('call calcular_horario_disp(5,2020-08-17,2020-08-19,@temp)');
-        return $hr;
-
-    }
-
-    public function prueb(){
-     
-        return "asd";
+    public function agregararriendo(Request $agregar_arriendo){
+        
+        $datos = DB::select("call agregar_arriendo('2020-09-29','2020-09-30',18683137,34990,5)");
+        return back()->with('mensaje','Reserva realizada con éxito! lo estaremos esperando!');
 
     }
 

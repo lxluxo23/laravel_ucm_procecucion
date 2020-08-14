@@ -82,9 +82,6 @@ class Espacio_trabajoController extends Controller
 
     public function crear_espacio (Request $agregar_espacio){
 
-        //$id_espacio = $agregar_espacio->ID;
-
-
         $file = $agregar_espacio->file('file');
 
         $nombre = $file->getClientOriginalName();

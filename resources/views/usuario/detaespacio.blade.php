@@ -76,13 +76,17 @@
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
+                                                <form method="POST" action="{{route('agregararriendo')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+                                                    @csrf
                                                 <div class="modal-body">
                                                     <h4 style="margin-bottom: 2em">Verifique los datos de la compra de arriendo</h4>
                                                 
                                                     <!-- Formulario Modal -->
-                                                    <form >
+                                                    
+                                                    
                                                         <div class="container-fluid">
                                                             <div class="col-md-12 order-md-1">
+                                                                
                                                                 <div class="row">
 
                                                                     <div class="col-md-6">
@@ -115,14 +119,14 @@
                                                            
                                                             </div>
                                                         </div>
-                                                    </form>
-
-
+                                                    
                                                 </div>
                                                 <div class="modal-footer">
                                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                                  <button type="button" class="btn btn-primary">Hacer compra</button>
+                                                  <button type="submit" class="btn btn-primary">Hacer compra</button>
+                                                
                                                 </div>
+                                            </form>
                                               </div>
                                             </div>
                                         </div>
@@ -199,7 +203,7 @@
             
             document.getElementById('fini').style="background: #fbb9afcc"
             document.getElementById('ffin').style="background: #fbb9afcc"
-            document.getElementById("capsulatemp").textContent = "Fecha no disponible, la más próxima a la consultada seria desde "+fecha_ini_res+" hasta el "+fecha_fin_res+" ";
+            document.getElementById("capsulatemp").textContent = "Fecha no disponible, la más próxima a la consultada sería desde "+fecha_ini_res+" hasta el "+fecha_fin_res+" ";
             document.getElementById('boton_arriendo').disabled = true;
         }                           
         })  

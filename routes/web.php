@@ -58,3 +58,5 @@ Route::post('actualizarespacio','Espacio_trabajoController@actualizarespacio')->
 
 Route::post('actualizar_usuario','LandingController@actualizar_usuario')->name('actualizar_usuario');
 
+Route::post('agregararriendo','LandingController@agregararriendo')->name('agregararriendo');
+
