@@ -3,7 +3,7 @@
 @section('contenidoadmin')
 
 <div class="container-fluid">
-
+  <br><br>
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Espacios de trabajo</h1>
     <p class="mb-4">Modifique o elimine seleccionando los botones a la derecha en la fila correspondiente al espacio de trabajo.</p>

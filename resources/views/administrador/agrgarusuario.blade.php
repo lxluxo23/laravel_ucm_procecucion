@@ -4,10 +4,10 @@
 
 
 
-<div class="container-fluid">
-<div class="row">
+<div class="container-fluid" >
+<div class="row" >
    
-    <div class="col-md-12 order-md-1">
+    <div class="col-md-12 order-md-1" >
 
       @if(session('mensaje'))
 
@@ -26,7 +26,7 @@
     </div>
         
     @endif
-
+      <br><br>
       <h4 class="mb-3">Nuevo cliente</h4>
       <form action="{{ route('crear_usuario') }}" method="POST">
         @csrf

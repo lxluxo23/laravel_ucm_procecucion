@@ -3,7 +3,7 @@
 @section('contenidoadmin')
 
 <div class="container-fluid">
-
+    <br><br>
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">CLIENTES</h1>
     <p class="mb-4">Modifique o elimine seleccionando los botones a la derecha en la fila correspondiente al usuario.</p>
@@ -20,6 +20,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
       <div class="card-header py-3">
+        
         <h6 class="m-0 font-weight-bold text-primary">Listado de clientes</h6>
       </div>
       <div class="card-body">

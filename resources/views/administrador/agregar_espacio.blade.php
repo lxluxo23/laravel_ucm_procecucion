@@ -4,14 +4,14 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12 order-md-1">
-
+      <br><br>
         @if(session('mensaje'))
 
           <div class="alert alert-success" onclick="window.close()"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <strong>!</strong>
             {{ session('mensaje') }}
           </div>
-
+          
         @endif
         <h4 class="mb-3">Agregar Espacio de trabajo</h4>
         <form action ="{{ route('crear_espacio') }}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
