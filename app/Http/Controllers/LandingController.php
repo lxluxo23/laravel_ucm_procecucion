@@ -199,7 +199,7 @@ class LandingController extends Controller
         
         $diafinal=$agregar_arriendo->diafinal;
 
-        $titular=18683137; 
+        $titular=194746652; 
     
         $TotalPago=$agregar_arriendo->TotalPago;
     
