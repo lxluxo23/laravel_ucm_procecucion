@@ -95,23 +95,38 @@
                                                                     </div>                                                             
                                                                     <div class="col-md-6">
                                                                         
-                                                                        <h2>{{$item->nombre_cat}}</h2><h6>Capacidad: {{$item->capacidad}} personas.</h6>
+                                                                        
+                                                                        <h2 id="nombrecat" name="nombrecat">{{$item->nombre_cat}}</h2>
+                                                                        <h6>Capacidad: {{$item->capacidad}} personas.</h6>
+                                                                        
                                                                         <br>
-                                                                        <h4>Numero de Sala: {{$item->id_espacio_trabajo}}.</h4>
+                                                                        <div class="form-inline">
+                                                                            <h4>Número de Sala:&emsp14;</h4>
+                                                                            <input  type="text" readonly style="width:5rem; font-weight:500; line-height:1.2; margin-bottom:.5rem; text-decoration: none;border:none; font-size:1.5rem" id="idespaciotrabajo" name="idespaciotrabajo" value="{{$item->id_espacio_trabajo}}">
+                                                                        </div>
                                                                         <br>
                                                                         <h5 style="color:red; text-align:justify">El número de sala es importante guardarlo ya que será el número con el que
                                                                         se identifique la sala que arrendará a continuación. </h5>
-
-                                                                        <h6 id="rango_f"></h6>
+                                                                        <br>
+                                                                        <div class="form-inline">
+                                                                            <h6>Desde &emsp14;</h6>
+                                                                            <input type="text" readonly style="width:5.5rem; font-weight:500; line-height:1.2; margin-bottom:.5rem; text-decoration: none;border:none; font-size:1rem" id="diainicio" name="diainicio">
+                                                                            <h6>&emsp14; hasta &emsp14;</h6>
+                                                                            <input type="text" readonly style="width:5.5rem; font-weight:500; line-height:1.2; margin-bottom:.5rem; text-decoration: none;border:none; font-size:1rem" id="diafinal" name="diafinal">
+                                                                        </div>
                                                                         
                                                                         <br>
-                                                                        <div style="margin-top:60px; margin-left:140px; border-radius: 10px; border: 1px solid #2a2a2aa8">
+                                                                        <div style="background: #02ddff0c ;margin-top:60px; border-radius: 10px; border: 1px solid #2a2a2aa8">
                                                                         <h6 style="margin-top:20px; margin-left:20px; text-aling:right;">Precio x dia: ${{$item->precio}}</h6>
-                                                                        
-                                                                        <h6 style="margin-left:20px;" id="DiasSolici"></h6>
+                                                                        <div class="form-inline" style="margin-left:20px;">
+                                                                            <h6>Días solicitados:&emsp14;</h6>
+                                                                            <h6 id="DiasSolici" name="DiasSolici"></h6>
+                                                                        </div>
                                                                         <br>
-                                                                        <h5 style="margin-left:20px; margin-bottom:20px; text-align:right; margin-right:20px " id="TotalPago"></h5>
-
+                                                                        <div class="form-inline justify-content-end" style="margin-bottom:20px; text-align:right; margin-right:20px;">
+                                                                            <h5>Total: $&emsp14;</h5>
+                                                                            <input type="text" readonly style="background: #02ddff0c ; width:7rem; font-weight:500; line-height:1.2; margin-bottom:.5rem; text-decoration: none;border:none; font-size:1.5rem" id="TotalPago" name="TotalPago">
+                                                                        </div>
                                                                         </div>
                                                                     </div>                                                                                                                                     
                       
@@ -247,9 +262,12 @@
             })
 
         document.getElementById("boton_arriendo").addEventListener("click",function(){
-            document.getElementById("rango_f").textContent= 'Desde '+document.getElementById("fini").value+ ' Hasta ' +document.getElementById("ffin").value;
-            document.getElementById("DiasSolici").textContent = 'Días solicitados: '+ cant_dias;
-            document.getElementById("TotalPago").textContent = 'Total: $'+ (cant_dias)*({{$item->precio}});
+            document.getElementById("diainicio").value= document.getElementById("fini").value;
+            document.getElementById("diafinal").value= document.getElementById("ffin").value;
+
+            
+            document.getElementById("DiasSolici").textContent = cant_dias;
+            document.getElementById("TotalPago").value = (cant_dias)*({{$item->precio}});
             
             
         })

@@ -194,8 +194,21 @@ class LandingController extends Controller
 
 
     public function agregararriendo(Request $agregar_arriendo){
+
+        $diainicio=$agregar_arriendo->diainicio;
         
-        $datos = DB::select("call agregar_arriendo('2020-09-29','2020-09-30',18683137,34990,5)");
+        $diafinal=$agregar_arriendo->diafinal;
+
+        $titular=18683137; 
+    
+        $TotalPago=$agregar_arriendo->TotalPago;
+    
+        $idespaciotrabajo=$agregar_arriendo->idespaciotrabajo;
+    
+    
+    
+
+        $datos = DB::select("call agregar_arriendo(?,?,?,?,?)", [$diainicio,$diafinal,$titular,$TotalPago,$idespaciotrabajo]);
         return back()->with('mensaje','Reserva realizada con éxito! lo estaremos esperando!');
 
     }

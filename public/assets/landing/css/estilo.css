@@ -122,11 +122,11 @@
 @media (max-width: 768px){
 
     .FondoContenedorDetalleEspacio{
-        height: 1000px;
+        height: 80rem;
     }
     
     .FondoContenedorDetalleEspacio::before{
-        height: 960px;
+        height: 77.5rem;
     }
 
 }
