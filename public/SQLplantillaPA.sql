@@ -14,7 +14,7 @@ DROP PROCEDURE consulta_espacio_concategoria;
 CREATE TABLE usuario(
 rut INT NOT NULL PRIMARY KEY,
 nombre TEXT NOT NULL,
-contrasena VARCHAR(15) NOT NULL,
+contrasena VARCHAR(100) NOT NULL,
 tipo VARCHAR(15) NOT NULL,
 estado VARCHAR(15) NOT NULL,
 telefono INT NOT NULL,
