@@ -19,6 +19,15 @@
                             </div>
                     
                         @endif
+
+                        @if(session('error'))
+                    
+                            <div class="alert alert-danger" onclick="window.close()"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>!</strong>
+                                {{ session('error') }}
+                            </div>
+                    
+                        @endif
                         @csrf
                         @foreach ($dato_espacio as $item)
                         @endforeach

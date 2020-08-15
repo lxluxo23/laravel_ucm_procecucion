@@ -221,7 +221,7 @@ class LandingController extends Controller
     
         }
         else{
-            return back()->with('mensaje','Tienes que estar logueado!');
+            return back()->with('error','Tienes que estar logueado!');
         }
     }
 
