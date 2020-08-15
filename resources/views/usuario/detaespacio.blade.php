@@ -130,8 +130,13 @@
                                                                             <h6>&emsp14; hasta &emsp14;</h6>
                                                                             <input type="text" readonly style="width:5.5rem; font-weight:500; line-height:1.2; margin-bottom:.5rem; text-decoration: none;border:none; font-size:1rem" id="diafinal" name="diafinal">
                                                                         </div>
-                                                                        
+
                                                                         <br>
+                                                                        @if (session('admin')==1)
+                                                                        <li class="nav-item">
+                                                                          <label>Rut Titular: &emsp14;</label><input type="number" id="ruttitular" name="ruttitular">
+                                                                        </li>
+                                                                        @endif
                                                                         <div style="background: #02ddff0c ;margin-top:60px; border-radius: 10px; border: 1px solid #2a2a2aa8">
                                                                         <h6 style="margin-top:20px; margin-left:20px; text-aling:right;">Precio x dia: ${{$item->precio}}</h6>
                                                                         <div class="form-inline" style="margin-left:20px;">
@@ -249,6 +254,11 @@
         var month = ("0" + (now.getMonth() + 1)).slice(-2);
         var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
         $("#fini").val(today);
+
+
+        document.getElementById("boton_arriendo").addEventListener("click",function(){
+            document.getElementById("ruttitular").value = "";
+        })
   
         document.getElementById("fini").addEventListener("change",function(){
             if (today>(document.getElementById('fini').value) || (document.getElementById('ffin').value) && (document.getElementById('fini').value)>(document.getElementById('ffin').value)){

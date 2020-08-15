@@ -67,10 +67,10 @@
 }
 
 .fondoblancotranspad{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
-    background-image: url("../../../../images/ofifondo.png");
+    background-image: url("../../../images/ofifondo.png");
     opacity: 0.5;
 }
 

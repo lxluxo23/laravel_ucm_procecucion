@@ -204,13 +204,20 @@ class LandingController extends Controller
             $diainicio=$agregar_arriendo->diainicio;
         
             $diafinal=$agregar_arriendo->diafinal;
+
+            $ruttitular=$agregar_arriendo->ruttitular;
     
             $sql= DB::select("select rut from usuario where email='".session('email')."'");
             
-            foreach($sql as $algo){
-                $titular=$algo->rut;
+            if($ruttitular){
+                $titular=$ruttitular;
+            }else{
+
+                foreach($sql as $algo){
+                    $titular=$algo->rut;
+                }   
             }
-    
+
             $TotalPago=$agregar_arriendo->TotalPago;
         
             $idespaciotrabajo=$agregar_arriendo->idespaciotrabajo;
@@ -221,7 +228,7 @@ class LandingController extends Controller
     
         }
         else{
-            return back()->with('error','Tienes que estar logueado!');
+            return back()->with('error','Tienes que iniciar sesión!');
         }
     }
 
