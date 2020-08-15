@@ -3,6 +3,9 @@
 @section('contenidoadmin')
 
 
+<div class="contenedordeinicioAdmin">
+    <div class="fondoblancotransp">
+    </div>
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -11,5 +14,8 @@
             
   
         </div>
+
+</div>
+
 
 @endsection

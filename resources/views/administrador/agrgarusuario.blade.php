@@ -42,7 +42,7 @@
             <label for="nombre">Nombre</label>
             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="" required>
             <div class="invalid-feedback">
-              ingrese un nombre.
+              Ingrese un nombre.
             </div>
           </div>
         </div>
@@ -51,12 +51,12 @@
           <label for="email">E-mail <span class="text-muted"></span></label>
           <input type="email" class="form-control" id="email" name="email" placeholder="">
           <div class="invalid-feedback">
-            Porfavor ingrese un E-mail valido.
+            Porfavor ingrese un E-mail válido.
           </div>
         </div>
 
         <div class="mb-3">
-          <label for="telefono">Telefono</label>
+          <label for="telefono">Teléfono</label>
           <input type="number" class="form-control" id="telefono" name="telefono" placeholder="" required>
         </div>
         

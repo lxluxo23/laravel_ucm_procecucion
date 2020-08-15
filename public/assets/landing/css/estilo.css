@@ -7,65 +7,12 @@
     position: relative;
     background-size: 100% 100%;
     
-}
-
-
-.imglogo{
-    margin-right: 20px;
-}
-
-.contenedordeinicio{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    /*background: #a7d5fa;*/
-    background-size: 100% 100%;
     
 }
 
-.fondoblancotransp{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-image: url("../../../images/ofifondo.png");
-    opacity: 0.5;
-   
 
-}
+.contendorimagenesinicioadmin{
 
-
-
-.contenedorheader{
-    
-    position: relative;
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    background-image: url("../../../images/brolololo.jpg");
-    background-size: 60% 350%;
-    /*background:#0580c798;*/
-    border-radius: .3rem;
-    border: 1px solid #5470cc;
-    
-   
-}
-
-/*.imagenheader{
-    background-image: url("../../../images/espacio1.jpg");
-    overflow: hidden;
-}*/
-
-.TextoTituloInicio{
-   color: #3a4adbf3;
-}
-
-.TextoSubTituloInicio{
-    color: #3a4adbf3;
- }
-
-
-.contendorimagenesinicio{
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -78,6 +25,95 @@
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
     border: 1px solid #5470cc;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #212529;
+
+}
+
+
+.botonadminarr{
+    padding: .75rem 1.25rem;
+    background-color: rgba(0,0,0,.03);
+    border-top: 1px solid rgba(0,0,0,.125);
+}
+
+
+
+
+
+
+
+.imglogo{
+    margin-right: 20px;
+}
+
+.contenedordeinicio{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: 100% 100%;
+    
+}
+
+.fondoblancotransp{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../images/ofifondo.png");
+    opacity: 0.5;
+}
+
+.fondoblancotranspad{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../../images/ofifondo.png");
+    opacity: 0.5;
+}
+
+.contenedorheader{
+    
+    position: relative;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-image: url("../../../images/brolololo.jpg");
+    background-size: 60% 350%;
+    border-radius: .3rem;
+    border: 1px solid #5470cc;
+    
+   
+}
+
+
+.TextoTituloInicio{
+   color: #3a4adbf3;
+}
+
+.TextoSubTituloInicio{
+    color: #3a4adbf3;
+ }
+
+
+.contendorimagenesinicio{
+
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #b9ebf3;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    border: 1px solid #5470cc;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #212529;
 
 }
 
