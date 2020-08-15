@@ -18,6 +18,11 @@ class LandingController extends Controller
     public function login (){
         return view ('usuario.login');
     }
+
+    public function registrame(){
+
+        return view ('usuario.registrame');
+    }
     public function logueame(Request $login){
         
 
@@ -199,16 +204,14 @@ class LandingController extends Controller
         
         $diafinal=$agregar_arriendo->diafinal;
 
-        $titular=194746652; 
+        $titular=18683137; 
     
         $TotalPago=$agregar_arriendo->TotalPago;
     
         $idespaciotrabajo=$agregar_arriendo->idespaciotrabajo;
     
-    
-    
-
         $datos = DB::select("call agregar_arriendo(?,?,?,?,?)", [$diainicio,$diafinal,$titular,$TotalPago,$idespaciotrabajo]);
+        
         return back()->with('mensaje','Reserva realizada con éxito! lo estaremos esperando!');
 
     }

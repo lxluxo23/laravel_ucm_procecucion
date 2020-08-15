@@ -25,6 +25,8 @@ Route::get('/modificar_usuario/{id}','LandingController@modificar_usuario')->nam
 
 Route::get('/listaclientes', 'LandingController@listaclientes')->name('listaclientes');
 
+Route::get('/registrame', 'LandingController@registrame')->name('registrame');
+
 Route::get('/agragarusuario', 'LandingController@nuevousuario')->name('nuevousuario');
 
 Route::get('eliminar_usuario/{id}','LandingController@eliminar_usuario')->name('eliminar_usuario');
