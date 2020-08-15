@@ -31,6 +31,8 @@
                         @csrf
                         @foreach ($dato_espacio as $item)
                         @endforeach
+                        
+                 
                         <br>
                         <h4 class="mb-3" style="font-size: 1.5rem">Características de {{$item->nombre_cat}}</h4>
                         <br>
@@ -248,6 +250,7 @@
 
 
     window.addEventListener("load",function(){
+        var logon;
         var fecha_ini_res;
         var now = new Date();
         var day = ("0" + now.getDate()).slice(-2);
@@ -258,6 +261,22 @@
 
         document.getElementById("boton_arriendo").addEventListener("click",function(){
             document.getElementById("ruttitular").value = "";
+            
+            /*logon = {{session('logueado')}};
+            
+            if(logon==1){
+                alert("inicia3");
+            }else{
+                alert("no iniciad");
+            }
+            
+            SOLO TOMA EL VALOR DE SESSION CUANDO SE ESTA LOGEADO
+            CUANDO NO HAY NADIE, NO TOMA EL JS
+            NO SE PODRA DEJAR SESSION COMO PREDETERMINADO EN 0 Y NO
+            */
+            
+          
+            
         })
   
         document.getElementById("fini").addEventListener("change",function(){

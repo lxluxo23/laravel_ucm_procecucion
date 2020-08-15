@@ -212,7 +212,6 @@ class LandingController extends Controller
             if($ruttitular){
                 $titular=$ruttitular;
             }else{
-
                 foreach($sql as $algo){
                     $titular=$algo->rut;
                 }   
