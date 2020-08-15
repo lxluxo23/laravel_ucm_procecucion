@@ -200,20 +200,29 @@ class LandingController extends Controller
 
     public function agregararriendo(Request $agregar_arriendo){
 
-        $diainicio=$agregar_arriendo->diainicio;
+        if (session('logueado')==1){
+            $diainicio=$agregar_arriendo->diainicio;
         
-        $diafinal=$agregar_arriendo->diafinal;
-
-        $titular=18683137; 
+            $diafinal=$agregar_arriendo->diafinal;
     
-        $TotalPago=$agregar_arriendo->TotalPago;
+            $sql= DB::select("select rut from usuario where email='".session('email')."'");
+            
+            foreach($sql as $algo){
+                $titular=$algo->rut;
+            }
     
-        $idespaciotrabajo=$agregar_arriendo->idespaciotrabajo;
-    
-        $datos = DB::select("call agregar_arriendo(?,?,?,?,?)", [$diainicio,$diafinal,$titular,$TotalPago,$idespaciotrabajo]);
+            $TotalPago=$agregar_arriendo->TotalPago;
         
-        return back()->with('mensaje','Reserva realizada con éxito! lo estaremos esperando!');
-
+            $idespaciotrabajo=$agregar_arriendo->idespaciotrabajo;
+        
+            $datos = DB::select("call agregar_arriendo(?,?,?,?,?)", [$diainicio,$diafinal,$titular,$TotalPago,$idespaciotrabajo]);
+            
+            return back()->with('mensaje','Reserva realizada con éxito! lo estaremos esperando!');
+    
+        }
+        else{
+            return back()->with('mensaje','Tienes que estar logueado!');
+        }
     }
 
 }
