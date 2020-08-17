@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
+
+    public function indexadmin(){
+        return view('administrador.indexadmin');
+    }
+
     public function listar_arriendo(){
 
         $arr= DB::select('SELECT id_reserva, fecha_reserva, fecha_ini_solicitada, fecha_fin_solicitada,titular,estado,tipo_pago,valor_total FROM arriendo '); 
@@ -33,6 +38,14 @@ class AdminController extends Controller
 
         $categorias= DB::select('call agregar_categoria()'); 
         return view ('administrador.agregar_categoria',compact('categorias'));
+
+    }
+
+    public function eliminar_arriendo (Request $request,$id){
+
+        $arriendo_eliminar=DB::delete('delete from arriendo where id_reserva='.$id);
+
+        return back()->with('mensaje','Eliminado Correctamente');
 
     }
 }

@@ -5,17 +5,15 @@
 
 
 <div class="contenedordeinicioAdmin">
-    <div class="fondoblancotransp">
+    <div class="fondoblancotransp">      
     </div>
+    <div class="container-fluid">
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-            <!-- Page Heading -->
+        <div style="font-size: 5vw; margin:3em; left: 2.4em;position: absolute; color: rgb(57, 60, 66)" class="font-control">StartWorking
+        </div>
             
   
-        </div>
-
+    </div>
 </div>
 
 

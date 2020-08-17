@@ -67,9 +67,6 @@ class LandingController extends Controller
         }
     }
     
-    public function indexadmin(){
-        return view('administrador.indexadmin');
-    }
 
     public function logout(){
         session()->flush();

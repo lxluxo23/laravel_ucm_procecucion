@@ -39,23 +39,19 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('pago') }}">Pagar</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Nuestro servicio</a>
-          </li>
-
           @if (session('logueado')!=1)
             <li class="nav-item">
-              <a class="nav-link" data-toggle="modal" data-target="#ModalLogin">Login</a>
-            </li>
-          @endif
-          @if (session('logueado')==1)
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('logout') }}">Cerrar sesión</a>
+              <a class="nav-link" style="cursor:pointer;" data-toggle="modal" data-target="#ModalLogin">Iniciar sesión</a>
             </li>
           @endif
           @if (session('admin')==1)
             <li class="nav-item">
               <a class="nav-link" href="{{ route('inicioadmin') }}">Administrador</a>
+            </li>
+          @endif
+          @if (session('logueado')==1)
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('logout') }}">Cerrar sesión</a>
             </li>
           @endif
         </ul>
