@@ -55,6 +55,8 @@ Route::post('logueame','LandingController@logueame')->name('logueame');
 
 Route::get('logout','LandingController@logout')->name('logout');
 
+Route::post('registrarsepost','LandingController@registrarse')->name('registrarse');
+
 Route::post('nuevousuariopost','LandingController@crearusuario')->name('crear_usuario');
 
 Route::post('crearespaciopost','Espacio_trabajoController@crear_espacio')->name('crear_espacio');

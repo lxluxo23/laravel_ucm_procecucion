@@ -96,7 +96,11 @@
               </div>
               <br><br>
               <button class="form-control btn btn-primary" style="margin-bottom:20">Acceder</button>
-            </form>               
+              <a href="{{route('registrame')}}">Crear nueva cuenta.</a>
+            </form>   
+            
+            
+            
         </div>
       </div>
     </div>

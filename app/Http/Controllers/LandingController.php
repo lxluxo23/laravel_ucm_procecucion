@@ -119,7 +119,52 @@ class LandingController extends Controller
 
             $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,md5($pass1),$tipo,$estado,$telefono,$email]);
     
-            return back()->with('mensaje','Agregado con exito ' );
+            return back()->with('mensaje','Agregado con exito' );
+
+            }
+        }
+        else{
+            return back()->with('error','Las contraseñas no coinciden' .$pass .$pass2);
+        }             
+    }
+
+    public function registrarse(Request $recuperar){
+
+        $rut = preg_replace('/[^k0-9]/i', '', $recuperar->rut);
+
+        if($this->valida_rut($rut) == true){
+            $valido = 1;
+        }else{
+            $valido = 0;
+        }
+
+        $nombre = $recuperar->nombre;
+
+        $pass1 = $recuperar->pass1;
+
+        $pass2=$recuperar->pass2;
+
+        $tipo = 'Usuario';
+        
+        $estado = 'ACTIVO';
+    
+        $telefono = $recuperar->telefono;
+    
+        $email = $recuperar->email;
+
+        if (strcmp($pass1, $pass2) === 0){
+
+            if ($valido == 0){
+                return back()->with('error','Por favor ingrese un rut valido');
+            }
+
+            if ($valido == 1){
+
+            $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,md5($pass1),$tipo,$estado,$telefono,$email]);
+    
+       
+
+            return redirect()->route('inicio')->with('success', 'Usuario registrado con éxito.');
 
             }
         }

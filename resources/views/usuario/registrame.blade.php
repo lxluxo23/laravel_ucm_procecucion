@@ -26,7 +26,7 @@
         @endif
     
           <h4 class="mb-3">Nuevo cliente</h4>
-          <form action="{{ route('crear_usuario') }}" method="POST">
+          <form action="{{ route('registrarse') }}" method="POST">
             @csrf
             <div class="row">
               <div class="col-md-6 mb-3">
@@ -40,7 +40,7 @@
                 <label for="nombre">Nombre</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="" required>
                 <div class="invalid-feedback">
-                  ingrese un nombre.
+                  Ingrese un nombre.
                 </div>
               </div>
             </div>
