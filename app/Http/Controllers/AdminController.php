@@ -36,8 +36,7 @@ class AdminController extends Controller
 
     public function agregar_categoria(){
 
-        $categorias= DB::select('call agregar_categoria()'); 
-        return view ('administrador.agregar_categoria',compact('categorias'));
+        return view ('administrador.agregar_categoria');
 
     }
 
