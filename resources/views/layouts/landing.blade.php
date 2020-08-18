@@ -39,18 +39,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('pago') }}">Pagar</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Nuestro servicio</a>
-          </li>
-
           @if (session('logueado')!=1)
             <li class="nav-item">
-              <a class="nav-link" data-toggle="modal" data-target="#ModalLogin">Login</a>
-            </li>
-          @endif
-          @if (session('logueado')==1)
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('logout') }}">Cerrar sesión</a>
+              <a class="nav-link" style="cursor:pointer;" data-toggle="modal" data-target="#ModalLogin">Iniciar sesión</a>
             </li>
           @endif
           @if (session('admin')==1)
@@ -58,12 +49,17 @@
               <a class="nav-link" href="{{ route('inicioadmin') }}">Administrador</a>
             </li>
           @endif
+          @if (session('logueado')==1)
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('logout') }}">Cerrar sesión</a>
+            </li>
+          @endif
         </ul>
       </div>
     </div>
   </nav>
 
-  @yield('contenido')
+ 
 
   
   <!-- Bootstrap core JavaScript -->
@@ -75,53 +71,43 @@
 
 <!-- Modal -->                                    
 <div class="modal fade" id="ModalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel1">Desea arrendar {{$item->nombre_cat}}?</h5>
-          
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <div class="modal-dialog" >
+    <div class="modal-content" style="border: none ; background: #f8f8fd">
+      <div class="modal-header" style="z-index:100 ;background: #007bff">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:white">
           <span aria-hidden="true">&times;</span>
-          </button>
+        </button>
       </div>
-      <div class="modal-body">
-          <label style="margin-bottom: 2em">Porfavor complete los datos a continuación</label>
-      
-          <!-- Formulario Modal -->
-          <div class="container">
-            <hr>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="h1 panel-title">Acceso</div>
-                        </div>
-                        <div class="panel-body">          
-                        <form method="POST" action="{{route('logueame')}}">
-                            {{csrf_field()}}
-                                <div class="form-group {{$errors->has('email') ? 'has-error':''}}">
-                                    <label for="email">Email</label>
-                                    <input class="form-control" type="email" name="email" placeholder="Ingresa Email">
-                                    {!!$errors->first ('email','<span class="help-block">:message </span>')!!}
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input class="form-control" type="password" name="password" placeholder="Ingresa tu contraseña">
-                                </div>
-                                <button class="btn btn-primary">Acceder</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>   
-            </div>
+      <div class="h1 panel-title" style="color:#007bff ;text-align: center; margin-top:40">Iniciar sesión</div>
+      <div class="modal-body" >
+        <!-- Formulario Modal -->
+        
+        <div class="container" >     
+        <br>        
+          <form method="POST" action="{{route('logueame')}}">
+            {{csrf_field()}}
+            <div class="form-group {{$errors->has('email') ? 'has-error':''}}">
+              <label for="email" style="color:rgb(91, 129, 241); font-weight: bold">Correo electronico</label>
+              <input class="form-control" type="email" name="email">
+              {!!$errors->first ('email','<span class="help-block">:message </span>')!!}
+              </div>
+              <div class="form-group">
+                <label for="password" style="color:rgb(91, 129, 241); font-weight: bold">Contraseña</label>
+                <input class="form-control" type="password" name="password">
+              </div>
+              <br><br>
+              <button class="form-control btn btn-primary" style="margin-bottom:20">Acceder</button>
+              <a href="{{route('registrame')}}">Crear nueva cuenta.</a>
+            </form>    
         </div>
+
       </div>
     </div>
   </div>
 </div>
 
 
-
+@yield('contenido')
 </body>
 
 </html>

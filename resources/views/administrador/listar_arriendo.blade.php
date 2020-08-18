@@ -6,7 +6,7 @@
   <br><br>
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Arriendos</h1>
-    <p class="mb-4">Elimine seleccionando el boton a la derecha en la fila correspondiente al arriendo.</p>
+    <p class="mb-4">Modifique seleccionando el boton a la derecha en la fila correspondiente al arriendo.</p>
     @if(session('mensaje'))
 
       <div class="alert alert-success" onclick="window.close()"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

@@ -48,7 +48,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('inicioadmin') }}">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+          <i class="far fa-address-book"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Administrador</div>
       </a>
@@ -59,8 +59,7 @@
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="{{ route('inicioadmin') }}">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Tablero</span></a>
+          <span>StartWorking</span></a>
       </li>
 
       <!-- Divider -->
@@ -74,7 +73,7 @@
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
+          <i class="fas fa-user-cog"></i>
           <span>Clientes</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -90,7 +89,7 @@
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
+          <i class="fas fa-door-open"></i>
           <span>Espacios de trabajo</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -104,7 +103,7 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#colapser" aria-expanded="true" aria-controls="colapser">
-          <i class="fas fa-fw fa-wrench"></i>
+          <i class="fab fa-buromobelexperte"></i>
           <span>Arriendos</span>
         </a>
         <div id="colapser" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">

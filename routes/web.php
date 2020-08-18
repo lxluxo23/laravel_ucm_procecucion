@@ -6,7 +6,7 @@ Route::get('/', 'Espacio_trabajoController@index')->name('inicio');
 
 Route::get('/pagogogogo', 'LandingController@pago')->name('pago');
 
-Route::get('/admin', 'LandingController@indexadmin')->name('inicioadmin');
+
 
 Route::get ('/algo','Espacio_trabajoController@agregar_espacio')->name('agregar');
 
@@ -34,7 +34,11 @@ Route::get('eliminar_usuario/{id}','LandingController@eliminar_usuario')->name('
 
 //----------------------- AdminController get ----------------------------------------------------------------
 
+Route::get('/admin', 'AdminController@indexadmin')->name('inicioadmin');
+
 Route::get ('/Listararriendo','AdminController@listar_arriendo')->name('listar_arriendo');
+
+Route::get('EliminarArriendo/{id}','AdminController@eliminar_arriendo')->name('eliminar_arriendo');
 
 Route::get ('/NuevoArriendo','AdminController@agregar_arriendo')->name('agregar_arriendo');
 
@@ -50,6 +54,8 @@ Route::get ('/arreindodetalle/{id}','AdminController@detallearriendo')->name('de
 Route::post('logueame','LandingController@logueame')->name('logueame');
 
 Route::get('logout','LandingController@logout')->name('logout');
+
+Route::post('registrarsepost','LandingController@registrarse')->name('registrarse');
 
 Route::post('nuevousuariopost','LandingController@crearusuario')->name('crear_usuario');
 

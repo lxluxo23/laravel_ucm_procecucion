@@ -67,9 +67,6 @@ class LandingController extends Controller
         }
     }
     
-    public function indexadmin(){
-        return view('administrador.indexadmin');
-    }
 
     public function logout(){
         session()->flush();
@@ -122,7 +119,52 @@ class LandingController extends Controller
 
             $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,md5($pass1),$tipo,$estado,$telefono,$email]);
     
-            return back()->with('mensaje','Agregado con exito ' );
+            return back()->with('mensaje','Agregado con exito' );
+
+            }
+        }
+        else{
+            return back()->with('error','Las contraseñas no coinciden' .$pass .$pass2);
+        }             
+    }
+
+    public function registrarse(Request $recuperar){
+
+        $rut = preg_replace('/[^k0-9]/i', '', $recuperar->rut);
+
+        if($this->valida_rut($rut) == true){
+            $valido = 1;
+        }else{
+            $valido = 0;
+        }
+
+        $nombre = $recuperar->nombre;
+
+        $pass1 = $recuperar->pass1;
+
+        $pass2=$recuperar->pass2;
+
+        $tipo = 'Usuario';
+        
+        $estado = 'ACTIVO';
+    
+        $telefono = $recuperar->telefono;
+    
+        $email = $recuperar->email;
+
+        if (strcmp($pass1, $pass2) === 0){
+
+            if ($valido == 0){
+                return back()->with('error','Por favor ingrese un rut valido');
+            }
+
+            if ($valido == 1){
+
+            $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,md5($pass1),$tipo,$estado,$telefono,$email]);
+    
+            
+                
+            return redirect()->route('inicio')->with('success', 'Usuario registrado con éxito.');
 
             }
         }
@@ -200,20 +242,35 @@ class LandingController extends Controller
 
     public function agregararriendo(Request $agregar_arriendo){
 
-        $diainicio=$agregar_arriendo->diainicio;
+        if (session('logueado')==1){
+            $diainicio=$agregar_arriendo->diainicio;
         
-        $diafinal=$agregar_arriendo->diafinal;
+            $diafinal=$agregar_arriendo->diafinal;
 
-        $titular=18683137; 
+            $ruttitular=$agregar_arriendo->ruttitular;
     
-        $TotalPago=$agregar_arriendo->TotalPago;
-    
-        $idespaciotrabajo=$agregar_arriendo->idespaciotrabajo;
-    
-        $datos = DB::select("call agregar_arriendo(?,?,?,?,?)", [$diainicio,$diafinal,$titular,$TotalPago,$idespaciotrabajo]);
+            $sql= DB::select("select rut from usuario where email='".session('email')."'");
+            
+            if($ruttitular){
+                $titular=$ruttitular;
+            }else{
+                foreach($sql as $algo){
+                    $titular=$algo->rut;
+                }   
+            }
+
+            $TotalPago=$agregar_arriendo->TotalPago;
         
-        return back()->with('mensaje','Reserva realizada con éxito! lo estaremos esperando!');
-
+            $idespaciotrabajo=$agregar_arriendo->idespaciotrabajo;
+        
+            $datos = DB::select("call agregar_arriendo(?,?,?,?,?)", [$diainicio,$diafinal,$titular,$TotalPago,$idespaciotrabajo]);
+            
+            return back()->with('mensaje','Reserva realizada con éxito! lo estaremos esperando!');
+    
+        }
+        else{
+            return back()->with('error','Tienes que iniciar sesión!');
+        }
     }
 
 }
