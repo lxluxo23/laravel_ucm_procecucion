@@ -12,7 +12,8 @@
         @csrf
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="categoria">Nombre categoria</label>
+          <label for="categoria">Nombre categoria {{ session('email') }}</label>
+            
             <input type="text" class="form-control" id="categoria" name="categoria" placeholder="" value="" required>
           </div>
         </div>
