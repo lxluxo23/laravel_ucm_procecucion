@@ -6,9 +6,9 @@
     <div class="fondoblancotransp" id="pr2"> 
     </div>
         <div class="FondoContenedorDetalleEspacio" id="pr3">
+            
             <div class="container-fluid">
-                <div class="row">
-                   
+                <div class="row">     
                     <div class="col-md-12 order-md-1">
                 
                         @if(session('mensaje'))

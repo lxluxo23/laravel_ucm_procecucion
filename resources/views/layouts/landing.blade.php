@@ -59,7 +59,7 @@
     </div>
   </nav>
 
-  @yield('contenido')
+ 
 
   
   <!-- Bootstrap core JavaScript -->
@@ -81,6 +81,7 @@
       <div class="h1 panel-title" style="color:#007bff ;text-align: center; margin-top:40">Iniciar sesión</div>
       <div class="modal-body" >
         <!-- Formulario Modal -->
+        
         <div class="container" >     
         <br>        
           <form method="POST" action="{{route('logueame')}}">
@@ -97,18 +98,16 @@
               <br><br>
               <button class="form-control btn btn-primary" style="margin-bottom:20">Acceder</button>
               <a href="{{route('registrame')}}">Crear nueva cuenta.</a>
-            </form>   
-            
-            
-            
+            </form>    
         </div>
+
       </div>
     </div>
   </div>
 </div>
 
 
-
+@yield('contenido')
 </body>
 
 </html>

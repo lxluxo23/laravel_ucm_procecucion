@@ -162,8 +162,8 @@ class LandingController extends Controller
 
             $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,md5($pass1),$tipo,$estado,$telefono,$email]);
     
-       
-
+            
+                
             return redirect()->route('inicio')->with('success', 'Usuario registrado con éxito.');
 
             }
