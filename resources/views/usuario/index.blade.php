@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="assets/landing/css/estilo.css">
+
 @extends('layouts.landing')
 @section('contenido')
 
@@ -34,7 +35,7 @@
             <p class="card-text">{{$item->descripcion}}</p>
             <p class="card-text">$ {{$item->precio}} x día</p>
           </div>
-          <div class="card-footer">
+          <div class="botonadminarr">
             <a href="{{('detaespacio/')}}{{$item->id_espacio_trabajo}}" class="btn btn-primary">Ver más detalles</a>
           </div>
         </div>
