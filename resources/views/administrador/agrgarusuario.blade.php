@@ -1,6 +1,10 @@
 @extends('layouts.plantillaadmin')
-
 @section('contenidoadmin')
+<link rel="stylesheet" href="assets/landing/css/estilo.css">
+<div class="contenedordeinicioAdmin">
+  <div class="fondoblancotransp"></div>
+  <div style="background: rgb(240, 240, 240); width:60%; height:50em; position:absolute; left:20%; border: 1px solid rgb(119, 119, 119)"></div>
+  
 
 <div class="container-fluid" >
 <div class="row" >
@@ -85,5 +89,6 @@
     </div>
     
   </div>
+</div>
 </div>
 @endsection

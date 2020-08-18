@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="assets/landing/css/estilo.css">
 @extends('layouts.plantillaadmin')
-
 @section('contenidoadmin')
 
 
