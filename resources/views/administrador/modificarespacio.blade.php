@@ -101,7 +101,10 @@
   </div>
 </div>
 </div>
+
 <script>
   document.getElementById("categoria").selectedIndex = {{$item->categoria}}-1;
+  document.getElementById("combobo").value = "{{$item->estado}}";
 </script>
+
 @endsection
