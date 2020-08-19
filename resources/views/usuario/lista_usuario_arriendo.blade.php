@@ -27,8 +27,8 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>Numero de Espacio arrendado</th>
-                  <th>Fecha de reserva</th>
+                  <th>Número del espacio arrendado</th>
+                  <th>Día de reserva</th>
                   <th>Fecha inicio</th>
                   <th>Fecha final</th>
                   <th>Tipo de pago</th>
