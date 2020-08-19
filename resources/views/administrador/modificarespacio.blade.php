@@ -28,12 +28,12 @@
 
           <div class="col-md-3 mb-3">
             <label for="Categoria">Categoria</label>
-              <select id="categoria" name="categoria" class="form-control"> 
-                <option value="1">Espacio pequeño</option>
-                <option value="2">Espacio mediano</option>
-                <option value="3">Espacio grande</option>
-                <option value="4">Titanico</option>
+              <select id="categoria" name="categoria" class="form-control">
+                @foreach($categoria as $cat) 
+                  <option value="{{$cat->id_categoria}}">{{$cat->nombre_cat}}</option>
+                @endforeach
               </select>
+              
           </div>
 
 
@@ -101,4 +101,7 @@
   </div>
 </div>
 </div>
+<script>
+  document.getElementById("categoria").selectedIndex = {{$item->categoria}}-1;
+</script>
 @endsection

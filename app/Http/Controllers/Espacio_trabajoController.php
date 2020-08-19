@@ -18,13 +18,15 @@ class Espacio_trabajoController extends Controller
  
 
     public function modificarespacio(Request $request, $id){
-
+        $categoria=DB::select('select * from categoria');
         $los_datos_a_modificar=DB::select('select * from espacio_trabajo where ID_espacio_trabajo='.$id);
-        return view('administrador.modificarespacio',compact('los_datos_a_modificar'));
+        return view('administrador.modificarespacio',compact('los_datos_a_modificar','categoria'));
 
     }
     public function agregar_espacio(){
-        return view('administrador.agregar_espacio');
+
+        $categoria=DB::select('select * from categoria');
+        return view('administrador.agregar_espacio',compact('categoria'));
     }
 
     public function listar_espacio(){
