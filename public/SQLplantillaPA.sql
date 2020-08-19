@@ -337,7 +337,31 @@ BEGIN
 END $$
 
 
+--------------------------------------------------------------PA PARA LISTAR ARRIENDO EN ADMIN-----------------
 
+DELIMITER $$
+CREATE PROCEDURE lista_arriendo_adm()
+BEGIN
+
+SELECT arriendo.id_reserva,arriendo.id_espacio_trabajo ,arriendo.fecha_reserva, arriendo.fecha_ini_solicitada,fecha_fin_solicitada, arriendo.valor_Total ,tipo_de_pago.Nombre_pago, arriendo.titular
+FROM arriendo 
+INNER JOIN tipo_de_pago 
+ON arriendo.tipo_pago = tipo_de_pago.ID_pago;
+
+END $$
+
+--------------------------------------------------------------PA PARA LISTAR ARRIENDO EN USUARIO-----------------
+
+DELIMITER $$
+CREATE OR REPLACE PROCEDURE lista_arriendo_usu(prut int)
+BEGIN
+
+SELECT arriendo.id_reserva,arriendo.id_espacio_trabajo ,arriendo.fecha_reserva, arriendo.fecha_ini_solicitada,fecha_fin_solicitada, arriendo.valor_Total ,tipo_de_pago.Nombre_pago, arriendo.titular
+FROM arriendo 
+INNER JOIN tipo_de_pago 
+ON arriendo.tipo_pago = tipo_de_pago.ID_pago and arriendo.titular=prut;
+
+END $$
 
 -------------COSAS QUE FALTAN EN EL SISTEMA 
 
