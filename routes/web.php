@@ -32,6 +32,8 @@ Route::get('/agragarusuario', 'LandingController@nuevousuario')->name('nuevousua
 Route::get('eliminar_usuario/{id}','LandingController@eliminar_usuario')->name('eliminar_usuario');
 
 
+Route::get('listaArriendos','LandingController@listaArriendos')->name('listaArriendos');
+
 //----------------------- AdminController get ----------------------------------------------------------------
 
 Route::get('/admin', 'AdminController@indexadmin')->name('inicioadmin');
