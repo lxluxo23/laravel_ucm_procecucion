@@ -25,8 +25,8 @@
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Fecha de reserva</th>
+                <th>Numero del espacio</th>
+                <th>Día de reserva</th>
                 <th>Fecha inicio</th>
                 <th>Fecha final</th>
                 <th>Titular</th>
@@ -40,14 +40,14 @@
             <tbody>
               @foreach($arr as $item)
               <tr>
-                <td>{{$item->id_reserva}}</td>
+                <td>{{$item->id_espacio_trabajo}}</td>
                 <td>{{$item->fecha_reserva}}</td>
                 <td>{{$item->fecha_ini_solicitada}}</td>
                 <td>{{$item->fecha_fin_solicitada}}</td>
                 <td>{{$item->titular}}</td>
                 <td>{{$item->estado}}</td>
-                <td>{{$item->tipo_pago}}</td>
-                <td>{{$item->valor_total}}</td>
+                <td>{{$item->Nombre_pago}}</td>
+                <td>{{$item->valor_Total}}</td>
                 <td><a href='{{('modificarespacio/')}}{{$item->id_reserva}}'><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a></td>
               </tr>
               @endforeach

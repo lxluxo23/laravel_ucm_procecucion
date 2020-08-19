@@ -17,7 +17,7 @@ class AdminController extends Controller
 
     public function listar_arriendo(){
 
-        $arr= DB::select('SELECT id_reserva, fecha_reserva, fecha_ini_solicitada, fecha_fin_solicitada,titular,estado,tipo_pago,valor_total FROM arriendo '); 
+        $arr= DB::select('CALL lista_arriendo_adm()'); 
         return view ('administrador.listar_arriendo',compact('arr'));
 
     }
