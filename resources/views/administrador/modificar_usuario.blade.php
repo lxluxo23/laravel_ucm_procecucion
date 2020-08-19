@@ -44,7 +44,7 @@
           <div class="col-md-4 mb-3">
             <label for="Estado">Estado</label>
               <select id="estado" name="estado" class="form-control"> 
-                <option value="Activo">Activo</option>
+                <option value="Activo">ACTIVO</option>
                 <option value="Inactivo">Inactivo</option>
               </select>
           </div>
@@ -58,4 +58,9 @@
   </div>
 </div>
 </div>
+
+<script>
+  document.getElementById("estado").value = "{{$item->estado}}";
+</script>
+
 @endsection
