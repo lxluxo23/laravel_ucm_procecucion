@@ -27,7 +27,7 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>ID</th>
+                  <th>Numero de Espacio arrendado</th>
                   <th>Fecha de reserva</th>
                   <th>Fecha inicio</th>
                   <th>Fecha final</th>
@@ -39,12 +39,12 @@
               <tbody>
                 @foreach($arr as $item)
                 <tr>
-                  <td>{{$item->id_reserva}}</td>
+                  <td>{{$item->id_espacio_trabajo}}</td>
                   <td>{{$item->fecha_reserva}}</td>
                   <td>{{$item->fecha_ini_solicitada}}</td>
                   <td>{{$item->fecha_fin_solicitada}}</td>
-                  <td>{{$item->tipo_pago}}</td>
-                  <td>{{$item->valor_total}}</td>
+                  <td>{{$item->Nombre_pago}}</td>
+                  <td>{{$item->valor_Total}}</td>
                   
                 </tr>
                 @endforeach
