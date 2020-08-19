@@ -282,14 +282,15 @@ class LandingController extends Controller
                 $titular=$algo->rut;
         }   
              
-        $arr= DB::select('SELECT id_reserva, fecha_reserva, fecha_ini_solicitada, fecha_fin_solicitada,titular,estado,tipo_pago,
-        valor_total FROM arriendo where titular='.$titular); 
-        return view('usuario.lista_usuario_arriendo', compact('arr'));
+        $arr= DB::select('CALL lista_arriendo_usu('.$titular.')');
+        return view ('usuario.lista_usuario_arriendo', compact('arr'));
         }
 
         else{
             return back()->with('error','Tienes que iniciar sesión!');
         }
+
+
         
     }
 
