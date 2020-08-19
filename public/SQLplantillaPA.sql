@@ -353,7 +353,7 @@ END $$
 --------------------------------------------------------------PA PARA LISTAR ARRIENDO EN USUARIO-----------------
 
 DELIMITER $$
-CREATE OR REPLACE PROCEDURE lista_arriendo_usu(prut int)
+CREATE PROCEDURE lista_arriendo_usu(prut int)
 BEGIN
 
 SELECT arriendo.id_reserva,arriendo.id_espacio_trabajo ,arriendo.fecha_reserva, arriendo.fecha_ini_solicitada,fecha_fin_solicitada, arriendo.valor_Total ,tipo_de_pago.Nombre_pago, arriendo.titular
@@ -366,8 +366,8 @@ END $$
 -------------COSAS QUE FALTAN EN EL SISTEMA 
 
 
-	->RF-9 "LISTADO DE ARRIENDO"
-	->RF-10 "MODIFICAR ARRIENDO"
+	->RF-9 "LISTADO DE ARRIENDO"    ->'LISTO 1/2'
+	->RF-10 "MODIFICAR ARRIENDO"	
 	
 
 -------------REQUISITOS FUNCIONALES FALTANTES 
