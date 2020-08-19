@@ -45,7 +45,7 @@
                 <td>{{$item->estado}}</td>
                 <td>{{$item->telefono}}</td>
                 <td><a href='{{('modificar_usuario/')}}{{$item->rut}}'><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a> 
-                    <a href='{{('eliminar_usuario/')}}{{$item->rut}}' class="bot" onclick="if(!confirm('¿Deseas realmente borrar este ESPACIO DE TRABAJO ?'))return false"><img id='img_tab_delete' src='images/elim.jpg' width="50"/></a>
+                    <a href='{{('eliminar_usuario/')}}{{$item->rut}}' class="bot" onclick="if(!confirm('¿Deseas realmente borrar este USUARIO ?'))return false"><img id='img_tab_delete' src='images/elim.jpg' width="50"/></a>
                 </td>
               </tr>
               @endforeach
