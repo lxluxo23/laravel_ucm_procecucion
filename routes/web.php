@@ -46,6 +46,8 @@ Route::get ('/NuevoArriendo','AdminController@agregar_arriendo')->name('agregar_
 
 Route::get ('/AgregarCategoria','AdminController@agregar_categoria')->name('agregar_categoria');
 
+Route::get ('/categorias','AdminController@categorias')->name('categorias');
+
 //----------------------- AdminController post ----------------------------------------------------------------
 
 Route::get ('/arreindodetalle/{id}','AdminController@detallearriendo')->name('detallearriendo');

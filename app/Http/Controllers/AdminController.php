@@ -40,6 +40,11 @@ class AdminController extends Controller
 
     }
 
+    public function categorias(){
+        $categorias=DB::select('select * from categoria');
+        return view ('administrador.categorias',compact('categorias'));
+    }
+
     public function eliminar_arriendo (Request $request,$id){
 
         $arriendo_eliminar=DB::delete('delete from arriendo where id_reserva='.$id);
