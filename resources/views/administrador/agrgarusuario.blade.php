@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="assets/landing/css/estilo.css">
 <div class="contenedordeinicioAdmin">
   <div class="fondoblancotransp"></div>
-  <div style="background: rgba(255, 255, 255, 0.863); width:60%; height:50em; position:absolute; left:20%; border: 1px solid rgb(119, 119, 119)"></div>
+  <div style="background: rgba(255, 255, 255, 0.863); width:60%; height:50em; position:absolute; left:20%; border: 1px solid rgb(119, 119, 119)">
   
 
 <div class="container-fluid" >
@@ -34,61 +34,62 @@
       <form action="{{ route('crear_usuario') }}" method="POST">
         @csrf
         <div class="row">
-            <div class="col-md-3 mb-3"></div>
-            <div class="col-md-3 mb-3">
+            <div class="col-md-1 mb-3"></div>
+            <div class="col-md-5 mb-3">
               <label for="rut">Rut</label>
               <input type="text" class="form-control" id="rut" name="rut" placeholder="" value="" required>
               <div class="invalid-feedback">
                 Requiere ingresar rut.
               </div>
             </div>
-            <div class="col-md-3 mb-3">
+            <div class="col-md-5 mb-3">
               <label for="nombre">Nombre</label>
               <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="" required>
               <div class="invalid-feedback">
                 Ingrese un nombre.
               </div>
             </div>
-            <div class="col-md-3 mb-3"></div>
+            <div class="col-md-1 mb-3"></div>
         
-            <div class="col-md-3 mb-3"></div>
-              <div class="col-md-3 mb-3">
+            <div class="col-md-1 mb-3"></div>
+              <div class="col-md-5 mb-3">
                 <label for="email">E-mail <span class="text-muted"></span></label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="">
                 <div class="invalid-feedback">
                   Porfavor ingrese un E-mail válido.
                 </div>
               </div>
-              <div class="col-md-3 mb-3">
+              <div class="col-md-5 mb-3">
                 <label for="telefono">Teléfono</label>
                 <input type="number" class="form-control" id="telefono" name="telefono" placeholder="" required>
               </div>
-            <div class="col-md-3 mb-3"></div>
+            <div class="col-md-1 mb-3"></div>
         
           
-            <div class="col-md-3 mb-3"></div>
-              <div class="col-md-3 mb-3">
+            <div class="col-md-1 mb-3"></div>
+              <div class="col-md-5 mb-3">
                 <label for="pass">Contraseña</label>
                 <input type="password" class="form-control" id="pass1" name="pass1" placeholder="" required>
               </div>
-              <div class="col-md-3 mb-3">
+              <div class="col-md-5 mb-3">
                 <label for="pass2">Confirmar contraseña</label>               
                 <input type="password" class="form-control" id="pass2" name="pass2"  placeholder="" required>
               </div>
-            <div class="col-md-3 mb-3"></div>
+            <div class="col-md-1 mb-3"></div>
             
-            <div class="col-md-3 mb-3"></div>
-              <div class="col-md-6 mb-3">
+            <div class="col-md-1 mb-3"></div>
+              <div class="col-md-10 mb-3">
                 <br><br>
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
               </div>
-            <div class="col-md-3 mb-3"></div>
+            <div class="col-md-1 mb-3"></div>
       
         </div>
       </form>
     </div>
     
   </div>
+</div>
 </div>
 </div>
 @endsection
