@@ -310,6 +310,7 @@ BEGIN
     and espacio_trabajo.id_espacio_trabajo = pidesp
     and arriendo.fecha_ini_solicitada <= pffin
     AND arriendo.fecha_fin_solicitada >= pfini
+	and arriendo.estado <> 'Cancelado'
     order by arriendo.fecha_fin_solicitada desc
     into fecha_ultima;
     
