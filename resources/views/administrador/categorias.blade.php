@@ -2,11 +2,28 @@
 
 @section('contenidoadmin')
 
-
-
 <div class="container-fluid">
     <br><br>
+
+    <h4 class="h1 mb-5" >Nueva Categoria :</h4>
     <!-- Page Heading -->
+
+    <form action="{{route('nuevacategoria')}}" method="POST" >
+        @csrf
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="Ncategoria">Nombre de categoria</label>
+                <div class="input-group">
+                    
+                    <input type="text" class="form-control" name="Ncategoria" id="Ncategoria">
+                    <span>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
+                  </span>
+                </div>
+              </div>
+            
+        </div>
+    </form>
     <h1 class="h3 mb-2 text-gray-800">Categorias</h1>
     <p class="mb-4">Modifique o elimine seleccionando los botones a la derecha en la fila correspondiente a la categoria</p>
 
@@ -40,8 +57,7 @@
               <tr>
                 <td>{{$item->id_categoria}}</td>
                 <td>{{$item->nombre_cat}}</td> 
-                <td><a href='{{('modificar_usuario/')}}{{$item->id_categoria}}'><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a> 
-                    <a href='{{('eliminar_usuario/')}}{{$item->id_categoria}}' class="bot" onclick="if(!confirm('¿Deseas realmente borrar este USUARIO ?'))return false"><img id='img_tab_delete' src='images/elim.jpg' width="50"/></a>
+                <td><a href='{{('modificar_categoria/')}}{{$item->id_categoria}}'><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a> 
                 </td>
               </tr>
               @endforeach

@@ -31,7 +31,6 @@ Route::get('/agragarusuario', 'LandingController@nuevousuario')->name('nuevousua
 
 Route::get('eliminar_usuario/{id}','LandingController@eliminar_usuario')->name('eliminar_usuario');
 
-
 Route::get('listaArriendos','LandingController@listaArriendos')->name('listaArriendos');
 
 //----------------------- AdminController get ----------------------------------------------------------------
@@ -47,6 +46,8 @@ Route::get ('/NuevoArriendo','AdminController@agregar_arriendo')->name('agregar_
 Route::get ('/AgregarCategoria','AdminController@agregar_categoria')->name('agregar_categoria');
 
 Route::get ('/categorias','AdminController@categorias')->name('categorias');
+
+Route::get ('/modificar_categoria/{id}','AdminController@modificar_categoria')->name('modificar_categoria');
 
 //----------------------- AdminController post ----------------------------------------------------------------
 
@@ -70,6 +71,8 @@ Route::post('crearespaciopost','Espacio_trabajoController@crear_espacio')->name(
 Route::post('actualizarespacio','Espacio_trabajoController@actualizarespacio')->name('actualizarespacio');
 
 Route::post('actualizar_usuario','LandingController@actualizar_usuario')->name('actualizar_usuario');
+
+Route::post('actualizar_categoria','AdminController@actualizar_categoria')->name('actualizar_categoria');
 
 Route::post('agregararriendo','LandingController@agregararriendo')->name('agregararriendo');
 

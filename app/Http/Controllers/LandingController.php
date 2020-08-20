@@ -198,7 +198,7 @@ class LandingController extends Controller
     
     $dato = DB::select('call actualizar_usuario(?,?,?,?,?,?)', [$rut,$nombre,$tipo,$estado,$telefono,$email]);
 
-    return back()->with('mensaje','Actualizado con exito! con exito');
+    return back()->with('mensaje','Actualizado con exito!');
         
     }
 

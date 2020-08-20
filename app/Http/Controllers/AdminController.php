@@ -60,7 +60,26 @@ class AdminController extends Controller
     
         $sql= DB::select('call agregar_categoria(?)',[$categoria]);
 
-        return back();
+        return back()->with('mensaje','Categoria agregada correctamente');
 
+    }
+
+    public function modificar_categoria (Request $request, $id){
+
+        $datos_categoria=DB::select('select * from categoria where id_categoria='.$id);
+
+        return view('administrador.modificar_categoria',compact('datos_categoria'));
+
+    }
+
+    public function actualizar_categoria (Request $actualizar_categoria){
+
+        $id_categoria=$actualizar_categoria->id_categoria;
+
+        $nombre_cat=$actualizar_categoria->nombre;
+
+        $actualizar=DB::select('call actualizar_categoria(?,?)', [$id_categoria,$nombre_cat]);
+            return back()->with('mensaje','Actualizado con exito! con exito');
+        
     }
 }
