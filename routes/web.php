@@ -52,10 +52,14 @@ Route::get ('/categorias','AdminController@categorias')->name('categorias');
 
 Route::post('NuevaCategoria','AdminController@nuevacategoria')->name('nuevacategoria');
 
+Route::get ('/arreindodetalle/{id}','AdminController@detallearriendo')->name('detallearriendo');
+
 //-------------------------------- post ----------------------------------------------------------------------
 
 
 Route::post('logueame','LandingController@logueame')->name('logueame');
+
+Route::get('logout','LandingController@logout')->name('logout');
 
 Route::post('registrarsepost','LandingController@registrarse')->name('registrarse');
 
