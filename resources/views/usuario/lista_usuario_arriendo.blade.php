@@ -24,7 +24,7 @@
         </div>
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered" id="dataTable" cellspacing="0">
               <thead>
                 <tr>
                   <th>Número del espacio arrendado</th>
@@ -33,6 +33,7 @@
                   <th>Fecha final</th>
                   <th>Tipo de pago</th>
                   <th>Total</th>
+                  <th>Estado</th>
          
                 </tr>
               </thead>
@@ -45,6 +46,7 @@
                   <td>{{$item->fecha_fin_solicitada}}</td>
                   <td>{{$item->Nombre_pago}}</td>
                   <td>{{$item->valor_Total}}</td>
+                  <td>{{$item->estado}}</td>
                   
                 </tr>
                 @endforeach

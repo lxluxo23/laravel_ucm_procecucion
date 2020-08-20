@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-
     public function indexadmin(){
         return view('administrador.indexadmin');
     }

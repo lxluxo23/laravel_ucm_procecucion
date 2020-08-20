@@ -357,7 +357,7 @@ DELIMITER $$
 CREATE PROCEDURE lista_arriendo_usu(prut int)
 BEGIN
 
-SELECT arriendo.id_reserva,arriendo.id_espacio_trabajo ,arriendo.fecha_reserva, arriendo.fecha_ini_solicitada,fecha_fin_solicitada, arriendo.valor_Total ,tipo_de_pago.Nombre_pago, arriendo.titular
+SELECT arriendo.id_reserva,arriendo.id_espacio_trabajo ,arriendo.fecha_reserva, arriendo.fecha_ini_solicitada,fecha_fin_solicitada, arriendo.valor_Total ,tipo_de_pago.Nombre_pago, arriendo.titular, arriendo.estado
 FROM arriendo 
 INNER JOIN tipo_de_pago 
 ON arriendo.tipo_pago = tipo_de_pago.ID_pago and arriendo.titular=prut;
@@ -368,15 +368,15 @@ END $$
 
 
 	->RF-9 "LISTADO DE ARRIENDO"    ->'LISTO'
-	->RF-10 "MODIFICAR ARRIENDO"	(SE MODIFICA SOLO EL ESTADO A: 'Canselado')
+	->RF-10 "MODIFICAR ARRIENDO"	(SE MODIFICA SOLO EL ESTADO A: 'Cancelado')
 	
 
 -------------REQUISITOS FUNCIONALES FALTANTES 
 
-	-> "ELIMINAR USUARIO"
+	-> "ELIMINAR USUARIO" ->'semiListo'
 
 -------------COSAS QUE FALTAN GLOBALMENTE 
 
-	->"LISTAR CATEGORIA"
-	->"AGREGAR CATEGORIA" ->'Listo'
-	->"MODIFICAR CATEGORIA"
+	->"LISTAR CATEGORIA" ->'semiListo falta en documento'
+	->"AGREGAR CATEGORIA" ->'semiListo falta en documento'
+	->"MODIFICAR CATEGORIA" ->'semiListo falta en documento' 
