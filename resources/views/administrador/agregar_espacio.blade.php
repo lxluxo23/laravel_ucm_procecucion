@@ -33,12 +33,14 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="Categoria">Categoría</label>
+            <button class="btn btn-light"  data-toggle="modal" data-target="#catmodal">Nueva</button>
               <select id="categoria" name="categoria" class="form-control"> 
                 @foreach($categoria as $item)  
 
               <option value="{{$item->id_categoria}}">{{$item->nombre_cat}}</option>
                 @endforeach
               </select>
+              
 
           </div>
           <div class="col-md-3 mb-4"></div>
@@ -95,6 +97,35 @@
     </div>
   </div>
 </div>
-</div>    
+</div>   
+
+<div class="modal fade" id="catmodal" tabindex="-1" role="dialog" aria-labelledby="catmodalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content" style="border: none ; background: #f8f8fd">
+      <div class="modal-header" style="z-index:100 ;background: #007bff">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:white">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="h1 panel-title" style="color:#007bff ;text-align: center; margin-top:40">Agregar categoria</div>
+      <div class="modal-body" >
+        <!-- Formulario Modal -->
+        
+        <div class="container" >     
+        <br>        
+          <form method="POST" action="{{route('nuevacategoria')}}">
+            @csrf
+            <div class="form-group">
+              <label for="Ncategoria">Nombre de Categoria</label>
+              <input type="text" class="form-control" id="Ncategoria" name="Ncategoria">
+            </div>
+            <button class="form-control btn btn-primary" style="margin-bottom:20">Agregar</button>
+            </form>    
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 @endsection
