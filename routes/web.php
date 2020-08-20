@@ -6,7 +6,7 @@ Route::get('/', 'Espacio_trabajoController@index')->name('inicio');
 
 Route::get('/pagogogogo', 'LandingController@pago')->name('pago');
 
-
+Route::get('logout','LandingController@logout')->name('logout');
 
 Route::get ('/algo','Espacio_trabajoController@agregar_espacio')->name('agregar');
 
@@ -50,14 +50,12 @@ Route::get ('/categorias','AdminController@categorias')->name('categorias');
 
 //----------------------- AdminController post ----------------------------------------------------------------
 
-Route::get ('/arreindodetalle/{id}','AdminController@detallearriendo')->name('detallearriendo');
+Route::post('NuevaCategoria','AdminController@nuevacategoria')->name('nuevacategoria');
 
 //-------------------------------- post ----------------------------------------------------------------------
 
 
 Route::post('logueame','LandingController@logueame')->name('logueame');
-
-Route::get('logout','LandingController@logout')->name('logout');
 
 Route::post('registrarsepost','LandingController@registrarse')->name('registrarse');
 

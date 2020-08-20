@@ -310,6 +310,7 @@ BEGIN
     and espacio_trabajo.id_espacio_trabajo = pidesp
     and arriendo.fecha_ini_solicitada <= pffin
     AND arriendo.fecha_fin_solicitada >= pfini
+	and arriendo.estado <> 'Cancelado'
     order by arriendo.fecha_fin_solicitada desc
     into fecha_ultima;
     
@@ -366,8 +367,8 @@ END $$
 -------------COSAS QUE FALTAN EN EL SISTEMA 
 
 
-	->RF-9 "LISTADO DE ARRIENDO"    ->'LISTO 1/2'
-	->RF-10 "MODIFICAR ARRIENDO"	
+	->RF-9 "LISTADO DE ARRIENDO"    ->'LISTO'
+	->RF-10 "MODIFICAR ARRIENDO"	(SE MODIFICA SOLO EL ESTADO A: 'Canselado')
 	
 
 -------------REQUISITOS FUNCIONALES FALTANTES 
@@ -377,5 +378,5 @@ END $$
 -------------COSAS QUE FALTAN GLOBALMENTE 
 
 	->"LISTAR CATEGORIA"
-	->"AGREGAR CATEGORIA"
+	->"AGREGAR CATEGORIA" ->'Listo'
 	->"MODIFICAR CATEGORIA"

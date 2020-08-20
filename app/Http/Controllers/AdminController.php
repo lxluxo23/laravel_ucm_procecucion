@@ -52,4 +52,15 @@ class AdminController extends Controller
         return back()->with('mensaje','Eliminado Correctamente');
 
     }
+
+    public function nuevacategoria(Request $cate){
+        
+
+        $categoria=$cate->Ncategoria;
+    
+        $sql= DB::select('call agregar_categoria(?)',[$categoria]);
+
+        return back();
+
+    }
 }
