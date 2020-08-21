@@ -47,7 +47,7 @@
                                     
                                     
                                     <div class="col-md-6">
-                                        <label for="descripcion" style="font-size: 1.1rem"><b>Descripcion</b></label>
+                                        <label for="descripcion" style="font-size: 1.1rem"><b>Descripción</b></label>
                                                   
                                         <label class="form-control" style="border: 1px solid  #2ba7e044; height: 6.5em; font-size: 1.1rem; overflow: auto" id="descripcion" name="descripcion" rows="5">
                                             {{$item->descripcion}}
