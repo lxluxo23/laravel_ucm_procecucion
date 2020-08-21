@@ -17,7 +17,7 @@
                     
                     <input type="text" class="form-control" name="Ncategoria" id="Ncategoria">
                     <span>
-                        <button class="btn btn-primary btn-lg btn-block" type="submit">Guardar</button>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" style="font-size: 0.8rem; margin-left:1.5rem; margin-bottom: 1.5rem">Guardar</button>
                   </span>
                 </div>
               </div>
