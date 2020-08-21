@@ -38,8 +38,6 @@
                 </tr>
               </thead>
               <tbody>
-                <form method="POST" action="{{route('actualizar_arriendo')}}" accept-charset="UTF-8" enctype="multipart/form-data">
-                  @csrf
                 @foreach($arr as $item)
                 <tr>
                   <td>{{$item->id_espacio_trabajo}}</td>
@@ -49,7 +47,9 @@
                   <td>{{$item->Nombre_pago}}</td>
                   <td>{{$item->valor_Total}}</td>
                   <td>{{$item->estado}}</td>
-                  <td><a class="button" data-toggle="modal" data-target="#modal_eliminar"><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a></td>
+                  <td>
+                    <a href='{{('modificar_arriendo/')}}{{$item->id_reserva}}' class="bot" onclick="if(!confirm('¿Desea realmente CANCELAR el arriendo Fecha inicio {{$item->fecha_ini_solicitada}} Fecha fin {{$item->fecha_fin_solicitada}}?'))return false"><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a></td>
+                    
                 </tr>
                 @endforeach
               </tbody>
@@ -59,7 +59,8 @@
       </div>
   
   </div>
-  <div class="modal fade" id="modal_eliminar" tabindex="-1" role="dialog" aria-labelledby="modal_eliminarLabel" aria-hidden="true">
+
+<!--  <div class="modal fade" id="modal_eliminar" tabindex="-1" role="dialog" aria-labelledby="modal_eliminarLabel" aria-hidden="true">
     <div class="modal-dialog" >
       <div class="modal-content" style="border: none ; background: #f8f8fd">
         <div class="modal-header" style="z-index:100 ;background: #ff0000">
@@ -69,10 +70,10 @@
         </div>
         <div class="h1 panel-title" style="color:#ff0000 ;text-align: center; margin-top:40">Cancelar arriendo ?</div>
         <div class="h5 panel-title" style="color:#ff0000 ;text-align: center; margin:40">Se reembolsará con un coste del 10% del valor total del arriendo.</div>
-        <div class="modal-body" >
+        <div class="modal-body" >-->
           <!-- Formulario Modal -->
           
-          <div class="container" >     
+<!--          <div class="container" >     
           <br>        
               <div class="form-group">
                 <div class="row">
@@ -80,10 +81,10 @@
                   <button type="buttom" data-dismiss="modal" class="btn btn-primary col-md-6 mb-3">NO</button>
                 </div>
               </form>    
-          </div>
+              </div>
   
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
 @endsection

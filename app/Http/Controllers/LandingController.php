@@ -210,6 +210,14 @@ class LandingController extends Controller
 
     }
 
+    public function modificar_arriendo (Request $request,$id){
+
+        $eliminar_usuario=DB::delete('call cancelar_arriendo('.$id.')');
+
+        return back()->with('mensaje','La reserva a sido canselada con exito');
+
+    }
+
     public function valida_rut($rut)
     {
         $rut = preg_replace('/[^k0-9]/i', '', $rut);
