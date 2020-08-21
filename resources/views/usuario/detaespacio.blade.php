@@ -128,9 +128,9 @@
                                                                         <br>
                                                                         <div class="form-inline">
                                                                             <h6>Desde &emsp14;</h6>
-                                                                            <input type="text" readonly style="width:5.5rem; font-weight:500; line-height:1.2; margin-bottom:.5rem; text-decoration: none;border:none; font-size:1rem" id="diainicio" name="diainicio">
+                                                                            <input type="text" readonly style="width:6rem; font-weight:500; line-height:1.2; margin-bottom:.5rem; text-decoration: none;border:none; font-size:1rem" id="diainicio" name="diainicio">
                                                                             <h6>&emsp14; hasta &emsp14;</h6>
-                                                                            <input type="text" readonly style="width:5.5rem; font-weight:500; line-height:1.2; margin-bottom:.5rem; text-decoration: none;border:none; font-size:1rem" id="diafinal" name="diafinal">
+                                                                            <input type="text" readonly style="width:6rem; font-weight:500; line-height:1.2; margin-bottom:.5rem; text-decoration: none;border:none; font-size:1rem" id="diafinal" name="diafinal">
                                                                         </div>
 
                                                                         <br>

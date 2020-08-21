@@ -294,9 +294,12 @@ class LandingController extends Controller
         
     }
 
-    public function modificar_arriendo(Request $id){
+    public function actualizar_arriendo(Request $actualizar_arriendo){
 
-        
+        $id = $actualizar_arriendo->id_reserva;
+
+        $dato = DB::select('call actualizar_usuario(?)', [$id]);
+        return back()->with('mensaje','Arriendo cancelado!');
 
     }
 }
