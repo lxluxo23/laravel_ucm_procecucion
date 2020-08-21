@@ -387,3 +387,8 @@ END $$
 	->"LISTAR CATEGORIA" ->'semiListo falta en documento'
 	->"AGREGAR CATEGORIA" ->'semiListo falta en documento'
 	->"MODIFICAR CATEGORIA" ->'semiListo falta en documento' 
+
+--------------------PEQUEÑOS DETALLES BUGS----------------------
+	'Por algun motivo misteriosamente astral dejo de funcionar actualizar estado usuario (listaclientes.blade)'
+	'BUG QUE CONOCEMOS PERO POR SEGURIDAD DE LA PRESENTACION NO SE ESCRIBE'
+	'BUG 0 arriendo'
