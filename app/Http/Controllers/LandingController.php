@@ -172,7 +172,7 @@ class LandingController extends Controller
                     return redirect()->route('inicio')->with('success', 'Usuario registrado con éxito.');
                 }
                 else{
-                    return redirect()->route('inicio')->with('error', 'Este usuario ya esta registrado!');
+                    return back()->with('error', 'Este usuario ya esta registrado!');
                 }  
                 
 
