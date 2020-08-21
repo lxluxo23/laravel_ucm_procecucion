@@ -33,6 +33,9 @@ Route::get('eliminar_usuario/{id}','LandingController@eliminar_usuario')->name('
 
 Route::get('listaArriendos','LandingController@listaArriendos')->name('listaArriendos');
 
+Route::get('modificar_arriendo/{id}','LandingController@modificar_arriendo')->name('modificar_arriendo');
+
+
 //----------------------- AdminController get ----------------------------------------------------------------
 
 Route::get('/admin', 'AdminController@indexadmin')->name('inicioadmin');

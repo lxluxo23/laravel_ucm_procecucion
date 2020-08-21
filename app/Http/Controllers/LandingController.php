@@ -294,9 +294,9 @@ class LandingController extends Controller
         
     }
 
+    public function modificar_arriendo(Request $id){
 
+        
 
-
-
-
+    }
 }

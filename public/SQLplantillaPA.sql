@@ -363,6 +363,13 @@ INNER JOIN tipo_de_pago
 ON arriendo.tipo_pago = tipo_de_pago.ID_pago and arriendo.titular=prut;
 
 END $$
+--------------------------------------------------------------PA PARA CANCELAR ARRIENDO-------------------------
+
+DELIMITER $$
+CREATE PROCEDURE cancelar_arriendo(prut INT,pidreserva int)
+BEGIN
+	update arriendo SET estado='Cancelado' WHERE id_reserva=pidreserva AND titular=prut;
+END $$
 
 -------------COSAS QUE FALTAN EN EL SISTEMA 
 
