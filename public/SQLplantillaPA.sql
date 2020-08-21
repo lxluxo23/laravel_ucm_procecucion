@@ -310,6 +310,7 @@ BEGIN
     and espacio_trabajo.id_espacio_trabajo = pidesp
     and arriendo.fecha_ini_solicitada <= pffin
     AND arriendo.fecha_fin_solicitada >= pfini
+	and arriendo.estado <> 'Cancelado'
     order by arriendo.fecha_fin_solicitada desc
     into fecha_ultima;
     
@@ -356,11 +357,18 @@ DELIMITER $$
 CREATE PROCEDURE lista_arriendo_usu(prut int)
 BEGIN
 
-SELECT arriendo.id_reserva,arriendo.id_espacio_trabajo ,arriendo.fecha_reserva, arriendo.fecha_ini_solicitada,fecha_fin_solicitada, arriendo.valor_Total ,tipo_de_pago.Nombre_pago, arriendo.titular
+SELECT arriendo.id_reserva,arriendo.id_espacio_trabajo ,arriendo.fecha_reserva, arriendo.fecha_ini_solicitada,fecha_fin_solicitada, arriendo.valor_Total ,tipo_de_pago.Nombre_pago, arriendo.titular, arriendo.estado
 FROM arriendo 
 INNER JOIN tipo_de_pago 
 ON arriendo.tipo_pago = tipo_de_pago.ID_pago and arriendo.titular=prut;
 
+END $$
+--------------------------------------------------------------PA PARA CANCELAR ARRIENDO-------------------------
+
+DELIMITER $$
+CREATE PROCEDURE cancelar_arriendo(prut INT,pidreserva int)
+BEGIN
+	update arriendo SET estado='Cancelado' WHERE id_reserva=pidreserva AND titular=prut;
 END $$
 
 -------------COSAS QUE FALTAN EN EL SISTEMA 
@@ -372,10 +380,10 @@ END $$
 
 -------------REQUISITOS FUNCIONALES FALTANTES 
 
-	-> "ELIMINAR USUARIO"
+	-> "ELIMINAR USUARIO" ->'semiListo'
 
 -------------COSAS QUE FALTAN GLOBALMENTE 
 
-	->"LISTAR CATEGORIA"
-	->"AGREGAR CATEGORIA" ->'Listo'
-	->"MODIFICAR CATEGORIA"
+	->"LISTAR CATEGORIA" ->'semiListo falta en documento'
+	->"AGREGAR CATEGORIA" ->'semiListo falta en documento'
+	->"MODIFICAR CATEGORIA" ->'semiListo falta en documento' 

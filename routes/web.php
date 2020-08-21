@@ -31,8 +31,10 @@ Route::get('/agragarusuario', 'LandingController@nuevousuario')->name('nuevousua
 
 Route::get('eliminar_usuario/{id}','LandingController@eliminar_usuario')->name('eliminar_usuario');
 
-
 Route::get('listaArriendos','LandingController@listaArriendos')->name('listaArriendos');
+
+Route::get('modificar_arriendo/{id}','LandingController@modificar_arriendo')->name('modificar_arriendo');
+
 
 //----------------------- AdminController get ----------------------------------------------------------------
 
@@ -46,16 +48,22 @@ Route::get ('/NuevoArriendo','AdminController@agregar_arriendo')->name('agregar_
 
 Route::get ('/AgregarCategoria','AdminController@agregar_categoria')->name('agregar_categoria');
 
-Route::get ('/arreindodetalle/{id}','AdminController@detallearriendo')->name('detallearriendo');
+Route::get ('/categorias','AdminController@categorias')->name('categorias');
+
+Route::get ('/modificar_categoria/{id}','AdminController@modificar_categoria')->name('modificar_categoria');
 
 //----------------------- AdminController post ----------------------------------------------------------------
 
 Route::post('NuevaCategoria','AdminController@nuevacategoria')->name('nuevacategoria');
 
+Route::get ('/arreindodetalle/{id}','AdminController@detallearriendo')->name('detallearriendo');
+
 //-------------------------------- post ----------------------------------------------------------------------
 
 
 Route::post('logueame','LandingController@logueame')->name('logueame');
+
+Route::get('logout','LandingController@logout')->name('logout');
 
 Route::post('registrarsepost','LandingController@registrarse')->name('registrarse');
 
@@ -66,6 +74,8 @@ Route::post('crearespaciopost','Espacio_trabajoController@crear_espacio')->name(
 Route::post('actualizarespacio','Espacio_trabajoController@actualizarespacio')->name('actualizarespacio');
 
 Route::post('actualizar_usuario','LandingController@actualizar_usuario')->name('actualizar_usuario');
+
+Route::post('actualizar_categoria','AdminController@actualizar_categoria')->name('actualizar_categoria');
 
 Route::post('agregararriendo','LandingController@agregararriendo')->name('agregararriendo');
 

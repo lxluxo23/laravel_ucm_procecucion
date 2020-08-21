@@ -114,6 +114,14 @@
           </div>
         </div>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ route ('categorias')}}" >
+          
+          <i class=" 	fas fa-clipboard-list"></i>
+          <span>Categorias</span>
+        </a>
+      </li>
    
       
     <li class="nav-item">

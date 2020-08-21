@@ -24,7 +24,7 @@
         </div>
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered" id="dataTable" cellspacing="0">
               <thead>
                 <tr>
                   <th>Número del espacio arrendado</th>
@@ -33,7 +33,8 @@
                   <th>Fecha final</th>
                   <th>Tipo de pago</th>
                   <th>Total</th>
-         
+                  <th>Estado</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -45,7 +46,8 @@
                   <td>{{$item->fecha_fin_solicitada}}</td>
                   <td>{{$item->Nombre_pago}}</td>
                   <td>{{$item->valor_Total}}</td>
-                  
+                  <td>{{$item->estado}}</td>
+                  <td><a class="button" data-toggle="modal" data-target="#modal_eliminar"><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a></td>
                 </tr>
                 @endforeach
               </tbody>
@@ -55,5 +57,32 @@
       </div>
   
   </div>
-
+  <div class="modal fade" id="modal_eliminar" tabindex="-1" role="dialog" aria-labelledby="modal_eliminarLabel" aria-hidden="true">
+    <div class="modal-dialog" >
+      <div class="modal-content" style="border: none ; background: #f8f8fd">
+        <div class="modal-header" style="z-index:100 ;background: #ff0000">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:white">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="h1 panel-title" style="color:#ff0000 ;text-align: center; margin-top:40">Cancelar arriendo ?</div>
+        <div class="modal-body" >
+          <!-- Formulario Modal -->
+          
+          <div class="container" >     
+          <br>        
+            <form method="POST" action="href='{{('modificar_arriendo/')}}{{$item->id_reserva}}'">
+              @csrf
+              <div class="form-group">
+                <div class="row">
+                  <button type="button" class="btn btn-danger col-md-6 mb-3" >SI</button>
+                  <button type="button" class="btn btn-primary col-md-6 mb-3">NO</button>
+                </div>
+              </form>    
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection
