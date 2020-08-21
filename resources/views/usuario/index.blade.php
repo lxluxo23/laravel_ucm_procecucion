@@ -9,6 +9,24 @@
       <!-- Page Content -->
   <div class="container">
 
+    @if(session('error'))
+
+      <div class="alert alert-danger" onclick="window.close()"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>!</strong>
+          {{ session('error') }}
+      </div>
+      @csrf
+    @endif
+
+    @if(session('success'))
+
+      <div class="alert alert-success" onclick="window.close()"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>!</strong>
+          {{ session('success') }}
+      </div>
+      @csrf
+    @endif
+
     <!-- Jumbotron Header -->
     <header class="contenedorheader my-4">
       <div class="imagenheader">

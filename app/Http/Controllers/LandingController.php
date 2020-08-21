@@ -160,11 +160,21 @@ class LandingController extends Controller
 
             if ($valido == 1){
 
-            $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,md5($pass1),$tipo,$estado,$telefono,$email]);
-    
-            
+                $existe=DB::select('select existe(?,?) as existee',[$email,$rut]);
                 
-            return redirect()->route('inicio')->with('success', 'Usuario registrado con éxito.');
+                foreach($existe as $algo){
+                    $resultado=$algo->existee;
+                }
+                if ($resultado==0){
+
+                    $dato = DB::select('call agregar_usuario(?,?,?,?,?,?,?)', [$rut,$nombre,md5($pass1),$tipo,$estado,$telefono,$email]);
+       
+                    return redirect()->route('inicio')->with('success', 'Usuario registrado con éxito.');
+                }
+                else{
+                    return redirect()->route('inicio')->with('error', 'Este usuario ya esta registrado!');
+                }  
+                
 
             }
         }

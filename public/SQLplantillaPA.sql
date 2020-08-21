@@ -337,6 +337,18 @@ BEGIN
     return fec;
 END $$
 
+-------------FUNCION EXISTE
+DELIMITER $$
+create function existe(femail TEXT,frut int)
+RETURNS boolean 
+BEGIN
+	DECLARE existe  boolean DEFAULT false;
+	IF EXISTS (SELECT email FROM usuario WHERE email = femail OR rut=frut)THEN
+        SET existe = TRUE;
+    END IF;
+    RETURN existe;
+END $$
+
 
 --------------------------------------------------------------PA PARA LISTAR ARRIENDO EN ADMIN-----------------
 
