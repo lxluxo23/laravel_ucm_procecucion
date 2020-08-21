@@ -136,7 +136,7 @@
                                                                         <br>
                                                                         @if (session('admin')==1)
                                                                         <li class="nav-item">
-                                                                          <label>Rut Titular: &emsp14;</label><input type="number" id="ruttitular" name="ruttitular">
+                                                                          <label>Rut Titular: &emsp14;</label><input type="text" id="ruttitular" name="ruttitular">
                                                                         </li>
                                                                         @endif
                                                                         <div style="background: #02ddff0c ;margin-top:60px; border-radius: 10px; border: 1px solid #2a2a2aa8">
@@ -161,7 +161,7 @@
                                                 </div>
                                                 <div class="modal-footer" style="width:100%;position: absolute;background: #ade5eb; z-index: 100">
                                           
-                                                  <button type="submit" class="btn btn-primary">Realizar compra</button>
+                                                  <button type="submit" class="btn btn-primary">Realizar Arriendo</button>
                                                 
                                                 </div>
                                             </form>

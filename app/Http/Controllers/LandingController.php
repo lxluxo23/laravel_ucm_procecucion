@@ -191,7 +191,7 @@ class LandingController extends Controller
 
     $telefono=$actualizar_usuario->telefono;
 
-    $estado=$actualizar_usuario->estado;
+    $estado=$actualizar_usuario->estadoc;
 
     $tipo='usuario'; 
 
@@ -255,13 +255,14 @@ class LandingController extends Controller
         
             $diafinal=$agregar_arriendo->diafinal;
 
-            $ruttitular=$agregar_arriendo->ruttitular;
-    
-            $sql= DB::select("select rut from usuario where email='".session('email')."'");
-            
-            if($ruttitular){
+
+            if ($agregar_arriendo->has('ruttitular')){
+                $ruttitular=$agregar_arriendo->ruttitular;
                 $titular=$ruttitular;
-            }else{
+                //return back()->with ('mensaje','el rut  es '.$ruttitular);
+            }
+            else{
+                $sql= DB::select("select rut from usuario where email='".session('email')."'");
                 foreach($sql as $algo){
                     $titular=$algo->rut;
                 }   

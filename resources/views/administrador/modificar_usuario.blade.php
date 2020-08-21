@@ -76,7 +76,7 @@
 </div>
 <script>
  
-    document.getElementById("estadoc").value = `{{$item->estado}}`;
+    document.getElementById("estadoc").value = '{{$item->estado}}';
 
   
 </script>

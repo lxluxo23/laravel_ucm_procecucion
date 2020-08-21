@@ -389,6 +389,6 @@ END $$
 	->"MODIFICAR CATEGORIA" ->'semiListo falta en documento' 
 
 --------------------PEQUEÑOS DETALLES BUGS----------------------
-	'Por algun motivo misteriosamente astral dejo de funcionar actualizar estado usuario (listaclientes.blade)'
-	'BUG QUE CONOCEMOS PERO POR SEGURIDAD DE LA PRESENTACION NO SE ESCRIBE'
-	'BUG 0 arriendo'
+	'Por algun motivo misteriosamente astral dejo de funcionar actualizar estado usuario (listaclientes.blade)' -> 'CORREGIDO'
+	'BUG QUE CONOCEMOS PERO POR SEGURIDAD DE LA PRESENTACION NO SE ESCRIBE' ->'CORREGIDO'
+	'BUG 0 arriendo' ->'CORREGIDO'
