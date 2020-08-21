@@ -38,6 +38,8 @@
                 </tr>
               </thead>
               <tbody>
+                <form method="POST" action="{{route('actualizar_arriendo')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+                  @csrf
                 @foreach($arr as $item)
                 <tr>
                   <td>{{$item->id_espacio_trabajo}}</td>
@@ -66,17 +68,16 @@
           </button>
         </div>
         <div class="h1 panel-title" style="color:#ff0000 ;text-align: center; margin-top:40">Cancelar arriendo ?</div>
+        <div class="h5 panel-title" style="color:#ff0000 ;text-align: center; margin:40">Se reembolsará con un coste del 10% del valor total del arriendo.</div>
         <div class="modal-body" >
           <!-- Formulario Modal -->
           
           <div class="container" >     
           <br>        
-            <form method="POST" action="href='{{('modificar_arriendo/')}}{{$item->id_reserva}}'">
-              @csrf
               <div class="form-group">
                 <div class="row">
-                  <button type="button" class="btn btn-danger col-md-6 mb-3" >SI</button>
-                  <button type="button" class="btn btn-primary col-md-6 mb-3">NO</button>
+                  <button type="submit" class="btn btn-danger col-md-6 mb-3">SI</button>
+                  <button type="buttom" data-dismiss="modal" class="btn btn-primary col-md-6 mb-3">NO</button>
                 </div>
               </form>    
           </div>

@@ -48,7 +48,7 @@
                 <td>{{$item->estado}}</td>
                 <td>{{$item->Nombre_pago}}</td>
                 <td>{{$item->valor_Total}}</td>
-                <td><a href='{{('modificarespacio/')}}{{$item->id_reserva}}'><img id='img_tab_edit' src='images/edit.jpg' width="50"/></a></td>
+                <td><a href='{{('modificarespacio/')}}{{$item->id_reserva}}'><img id='img_tab_delete' src='images/cance.jpg' width="30"/></a></td>
               </tr>
               @endforeach
             </tbody>
