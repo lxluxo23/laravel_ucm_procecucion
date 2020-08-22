@@ -378,7 +378,7 @@ END $$
 --------------------------------------------------------------PA PARA CANCELAR ARRIENDO-------------------------
 
 DELIMITER $$
-CREATE PROCEDURE cancelar_arriendo(pidreserva int)
+CREATE or replace PROCEDURE cancelar_arriendo(pidreserva int)
 BEGIN
 	update arriendo SET estado='Cancelado' WHERE id_reserva=pidreserva;
 END $$
