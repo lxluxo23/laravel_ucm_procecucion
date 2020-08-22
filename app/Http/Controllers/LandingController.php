@@ -224,7 +224,7 @@ class LandingController extends Controller
 
         $eliminar_usuario=DB::delete('call cancelar_arriendo('.$id.')');
 
-        return back()->with('mensaje','La reserva a sido canselada con exito');
+        return back()->with('mensaje','La reserva a sido cancelada con exito');
 
     }
 
