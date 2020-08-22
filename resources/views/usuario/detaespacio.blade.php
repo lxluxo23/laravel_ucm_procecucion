@@ -60,13 +60,12 @@
                                         <br>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label for="fini" style="font-size: 0.9em">Elija el día que desea usar el servicio</label>                                                               
+                                                <label for="fini" style="font-size: 0.9em">Desde las 00:00 del día</label>                                                               
                                                 <input type="date" class="form-control" id="fini" name="fini" placeholder="" required>
-                            
                                             </div>
 
                                             <div class="col-md-6">
-                                                <label for="ffin" style="font-size: 0.9em">Hasta el día (incluyéndose)</label>
+                                                <label for="ffin" style="font-size: 0.9em">Hasta las 23:40 del día</label>
                                                 <input type="date" class="form-control" id="ffin" name="ffin" placeholder="" required>
                                             </div>   
                                         </div>  
@@ -124,11 +123,13 @@
                                                                         <h5 style="color:red; text-align:justify">El número de sala es importante guardarlo ya que será el número con el que
                                                                         se identifique la sala que arrendará a continuación. </h5>
                                                                         <br>
-                                                                        <div class="form-inline">
-                                                                            <h6>Desde &emsp14;</h6>
-                                                                            <input type="text" readonly style="width:6rem; font-weight:500; line-height:1.2; margin-bottom:.5rem; text-decoration: none;border:none; font-size:1rem" id="diainicio" name="diainicio">
-                                                                            <h6>&emsp14; hasta &emsp14;</h6>
-                                                                            <input type="text" readonly style="width:6rem; font-weight:500; line-height:1.2; margin-bottom:.5rem; text-decoration: none;border:none; font-size:1rem" id="diafinal" name="diafinal">
+                                                                        <div class="row">
+                                                                            <div class="form-inline">
+                                                                                <h6>Desde &emsp14;</h6>
+                                                                                <input type="text" readonly style="width:6rem; font-weight:500; line-height:1.2; margin-bottom:.5rem; text-decoration: none;border:none; font-size:1rem" id="diainicio" name="diainicio">
+                                                                                <h6>&emsp14; hasta &emsp14;</h6>
+                                                                                <input type="text" readonly style="width:6rem; font-weight:500; line-height:1.2; margin-bottom:.5rem; text-decoration: none;border:none; font-size:1rem" id="diafinal" name="diafinal">
+                                                                            </div>
                                                                         </div>
 
                                                                         <br>
