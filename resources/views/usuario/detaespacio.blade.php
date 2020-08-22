@@ -37,8 +37,7 @@
                         <h4 class="mb-3" style="font-size: 1.5rem">Características de {{$item->nombre_cat}}</h4>
                         <br>
                             
-                            <div class="row">    
-                                
+                            <div class="row">                                   
                                         
                                     <div class="col-md-6">
                                         <img src="../images/{{$item->url_img}}" alt="" class="imagenDeTVenta" style="margin-top:10px;margin-left:20px;border-radius: 10px; width: 93%">
@@ -77,7 +76,7 @@
                                         
                                         <!-- Modal -->
                                         
-                                        <div class="modal fade" id="exampleModal" tabindex="-1" style="margin-top:50px ;background: rgba(9, 20, 36, 0.5)" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" style="margin-top:20px ;background: rgba(9, 20, 36, 0.5)" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             
                                             <div class="modal-dialog modal-xl">
                                                 
@@ -112,8 +111,7 @@
                                                                         <h5 style="text-align: justify; width: 90%">{{$item->descripcion}}.</h5>
                                                                     </div>                                                             
                                                                     <div class="col-md-6">
-                                                                        
-                                                                        
+                                                                                         
                                                                         <h2 id="nombrecat" name="nombrecat">{{$item->nombre_cat}}</h2>
                                                                         <h6>Capacidad: {{$item->capacidad}} personas.</h6>
                                                                         
@@ -136,9 +134,25 @@
                                                                         <br>
                                                                         @if (session('admin')==1)
                                                                         <li class="nav-item">
-                                                                          <label>Rut Titular: &emsp14;</label><input type="text" id="ruttitular" name="ruttitular">
+                                                                          <label>Rut Titular: &emsp14;</label><input type="text" id="ruttitular" name="ruttitular">                                                            
                                                                         </li>
                                                                         @endif
+
+                                                                        <div class="d-block my-3">
+                                                                            <div class="custom-control custom-radio">
+                                                                              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                                                                              <label class="custom-control-label" for="credit">Tarjeta crédito</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                              <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                                                              <label class="custom-control-label" for="debit">Tarjeta débito</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                              <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                                                              <label class="custom-control-label" for="paypal">PayPal</label>
+                                                                            </div>
+                                                                          </div>
+
                                                                         <div style="background: #02ddff0c ;margin-top:60px; border-radius: 10px; border: 1px solid #2a2a2aa8">
                                                                         <h6 style="margin-top:20px; margin-left:20px; text-aling:right;">Precio x dia: ${{$item->precio}}</h6>
                                                                         <div class="form-inline" style="margin-left:20px;">
