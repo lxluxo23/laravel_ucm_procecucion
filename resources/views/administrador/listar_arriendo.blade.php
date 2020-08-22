@@ -50,7 +50,7 @@
                 <td>{{$item->valor_Total}}</td>
                
                 @if((date('Y-m-d')) <= ($item->fecha_ini_solicitada))
-                  @if(($item->estado) === 'vigente')
+                  @if(($item->estado) === 'Vigente')
                     <td><a href='{{('modificar_arriendo/')}}{{$item->id_reserva}}'><img id='img_tab_delete' src='images/cance.jpg' width="30"/></a></td>
                   @else
                     <td><img id='img_tab_delete' src='images/cance.jpg' disabled style="filter: grayscale(100%);" width="30"/></td>

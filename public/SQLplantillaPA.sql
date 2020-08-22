@@ -234,7 +234,7 @@ ALTER TABLE arriendo ADD CONSTRAINT la_fk_de_titular FOREIGN KEY (Titular) REFER
 ---------------------------------------------------------------PA AGREGAR ARRIENDO--
 
 DELIMITER $$
-CREATE or REPLACE PROCEDURE agregar_arriendo ( pfecha_ini_solicitada date, pfecha_fin_solicitada date, ptitular int, pvalor_total int,pid_espacio_trabajo int )
+CREATE or REPLACE PROCEDURE agregar_arriendo ( pfecha_ini_solicitada date, pfecha_fin_solicitada date, ptitular int, tipo_pago int, pvalor_total int,pid_espacio_trabajo int )
 BEGIN
 
 INSERT INTO arriendo(
@@ -246,7 +246,7 @@ estado,
 tipo_pago,
 valor_total,
 id_espacio_trabajo) 
-VALUES (CURDATE(),pfecha_ini_solicitada,pfecha_fin_solicitada,ptitular,'vigente',1,pvalor_total,pid_espacio_trabajo);
+VALUES (CURDATE(),pfecha_ini_solicitada,pfecha_fin_solicitada,ptitular,'vigente',tipo_pago,pvalor_total,pid_espacio_trabajo);
 END$$
 
 

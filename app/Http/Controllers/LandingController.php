@@ -103,7 +103,7 @@ class LandingController extends Controller
 
         $tipo = 'Usuario';
         
-        $estado = 'ACTIVO';
+        $estado = 'Activo';
     
         $telefono = $recuperar->telefono;
     
@@ -281,8 +281,12 @@ class LandingController extends Controller
             $TotalPago=$agregar_arriendo->TotalPago;
         
             $idespaciotrabajo=$agregar_arriendo->idespaciotrabajo;
+
+         
+                $radiobtn = $_POST['paymentMethod'];
+           
         
-            $datos = DB::select("call agregar_arriendo(?,?,?,?,?)", [$diainicio,$diafinal,$titular,$TotalPago,$idespaciotrabajo]);
+            $datos = DB::select("call agregar_arriendo(?,?,?,?,?,?)", [$diainicio,$diafinal,$titular,$radiobtn,$TotalPago,$idespaciotrabajo]);
             
             return back()->with('mensaje','Reserva realizada con éxito! lo estaremos esperando!');
     
