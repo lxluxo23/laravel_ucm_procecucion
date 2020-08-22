@@ -48,7 +48,7 @@
                   <td>{{$item->valor_Total}}</td>
                   <td>{{$item->estado}}</td>
                   <td>
-                    @if((date('Y-m-d')) <= ($item->fecha_ini_solicitada))
+                    @if((date('y-m-d')) <= ($item->fecha_ini_solicitada))
                       @if(($item->estado)<>'Cancelado')
                         <a href='{{('modificar_arriendo/')}}{{$item->id_reserva}}' class="bot" onclick="if(!confirm('¿Desea realmente CANCELAR el arriendo Fecha inicio {{$item->fecha_ini_solicitada}} Fecha fin {{$item->fecha_fin_solicitada}}? \n tendra un cobro del 10% del pago total'))return false"><img id='img_tab_delet' src='images/cance.jpg' width="30"/></a></td>
                       @else
