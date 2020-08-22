@@ -49,7 +49,7 @@
                 <td>{{$item->Nombre_pago}}</td>
                 <td>{{$item->valor_Total}}</td>
                
-                @if(($item->fecha_reserva) <= ($item->fecha_ini_solicitada))
+                @if((date('Y-m-d')) <= ($item->fecha_ini_solicitada))
                   @if(($item->estado) === 'vigente')
                     <td><a href='{{('modificar_arriendo/')}}{{$item->id_reserva}}'><img id='img_tab_delete' src='images/cance.jpg' width="30"/></a></td>
                   @else
