@@ -51,7 +51,7 @@
                     @if((date('Y-m-d')) <= ($item->fecha_ini_solicitada))
                       <a href='{{('modificar_arriendo/')}}{{$item->id_reserva}}' class="bot" onclick="if(!confirm('¿Desea realmente CANCELAR el arriendo Fecha inicio {{$item->fecha_ini_solicitada}} Fecha fin {{$item->fecha_fin_solicitada}}?'))return false"><img id='img_tab_delet' src='images/cance.jpg' width="30"/></a></td>
                     @else
-                    <a href='{{('modificar_arriendo/')}}{{$item->id_reserva}}' class="bot" onclick="if(!confirm('¿Desea realmente CANCELAR el arriendo Fecha inicio {{$item->fecha_ini_solicitada}} Fecha fin {{$item->fecha_fin_solicitada}}?'))return false"><img id='img_tab_delet' style="filter: grayscale(100%);" src='images/cance.jpg' width="30"/></a></td>
+                    <a class="bot"><img id='img_tab_delet' style="filter: grayscale(100%);" src='images/cance.jpg' width="30"/></a></td>
                     @endif
                 </tr>
                 @endforeach
