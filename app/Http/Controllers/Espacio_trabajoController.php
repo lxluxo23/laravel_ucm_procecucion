@@ -15,6 +15,8 @@ class Espacio_trabajoController extends Controller
         return view ('usuario.index',compact('espacioss'));
     }
   
+ 
+
     public function modificarespacio(Request $request, $id){
         $categoria=DB::select('select * from categoria');
         $los_datos_a_modificar=DB::select('select * from espacio_trabajo where ID_espacio_trabajo='.$id);
@@ -113,7 +115,8 @@ class Espacio_trabajoController extends Controller
     }
 
     public function white(Request $request){
-      
+     
+    
         $asde = DB::select("select fecha_ini_disp(".$request->texto0.",'".$request->texto1."','".$request->texto2."') as fec");
         return view('usuario.white',compact('asde'));
         

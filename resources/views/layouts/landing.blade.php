@@ -42,6 +42,9 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('pago') }}">Pagar</a>
+          </li>
           @if (session('logueado')!=1)
             <li class="nav-item">
               <a class="nav-link" style="cursor:pointer;" data-toggle="modal" data-target="#ModalLogin">Iniciar sesión</a>
